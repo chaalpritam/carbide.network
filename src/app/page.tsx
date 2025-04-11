@@ -23,40 +23,67 @@ import {
 export default function LandingPage() {
   return (
     <div className="flex flex-col min-h-screen">
-      {/* Header */}
-      <header className="fixed w-full px-4 lg:px-6 h-16 flex items-center border-b bg-white/80 backdrop-blur-sm z-50">
-        <div className="flex items-center justify-between w-full max-w-7xl mx-auto">
+      {/* Floating Menu */}
+      <div className="fixed w-full px-4 lg:px-6 h-14 flex items-center z-50">
+        <div className="relative flex items-center justify-between w-full max-w-7xl mx-auto">
           <div className="flex items-center gap-2">
             <div className="relative">
-              <Database className="h-6 w-6 text-primary" />
-              <div className="absolute -top-1 -right-1 h-2 w-2 rounded-full bg-primary animate-pulse" />
+              <Database className="h-4 w-4 text-primary" />
+              <div className="absolute -top-0.5 -right-0.5 h-1 w-1 rounded-full bg-primary animate-pulse" />
             </div>
-            <span className="text-xl font-bold bg-gradient-to-r from-primary to-primary/80 bg-clip-text text-transparent">
+            <span className="text-base font-bold bg-gradient-to-r from-primary to-primary/80 bg-clip-text text-transparent">
               Carbide Network
             </span>
           </div>
-          <nav className="hidden md:flex gap-6">
-            <Link href="#features" className="text-sm font-medium hover:text-primary transition-colors">
-              Features
-            </Link>
-            <Link href="#how-it-works" className="text-sm font-medium hover:text-primary transition-colors">
-              How It Works
-            </Link>
-            <Link href="#faq" className="text-sm font-medium hover:text-primary transition-colors">
-              FAQ
-            </Link>
+          <nav className="hidden md:flex items-center gap-1">
+            <div className="flex items-center gap-1 px-2 py-1 rounded-full bg-white/30 backdrop-blur-sm border border-primary/5">
+              <Link href="#features" className="px-2 py-0.5 rounded-full text-sm font-medium hover:bg-primary/5 hover:text-primary transition-colors">
+                Features
+              </Link>
+              <Link href="#how-it-works" className="px-2 py-0.5 rounded-full text-sm font-medium hover:bg-primary/5 hover:text-primary transition-colors">
+                How It Works
+              </Link>
+              <Link href="#faq" className="px-2 py-0.5 rounded-full text-sm font-medium hover:bg-primary/5 hover:text-primary transition-colors">
+                FAQ
+              </Link>
+              <div className="h-2.5 w-px bg-primary/5 mx-0.5" />
+              <Link href="#" className="px-2 py-0.5 rounded-full text-sm font-medium hover:bg-primary/5 hover:text-primary transition-colors">
+                Docs
+              </Link>
+              <Link href="#" className="px-2 py-0.5 rounded-full text-sm font-medium hover:bg-primary/5 hover:text-primary transition-colors">
+                Blog
+              </Link>
+            </div>
           </nav>
-          <div className="flex items-center gap-4">
-            <Link href="#" className="text-sm font-medium hover:text-primary transition-colors">
+          <div className="flex items-center gap-1">
+            <Button variant="ghost" size="sm" className="text-sm font-medium hover:text-primary h-8">
               Login
-            </Link>
-            <Button variant="outline" className="relative overflow-hidden group">
+            </Button>
+            <Button size="sm" className="relative overflow-hidden group rounded-full h-8">
               <span className="relative z-10">Get Started</span>
               <div className="absolute inset-0 bg-gradient-to-r from-primary/10 to-primary/5 opacity-0 group-hover:opacity-100 transition-opacity" />
             </Button>
+            <Button variant="outline" size="icon" className="md:hidden rounded-full h-8 w-8">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                className="h-3.5 w-3.5"
+              >
+                <line x1="4" x2="20" y1="12" y2="12" />
+                <line x1="4" x2="20" y1="6" y2="6" />
+                <line x1="4" x2="20" y1="18" y2="18" />
+              </svg>
+            </Button>
           </div>
         </div>
-      </header>
+      </div>
 
       {/* Hero Section */}
       <section className="w-full pt-24 pb-12 md:pt-32 md:pb-24 lg:pt-40 lg:pb-32 bg-gradient-to-b from-white to-gray-50">
