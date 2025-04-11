@@ -90,7 +90,7 @@ export default function LandingPage() {
         <div className="absolute inset-0">
           <div className="absolute inset-0">
             <Image
-              src="https://images.unsplash.com/photo-1639322537228-f710d846310a?auto=format&fit=crop&q=80"
+              src="https://images.unsplash.com/photo-1639322537508-3d530caf2a0d?auto=format&fit=crop&q=80"
               alt="Decentralized Network Visualization"
               fill
               className="object-cover"
@@ -138,7 +138,7 @@ export default function LandingPage() {
       </section>
 
       {/* Features Section */}
-      <section id="features" className="w-full h-screen bg-white">
+      <section id="features" className="w-full h-screen bg-gray-50/50">
         <div className="container h-full px-4 md:px-6 mx-auto flex flex-col justify-center">
           <div className="flex flex-col items-center justify-center space-y-4 text-center mb-12">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/5 border border-primary/10">
@@ -210,8 +210,8 @@ export default function LandingPage() {
       </section>
 
       {/* How It Works Section with Image */}
-      <section id="how-it-works" className="w-full py-12 md:py-24 bg-gray-50">
-        <div className="container px-4 md:px-6 mx-auto">
+      <section id="how-it-works" className="w-full h-screen bg-white dot-wave-pattern">
+        <div className="container h-full px-4 md:px-6 mx-auto flex flex-col justify-center">
           <div className="flex flex-col items-center justify-center space-y-4 text-center mb-12">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/5 border border-primary/10">
               <Zap className="h-4 w-4 text-primary" />
@@ -276,7 +276,7 @@ export default function LandingPage() {
       </section>
 
       {/* Comparison Section */}
-      <section className="w-full py-12 md:py-24 bg-white">
+      <section className="w-full py-12 md:py-24 bg-gray-50/50">
         <div className="container px-4 md:px-6 mx-auto">
           <div className="flex flex-col items-center justify-center space-y-4 text-center mb-12">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/5 border border-primary/10">
@@ -325,7 +325,7 @@ export default function LandingPage() {
       </section>
 
       {/* FAQ Section */}
-      <section id="faq" className="w-full py-12 md:py-24 bg-gray-50">
+      <section id="faq" className="w-full py-12 md:py-24 bg-white">
         <div className="container px-4 md:px-6 mx-auto">
           <div className="flex flex-col items-center justify-center space-y-4 text-center mb-12">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/5 border border-primary/10">
