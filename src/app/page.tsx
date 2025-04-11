@@ -138,8 +138,8 @@ export default function LandingPage() {
       </section>
 
       {/* Features Section */}
-      <section id="features" className="w-full py-12 md:py-24 bg-white">
-        <div className="container px-4 md:px-6 mx-auto">
+      <section id="features" className="w-full h-screen bg-white">
+        <div className="container h-full px-4 md:px-6 mx-auto flex flex-col justify-center">
           <div className="flex flex-col items-center justify-center space-y-4 text-center mb-12">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/5 border border-primary/10">
               <Zap className="h-4 w-4 text-primary" />
@@ -150,58 +150,58 @@ export default function LandingPage() {
               Disrupting traditional consumer storage services with a decentralized approach.
             </p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div className="group relative flex flex-col items-center text-center p-6 bg-white rounded-xl border shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1">
-              <div className="h-12 w-12 rounded-full bg-primary/10 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
-                <Server className="h-6 w-6 text-primary" />
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+            <div className="group relative flex flex-col items-center text-center p-4 bg-white rounded-lg border shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1">
+              <div className="h-10 w-10 rounded-full bg-primary/10 flex items-center justify-center mb-3 group-hover:scale-110 transition-transform">
+                <Server className="h-5 w-5 text-primary" />
               </div>
-              <h3 className="text-xl font-bold mb-2">Decentralized Storage</h3>
-              <p className="text-muted-foreground">
+              <h3 className="text-lg font-bold mb-1">Decentralized Storage</h3>
+              <p className="text-sm text-muted-foreground">
                 Host your own hardware storage devices and eliminate reliance on centralized providers.
               </p>
             </div>
-            <div className="group relative flex flex-col items-center text-center p-6 bg-white rounded-xl border shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1">
-              <div className="h-12 w-12 rounded-full bg-primary/10 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
-                <ShieldCheck className="h-6 w-6 text-primary" />
+            <div className="group relative flex flex-col items-center text-center p-4 bg-white rounded-lg border shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1">
+              <div className="h-10 w-10 rounded-full bg-primary/10 flex items-center justify-center mb-3 group-hover:scale-110 transition-transform">
+                <ShieldCheck className="h-5 w-5 text-primary" />
               </div>
-              <h3 className="text-xl font-bold mb-2">Secure and Private</h3>
-              <p className="text-muted-foreground">
+              <h3 className="text-lg font-bold mb-1">Secure and Private</h3>
+              <p className="text-sm text-muted-foreground">
                 Blockchain technology ensures data integrity and privacy, giving you full ownership of your data.
               </p>
             </div>
-            <div className="group relative flex flex-col items-center text-center p-6 bg-white rounded-xl border shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1">
-              <div className="h-12 w-12 rounded-full bg-primary/10 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
-                <Coins className="h-6 w-6 text-primary" />
+            <div className="group relative flex flex-col items-center text-center p-4 bg-white rounded-lg border shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1">
+              <div className="h-10 w-10 rounded-full bg-primary/10 flex items-center justify-center mb-3 group-hover:scale-110 transition-transform">
+                <Coins className="h-5 w-5 text-primary" />
               </div>
-              <h3 className="text-xl font-bold mb-2">Earn Rewards</h3>
-              <p className="text-muted-foreground">
+              <h3 className="text-lg font-bold mb-1">Earn Rewards</h3>
+              <p className="text-sm text-muted-foreground">
                 Contribute to the network by hosting storage devices and earn rewards for your participation.
               </p>
             </div>
-            <div className="group relative flex flex-col items-center text-center p-6 bg-white rounded-xl border shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1">
-              <div className="h-12 w-12 rounded-full bg-primary/10 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
-                <Globe className="h-6 w-6 text-primary" />
+            <div className="group relative flex flex-col items-center text-center p-4 bg-white rounded-lg border shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1">
+              <div className="h-10 w-10 rounded-full bg-primary/10 flex items-center justify-center mb-3 group-hover:scale-110 transition-transform">
+                <Globe className="h-5 w-5 text-primary" />
               </div>
-              <h3 className="text-xl font-bold mb-2">Global Network</h3>
-              <p className="text-muted-foreground">
+              <h3 className="text-lg font-bold mb-1">Global Network</h3>
+              <p className="text-sm text-muted-foreground">
                 Access your data from anywhere in the world with our distributed network infrastructure.
               </p>
             </div>
-            <div className="group relative flex flex-col items-center text-center p-6 bg-white rounded-xl border shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1">
-              <div className="h-12 w-12 rounded-full bg-primary/10 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
-                <BarChart3 className="h-6 w-6 text-primary" />
+            <div className="group relative flex flex-col items-center text-center p-4 bg-white rounded-lg border shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1">
+              <div className="h-10 w-10 rounded-full bg-primary/10 flex items-center justify-center mb-3 group-hover:scale-110 transition-transform">
+                <BarChart3 className="h-5 w-5 text-primary" />
               </div>
-              <h3 className="text-xl font-bold mb-2">High Performance</h3>
-              <p className="text-muted-foreground">
+              <h3 className="text-lg font-bold mb-1">High Performance</h3>
+              <p className="text-sm text-muted-foreground">
                 Experience faster speeds and better reliability with our optimized network architecture.
               </p>
             </div>
-            <div className="group relative flex flex-col items-center text-center p-6 bg-white rounded-xl border shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1">
-              <div className="h-12 w-12 rounded-full bg-primary/10 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
-                <Cpu className="h-6 w-6 text-primary" />
+            <div className="group relative flex flex-col items-center text-center p-4 bg-white rounded-lg border shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1">
+              <div className="h-10 w-10 rounded-full bg-primary/10 flex items-center justify-center mb-3 group-hover:scale-110 transition-transform">
+                <Cpu className="h-5 w-5 text-primary" />
               </div>
-              <h3 className="text-xl font-bold mb-2">DePIN Protocol</h3>
-              <p className="text-muted-foreground">
+              <h3 className="text-lg font-bold mb-1">DePIN Protocol</h3>
+              <p className="text-sm text-muted-foreground">
                 Built on a Decentralized Physical Infrastructure Network protocol for maximum security and reliability.
               </p>
             </div>
