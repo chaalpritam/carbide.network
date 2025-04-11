@@ -276,8 +276,8 @@ export default function LandingPage() {
       </section>
 
       {/* Comparison Section */}
-      <section className="w-full py-12 md:py-24 bg-gray-50/50">
-        <div className="container px-4 md:px-6 mx-auto">
+      <section className="w-full h-screen bg-gray-50/50">
+        <div className="container h-full px-4 md:px-6 mx-auto flex flex-col justify-center">
           <div className="flex flex-col items-center justify-center space-y-4 text-center mb-12">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/5 border border-primary/10">
               <BarChart3 className="h-4 w-4 text-primary" />
@@ -288,35 +288,101 @@ export default function LandingPage() {
               See how we stack up against centralized storage providers.
             </p>
           </div>
-          <div className="overflow-x-auto rounded-xl border shadow-sm">
+          <div className="overflow-x-auto rounded-xl border shadow-sm bg-white">
             <table className="w-full border-collapse">
               <thead>
                 <tr className="border-b bg-gray-50">
-                  <th className="text-left p-4">Features</th>
-                  <th className="p-4 text-center">Carbide Network</th>
-                  <th className="p-4 text-center">Traditional Cloud Storage</th>
+                  <th className="text-left p-6 font-semibold text-muted-foreground">Features</th>
+                  <th className="p-6 text-center font-semibold">
+                    <div className="flex flex-col items-center gap-2">
+                      <div className="flex items-center gap-2">
+                        <Database className="h-5 w-5 text-primary" />
+                        <span className="text-primary font-medium">Carbide Network</span>
+                      </div>
+                      <span className="text-xs text-muted-foreground">Decentralized Solution</span>
+                    </div>
+                  </th>
+                  <th className="p-6 text-center font-semibold">
+                    <div className="flex flex-col items-center gap-2">
+                      <div className="flex items-center gap-2">
+                        <Cloud className="h-5 w-5 text-muted-foreground" />
+                        <span className="text-muted-foreground font-medium">Traditional Cloud Storage</span>
+                      </div>
+                      <span className="text-xs text-muted-foreground">Centralized Solution</span>
+                    </div>
+                  </th>
                 </tr>
               </thead>
               <tbody>
                 <tr className="border-b hover:bg-gray-50/50 transition-colors">
-                  <td className="text-left p-4">Data Control</td>
-                  <td className="p-4 text-center text-green-600 font-medium">Full Control</td>
-                  <td className="p-4 text-center text-red-600 font-medium">Limited Control</td>
+                  <td className="text-left p-6 font-medium">Data Control</td>
+                  <td className="p-6 text-center">
+                    <div className="flex items-center justify-center gap-2 text-green-600">
+                      <CheckCircle2 className="h-5 w-5" />
+                      <span className="font-medium">Full Control</span>
+                    </div>
+                  </td>
+                  <td className="p-6 text-center">
+                    <div className="flex items-center justify-center gap-2 text-red-600">
+                      <span className="font-medium">Limited Control</span>
+                    </div>
+                  </td>
                 </tr>
                 <tr className="border-b hover:bg-gray-50/50 transition-colors">
-                  <td className="text-left p-4">Cost</td>
-                  <td className="p-4 text-center text-green-600 font-medium">Pay for What You Use</td>
-                  <td className="p-4 text-center text-red-600 font-medium">Fixed Monthly Fees</td>
+                  <td className="text-left p-6 font-medium">Cost</td>
+                  <td className="p-6 text-center">
+                    <div className="flex items-center justify-center gap-2 text-green-600">
+                      <CheckCircle2 className="h-5 w-5" />
+                      <span className="font-medium">Pay for What You Use</span>
+                    </div>
+                  </td>
+                  <td className="p-6 text-center">
+                    <div className="flex items-center justify-center gap-2 text-red-600">
+                      <span className="font-medium">Fixed Monthly Fees</span>
+                    </div>
+                  </td>
                 </tr>
                 <tr className="border-b hover:bg-gray-50/50 transition-colors">
-                  <td className="text-left p-4">Earning Potential</td>
-                  <td className="p-4 text-center text-green-600 font-medium">Yes</td>
-                  <td className="p-4 text-center text-red-600 font-medium">No</td>
+                  <td className="text-left p-6 font-medium">Earning Potential</td>
+                  <td className="p-6 text-center">
+                    <div className="flex items-center justify-center gap-2 text-green-600">
+                      <CheckCircle2 className="h-5 w-5" />
+                      <span className="font-medium">Yes</span>
+                    </div>
+                  </td>
+                  <td className="p-6 text-center">
+                    <div className="flex items-center justify-center gap-2 text-red-600">
+                      <span className="font-medium">No</span>
+                    </div>
+                  </td>
                 </tr>
                 <tr className="border-b hover:bg-gray-50/50 transition-colors">
-                  <td className="text-left p-4">Privacy</td>
-                  <td className="p-4 text-center text-green-600 font-medium">End-to-End Encryption</td>
-                  <td className="p-4 text-center text-red-600 font-medium">Provider Dependent</td>
+                  <td className="text-left p-6 font-medium">Privacy</td>
+                  <td className="p-6 text-center">
+                    <div className="flex items-center justify-center gap-2 text-green-600">
+                      <CheckCircle2 className="h-5 w-5" />
+                      <span className="font-medium">End-to-End Encryption</span>
+                    </div>
+                  </td>
+                  <td className="p-6 text-center">
+                    <div className="flex items-center justify-center gap-2 text-red-600">
+                      <span className="font-medium">Provider Dependent</span>
+                    </div>
+                  </td>
+                </tr>
+                <tr className="hover:bg-gray-50/50 transition-colors">
+                  <td className="text-left p-6 font-medium">Reliability</td>
+                  <td className="p-6 text-center">
+                    <div className="flex items-center justify-center gap-2 text-green-600">
+                      <CheckCircle2 className="h-5 w-5" />
+                      <span className="font-medium">Distributed Network</span>
+                    </div>
+                  </td>
+                  <td className="p-6 text-center">
+                    <div className="flex items-center justify-center gap-2 text-red-600">
+                      <span className="font-medium">Single Point of Failure</span>
+                    </div>
+                  </td>
                 </tr>
               </tbody>
             </table>
@@ -325,9 +391,9 @@ export default function LandingPage() {
       </section>
 
       {/* FAQ Section */}
-      <section id="faq" className="w-full py-12 md:py-24 bg-white">
+      <section id="faq" className="w-full py-16 bg-white">
         <div className="container px-4 md:px-6 mx-auto">
-          <div className="flex flex-col items-center justify-center space-y-4 text-center mb-12">
+          <div className="flex flex-col items-center justify-center space-y-4 text-center mb-8">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/5 border border-primary/10">
               <ShieldCheck className="h-4 w-4 text-primary" />
               <span className="text-sm font-medium text-primary">FAQ</span>
@@ -337,25 +403,61 @@ export default function LandingPage() {
               Everything you need to know about Carbide Network.
             </p>
           </div>
-          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-            <div className="bg-white p-6 rounded-xl border shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1">
-              <h3 className="text-xl font-bold mb-2">How secure is my data?</h3>
-              <p className="text-muted-foreground">
+          <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+            <div className="group bg-white p-6 rounded-xl border shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1">
+              <div className="h-10 w-10 rounded-full bg-primary/10 flex items-center justify-center mb-3 group-hover:scale-110 transition-transform">
+                <Shield className="h-5 w-5 text-primary" />
+              </div>
+              <h3 className="text-lg font-bold mb-2">How secure is my data?</h3>
+              <p className="text-sm text-muted-foreground">
                 Your data is protected with military-grade encryption and distributed across multiple nodes for maximum security and redundancy.
               </p>
             </div>
-            <div className="bg-white p-6 rounded-xl border shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1">
-              <h3 className="text-xl font-bold mb-2">How do I earn rewards?</h3>
-              <p className="text-muted-foreground">
+            <div className="group bg-white p-6 rounded-xl border shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1">
+              <div className="h-10 w-10 rounded-full bg-primary/10 flex items-center justify-center mb-3 group-hover:scale-110 transition-transform">
+                <Coins className="h-5 w-5 text-primary" />
+              </div>
+              <h3 className="text-lg font-bold mb-2">How do I earn rewards?</h3>
+              <p className="text-sm text-muted-foreground">
                 By contributing storage space to the network, you earn Carbide tokens based on the amount of space
                 provided, uptime, and network demand.
               </p>
             </div>
-            <div className="bg-white p-6 rounded-xl border shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1">
-              <h3 className="text-xl font-bold mb-2">Can I access my files from anywhere?</h3>
-              <p className="text-muted-foreground">
+            <div className="group bg-white p-6 rounded-xl border shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1">
+              <div className="h-10 w-10 rounded-full bg-primary/10 flex items-center justify-center mb-3 group-hover:scale-110 transition-transform">
+                <Globe className="h-5 w-5 text-primary" />
+              </div>
+              <h3 className="text-lg font-bold mb-2">Can I access my files from anywhere?</h3>
+              <p className="text-sm text-muted-foreground">
                 Yes, Carbide Network provides web, desktop, and mobile applications that allow you to access your files
                 from any device with an internet connection.
+              </p>
+            </div>
+            <div className="group bg-white p-6 rounded-xl border shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1">
+              <div className="h-10 w-10 rounded-full bg-primary/10 flex items-center justify-center mb-3 group-hover:scale-110 transition-transform">
+                <Server className="h-5 w-5 text-primary" />
+              </div>
+              <h3 className="text-lg font-bold mb-2">What hardware do I need?</h3>
+              <p className="text-sm text-muted-foreground">
+                Any storage device with sufficient capacity can be used. We recommend a minimum of 1TB storage and a stable internet connection.
+              </p>
+            </div>
+            <div className="group bg-white p-6 rounded-xl border shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1">
+              <div className="h-10 w-10 rounded-full bg-primary/10 flex items-center justify-center mb-3 group-hover:scale-110 transition-transform">
+                <Lock className="h-5 w-5 text-primary" />
+              </div>
+              <h3 className="text-lg font-bold mb-2">Is my data private?</h3>
+              <p className="text-sm text-muted-foreground">
+                Yes, all data is encrypted before being stored, and only you have access to your encryption keys.
+              </p>
+            </div>
+            <div className="group bg-white p-6 rounded-xl border shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1">
+              <div className="h-10 w-10 rounded-full bg-primary/10 flex items-center justify-center mb-3 group-hover:scale-110 transition-transform">
+                <UserCircle className="h-5 w-5 text-primary" />
+              </div>
+              <h3 className="text-lg font-bold mb-2">How do I get started?</h3>
+              <p className="text-sm text-muted-foreground">
+                Simply download our application, connect your storage device, and follow the setup wizard to join the network.
               </p>
             </div>
           </div>
