@@ -86,8 +86,20 @@ export default function LandingPage() {
       </div>
 
       {/* Hero Section */}
-      <section className="w-full pt-24 pb-12 md:pt-32 md:pb-24 lg:pt-40 lg:pb-32 bg-gradient-to-b from-white to-gray-50">
-        <div className="container px-4 md:px-6 mx-auto flex flex-col items-center text-center gap-8">
+      <section className="w-full h-screen relative overflow-hidden">
+        <div className="absolute inset-0">
+          <div className="absolute inset-0">
+            <Image
+              src="https://images.unsplash.com/photo-1639322537228-f710d846310a?auto=format&fit=crop&q=80"
+              alt="Decentralized Network Visualization"
+              fill
+              className="object-cover"
+              priority
+            />
+          </div>
+          <div className="absolute inset-0 bg-gradient-to-b from-white/90 via-white/50 to-transparent" />
+        </div>
+        <div className="container h-full px-4 md:px-6 mx-auto relative flex flex-col items-center justify-center text-center gap-8">
           <div className="space-y-4 max-w-3xl">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/5 border border-primary/10">
               <Sparkles className="h-4 w-4 text-primary" />
@@ -117,24 +129,10 @@ export default function LandingPage() {
               <div className="absolute inset-0 bg-gradient-to-r from-primary/10 to-primary/5 opacity-0 group-hover:opacity-100 transition-opacity" />
             </Button>
           </div>
-          <div className="w-full max-w-5xl mx-auto mt-8 relative rounded-2xl overflow-hidden shadow-2xl">
-            <Image
-              src="https://images.unsplash.com/photo-1639322537228-f710d846310a?auto=format&fit=crop&q=80"
-              alt="Decentralized Network Visualization"
-              width={1920}
-              height={1080}
-              priority
-              className="w-full aspect-video object-cover"
-            />
-            <div className="absolute inset-0 bg-gradient-to-tr from-primary/20 to-transparent mix-blend-overlay" />
-            <div className="absolute inset-0 flex items-center justify-center">
-              <div className="relative">
-                <div className="absolute inset-0 bg-primary/20 rounded-full blur-xl" />
-                <div className="relative p-4 bg-white/10 backdrop-blur-sm rounded-full">
-                  <Database className="h-12 w-12 text-white" />
-                </div>
-              </div>
-            </div>
+          <div className="absolute bottom-4 left-0 right-0 flex justify-center gap-2">
+            <div className="w-2 h-2 rounded-full bg-primary/30 animate-pulse" />
+            <div className="w-2 h-2 rounded-full bg-primary/30 animate-pulse delay-300" />
+            <div className="w-2 h-2 rounded-full bg-primary/30 animate-pulse delay-600" />
           </div>
         </div>
       </section>
