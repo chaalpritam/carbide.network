@@ -25,13 +25,13 @@ export default function LandingPage() {
     <div className="flex flex-col min-h-screen">
       {/* Floating Menu */}
       <div className="fixed w-full px-4 lg:px-6 h-14 flex items-center z-50">
-        <div className="relative flex items-center justify-between w-full max-w-7xl mx-auto">
+        <div className="relative flex items-center justify-between w-full max-w-7xl mx-auto mt-12">
           <div className="flex items-center gap-2">
             <div className="relative">
-              <Database className="h-4 w-4 text-primary" />
-              <div className="absolute -top-0.5 -right-0.5 h-1 w-1 rounded-full bg-primary animate-pulse" />
+              <Database className="h-4 w-4 text-white" />
+              <div className="absolute -top-0.5 -right-0.5 h-1 w-1 rounded-full bg-white animate-pulse" />
             </div>
-            <span className="text-base font-bold bg-gradient-to-r from-primary to-primary/80 bg-clip-text text-transparent">
+            <span className="text-base font-bold bg-gradient-to-r from-white to-white/80 bg-clip-text text-transparent">
               Carbide Network
             </span>
           </div>
@@ -106,11 +106,11 @@ export default function LandingPage() {
             </div>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tighter text-white">
               <span className="bg-gradient-to-r from-white to-white/80 bg-clip-text text-transparent">
-                The Future of
+                Redefining the
               </span>
               <br />
               <span className="bg-gradient-to-r from-white/80 to-white bg-clip-text text-transparent">
-                Decentralized Storage
+                Consumer storage space
               </span>
             </h1>
             <p className="text-white/90 text-lg md:text-xl max-w-[700px] mx-auto">
