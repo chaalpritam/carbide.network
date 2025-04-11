@@ -1,4 +1,5 @@
 import Link from "next/link"
+import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import {
   Database,
@@ -17,7 +18,7 @@ export default function LandingPage() {
   return (
     <div className="flex flex-col min-h-screen">
       {/* Header */}
-      <header className="px-4 lg:px-6 h-16 flex items-center border-b bg-white">
+      <header className="fixed w-full px-4 lg:px-6 h-16 flex items-center border-b bg-white/80 backdrop-blur-sm z-50">
         <div className="flex items-center justify-between w-full max-w-7xl mx-auto">
           <div className="flex items-center gap-2">
             <Database className="h-6 w-6 text-primary" />
@@ -44,14 +45,15 @@ export default function LandingPage() {
       </header>
 
       {/* Hero Section */}
-      <section className="w-full py-12 md:py-24 lg:py-32 bg-gradient-to-b from-white to-gray-50">
-        <div className="container px-4 md:px-6 mx-auto flex flex-col items-center text-center gap-6">
-          <div className="space-y-3">
-            <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold tracking-tighter">
+      <section className="w-full pt-24 pb-12 md:pt-32 md:pb-24 lg:pt-40 lg:pb-32 bg-gradient-to-b from-white to-gray-50">
+        <div className="container px-4 md:px-6 mx-auto flex flex-col items-center text-center gap-8">
+          <div className="space-y-4 max-w-3xl">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tighter bg-clip-text text-transparent bg-gradient-to-r from-primary/80 to-primary">
               The Future of Decentralized Storage
             </h1>
-            <p className="text-muted-foreground md:text-xl max-w-[700px] mx-auto">
+            <p className="text-muted-foreground text-lg md:text-xl max-w-[700px] mx-auto">
               Take control of your data with Carbide Network's next-generation decentralized storage solution.
+              Built for security, scalability, and true data ownership.
             </p>
           </div>
           <div className="flex flex-col sm:flex-row gap-4">
@@ -62,17 +64,16 @@ export default function LandingPage() {
               Learn More
             </Button>
           </div>
-          <div className="w-full max-w-3xl mx-auto mt-8 relative">
-            <div className="aspect-video rounded-lg overflow-hidden border shadow-xl bg-gradient-to-br from-primary/5 to-secondary/5 flex items-center justify-center">
-              <img
-                src="/placeholder.svg?height=720&width=1280"
-                alt="Carbide Network Dashboard"
-                className="w-full h-full object-cover opacity-90"
-              />
-              <div className="absolute inset-0 flex items-center justify-center">
-                <Database className="h-20 w-20 text-primary opacity-80" />
-              </div>
-            </div>
+          <div className="w-full max-w-5xl mx-auto mt-8 relative rounded-2xl overflow-hidden shadow-2xl">
+            <Image
+              src="https://images.unsplash.com/photo-1639322537228-f710d846310a?auto=format&fit=crop&q=80"
+              alt="Decentralized Network Visualization"
+              width={1920}
+              height={1080}
+              priority
+              className="w-full aspect-video object-cover"
+            />
+            <div className="absolute inset-0 bg-gradient-to-tr from-primary/20 to-transparent mix-blend-overlay" />
           </div>
         </div>
       </section>
@@ -88,8 +89,8 @@ export default function LandingPage() {
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div className="flex flex-col items-center text-center p-6 bg-white rounded-lg border shadow-sm">
-              <div className="h-12 w-12 rounded-full bg-primary/10 flex items-center justify-center mb-4">
+            <div className="group relative flex flex-col items-center text-center p-6 bg-white rounded-xl border shadow-sm hover:shadow-md transition-shadow">
+              <div className="h-12 w-12 rounded-full bg-primary/10 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
                 <Server className="h-6 w-6 text-primary" />
               </div>
               <h3 className="text-xl font-bold mb-2">Decentralized Storage</h3>
@@ -97,8 +98,8 @@ export default function LandingPage() {
                 Host your own hardware storage devices and eliminate reliance on centralized providers.
               </p>
             </div>
-            <div className="flex flex-col items-center text-center p-6 bg-white rounded-lg border shadow-sm">
-              <div className="h-12 w-12 rounded-full bg-primary/10 flex items-center justify-center mb-4">
+            <div className="group relative flex flex-col items-center text-center p-6 bg-white rounded-xl border shadow-sm hover:shadow-md transition-shadow">
+              <div className="h-12 w-12 rounded-full bg-primary/10 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
                 <Shield className="h-6 w-6 text-primary" />
               </div>
               <h3 className="text-xl font-bold mb-2">Secure and Private</h3>
@@ -106,8 +107,8 @@ export default function LandingPage() {
                 Blockchain technology ensures data integrity and privacy, giving you full ownership of your data.
               </p>
             </div>
-            <div className="flex flex-col items-center text-center p-6 bg-white rounded-lg border shadow-sm">
-              <div className="h-12 w-12 rounded-full bg-primary/10 flex items-center justify-center mb-4">
+            <div className="group relative flex flex-col items-center text-center p-6 bg-white rounded-xl border shadow-sm hover:shadow-md transition-shadow">
+              <div className="h-12 w-12 rounded-full bg-primary/10 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
                 <Coins className="h-6 w-6 text-primary" />
               </div>
               <h3 className="text-xl font-bold mb-2">Earn Rewards</h3>
@@ -115,8 +116,8 @@ export default function LandingPage() {
                 Contribute to the network by hosting storage devices and earn rewards for your participation.
               </p>
             </div>
-            <div className="flex flex-col items-center text-center p-6 bg-white rounded-lg border shadow-sm">
-              <div className="h-12 w-12 rounded-full bg-primary/10 flex items-center justify-center mb-4">
+            <div className="group relative flex flex-col items-center text-center p-6 bg-white rounded-xl border shadow-sm hover:shadow-md transition-shadow">
+              <div className="h-12 w-12 rounded-full bg-primary/10 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
                 <UserCircle className="h-6 w-6 text-primary" />
               </div>
               <h3 className="text-xl font-bold mb-2">Superior User Experience</h3>
@@ -124,8 +125,8 @@ export default function LandingPage() {
                 Enjoy a seamless and intuitive storage solution with a user-friendly interface.
               </p>
             </div>
-            <div className="flex flex-col items-center text-center p-6 bg-white rounded-lg border shadow-sm">
-              <div className="h-12 w-12 rounded-full bg-primary/10 flex items-center justify-center mb-4">
+            <div className="group relative flex flex-col items-center text-center p-6 bg-white rounded-xl border shadow-sm hover:shadow-md transition-shadow">
+              <div className="h-12 w-12 rounded-full bg-primary/10 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
                 <Cloud className="h-6 w-6 text-primary" />
               </div>
               <h3 className="text-xl font-bold mb-2">Alternative to Centralized Providers</h3>
@@ -133,8 +134,8 @@ export default function LandingPage() {
                 Replace traditional cloud storage services with better performance, lower costs, and more control.
               </p>
             </div>
-            <div className="flex flex-col items-center text-center p-6 bg-white rounded-lg border shadow-sm">
-              <div className="h-12 w-12 rounded-full bg-primary/10 flex items-center justify-center mb-4">
+            <div className="group relative flex flex-col items-center text-center p-6 bg-white rounded-xl border shadow-sm hover:shadow-md transition-shadow">
+              <div className="h-12 w-12 rounded-full bg-primary/10 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
                 <Lock className="h-6 w-6 text-primary" />
               </div>
               <h3 className="text-xl font-bold mb-2">DePIN Protocol</h3>
@@ -146,7 +147,7 @@ export default function LandingPage() {
         </div>
       </section>
 
-      {/* How It Works Section */}
+      {/* How It Works Section with Image */}
       <section id="how-it-works" className="w-full py-12 md:py-24 bg-gray-50">
         <div className="container px-4 md:px-6 mx-auto">
           <div className="flex flex-col items-center justify-center space-y-4 text-center mb-12">
@@ -158,33 +159,51 @@ export default function LandingPage() {
               Simple steps to become part of the Carbide Network ecosystem.
             </p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-8">
-            <div className="relative flex flex-col items-center p-6 bg-white rounded-lg border shadow-sm">
-              <div className="absolute -top-4 -left-4 h-10 w-10 rounded-full bg-primary/20 border border-primary flex items-center justify-center text-primary font-bold">
-                1
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            <div className="space-y-8">
+              <div className="flex items-start gap-4">
+                <div className="flex-shrink-0 size-8 rounded-full bg-primary/10 flex items-center justify-center">
+                  <span className="font-semibold text-primary">1</span>
+                </div>
+                <div>
+                  <h3 className="text-xl font-semibold mb-2">Connect Your Storage</h3>
+                  <p className="text-muted-foreground">
+                    Set up your storage device and connect it to the Carbide Network using our simple installation process.
+                  </p>
+                </div>
               </div>
-              <h3 className="text-xl font-bold mt-4 mb-2">Connect Your Hardware</h3>
-              <p className="text-muted-foreground text-center">
-                Set up your storage device and connect it to the Carbide Network.
-              </p>
+              <div className="flex items-start gap-4">
+                <div className="flex-shrink-0 size-8 rounded-full bg-primary/10 flex items-center justify-center">
+                  <span className="font-semibold text-primary">2</span>
+                </div>
+                <div>
+                  <h3 className="text-xl font-semibold mb-2">Configure Settings</h3>
+                  <p className="text-muted-foreground">
+                    Choose how much storage to contribute and set your preferences for network participation.
+                  </p>
+                </div>
+              </div>
+              <div className="flex items-start gap-4">
+                <div className="flex-shrink-0 size-8 rounded-full bg-primary/10 flex items-center justify-center">
+                  <span className="font-semibold text-primary">3</span>
+                </div>
+                <div>
+                  <h3 className="text-xl font-semibold mb-2">Start Earning</h3>
+                  <p className="text-muted-foreground">
+                    Begin earning rewards as your storage contributes to the decentralized network.
+                  </p>
+                </div>
+              </div>
             </div>
-            <div className="relative flex flex-col items-center p-6 bg-white rounded-lg border shadow-sm">
-              <div className="absolute -top-4 -left-4 h-10 w-10 rounded-full bg-primary/20 border border-primary flex items-center justify-center text-primary font-bold">
-                2
-              </div>
-              <h3 className="text-xl font-bold mt-4 mb-2">Share Your Storage</h3>
-              <p className="text-muted-foreground text-center">
-                Allocate unused storage space to contribute to the decentralized network.
-              </p>
-            </div>
-            <div className="relative flex flex-col items-center p-6 bg-white rounded-lg border shadow-sm">
-              <div className="absolute -top-4 -left-4 h-10 w-10 rounded-full bg-primary/20 border border-primary flex items-center justify-center text-primary font-bold">
-                3
-              </div>
-              <h3 className="text-xl font-bold mt-4 mb-2">Earn Rewards</h3>
-              <p className="text-muted-foreground text-center">
-                Get rewarded for your contribution while helping build a more secure internet.
-              </p>
+            <div className="relative rounded-2xl overflow-hidden shadow-xl">
+              <Image
+                src="https://images.unsplash.com/photo-1633886038251-66951c209216?auto=format&fit=crop&q=80"
+                alt="Network Setup Process"
+                width={800}
+                height={600}
+                className="w-full aspect-4/3 object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-tr from-primary/20 to-transparent mix-blend-overlay" />
             </div>
           </div>
         </div>
@@ -204,46 +223,31 @@ export default function LandingPage() {
             <table className="w-full border-collapse">
               <thead>
                 <tr className="border-b">
-                  <th className="text-left p-4">Features</th>
-                  <th className="p-4 text-center">Carbide Network</th>
-                  <th className="p-4 text-center">Traditional Cloud Storage</th>
+                  <th className="text-left p-4 bg-gray-50">Features</th>
+                  <th className="p-4 text-center bg-gray-50">Carbide Network</th>
+                  <th className="p-4 text-center bg-gray-50">Traditional Cloud Storage</th>
                 </tr>
               </thead>
               <tbody>
                 <tr className="border-b">
-                  <td className="p-4 font-medium">Data Ownership</td>
-                  <td className="p-4 text-center">
-                    <CheckCircle2 className="h-5 w-5 text-primary mx-auto" />
-                  </td>
-                  <td className="p-4 text-center">Limited</td>
+                  <td className="text-left p-4">Data Control</td>
+                  <td className="p-4 text-center text-green-600">Full Control</td>
+                  <td className="p-4 text-center text-red-600">Limited Control</td>
                 </tr>
                 <tr className="border-b">
-                  <td className="p-4 font-medium">Privacy</td>
-                  <td className="p-4 text-center">
-                    <CheckCircle2 className="h-5 w-5 text-primary mx-auto" />
-                  </td>
-                  <td className="p-4 text-center">Varies</td>
+                  <td className="text-left p-4">Cost</td>
+                  <td className="p-4 text-center text-green-600">Pay for What You Use</td>
+                  <td className="p-4 text-center text-red-600">Fixed Monthly Fees</td>
                 </tr>
                 <tr className="border-b">
-                  <td className="p-4 font-medium">Earn While Storing</td>
-                  <td className="p-4 text-center">
-                    <CheckCircle2 className="h-5 w-5 text-primary mx-auto" />
-                  </td>
-                  <td className="p-4 text-center">No</td>
+                  <td className="text-left p-4">Earning Potential</td>
+                  <td className="p-4 text-center text-green-600">Yes</td>
+                  <td className="p-4 text-center text-red-600">No</td>
                 </tr>
                 <tr className="border-b">
-                  <td className="p-4 font-medium">Decentralized</td>
-                  <td className="p-4 text-center">
-                    <CheckCircle2 className="h-5 w-5 text-primary mx-auto" />
-                  </td>
-                  <td className="p-4 text-center">No</td>
-                </tr>
-                <tr>
-                  <td className="p-4 font-medium">Cost Efficiency</td>
-                  <td className="p-4 text-center">
-                    <CheckCircle2 className="h-5 w-5 text-primary mx-auto" />
-                  </td>
-                  <td className="p-4 text-center">Expensive Long-term</td>
+                  <td className="text-left p-4">Privacy</td>
+                  <td className="p-4 text-center text-green-600">End-to-End Encryption</td>
+                  <td className="p-4 text-center text-red-600">Provider Dependent</td>
                 </tr>
               </tbody>
             </table>
@@ -258,33 +262,24 @@ export default function LandingPage() {
             <div className="inline-block rounded-lg bg-primary/5 px-3 py-1 text-sm text-primary">FAQ</div>
             <h2 className="text-3xl font-bold tracking-tighter md:text-4xl">Frequently Asked Questions</h2>
             <p className="max-w-[700px] text-muted-foreground md:text-xl">
-              Get answers to common questions about Carbide Network.
+              Everything you need to know about Carbide Network.
             </p>
           </div>
-          <div className="grid gap-6 max-w-3xl mx-auto">
-            <div className="bg-white p-6 rounded-lg border shadow-sm">
-              <h3 className="text-xl font-bold mb-2">What hardware do I need to join Carbide Network?</h3>
+          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+            <div className="bg-white p-6 rounded-xl border shadow-sm">
+              <h3 className="text-xl font-bold mb-2">How secure is my data?</h3>
               <p className="text-muted-foreground">
-                You can use almost any storage device with an internet connection. This includes external hard drives,
-                NAS devices, or even dedicated servers.
+                Your data is protected with military-grade encryption and distributed across multiple nodes for maximum security and redundancy.
               </p>
             </div>
-            <div className="bg-white p-6 rounded-lg border shadow-sm">
-              <h3 className="text-xl font-bold mb-2">How secure is my data on Carbide Network?</h3>
-              <p className="text-muted-foreground">
-                Extremely secure. We use blockchain technology and encryption to ensure your data remains private and
-                intact. Your files are split and distributed across the network, making them virtually impossible to
-                compromise.
-              </p>
-            </div>
-            <div className="bg-white p-6 rounded-lg border shadow-sm">
+            <div className="bg-white p-6 rounded-xl border shadow-sm">
               <h3 className="text-xl font-bold mb-2">How do I earn rewards?</h3>
               <p className="text-muted-foreground">
                 By contributing storage space to the network, you earn Carbide tokens based on the amount of space
                 provided, uptime, and network demand.
               </p>
             </div>
-            <div className="bg-white p-6 rounded-lg border shadow-sm">
+            <div className="bg-white p-6 rounded-xl border shadow-sm">
               <h3 className="text-xl font-bold mb-2">Can I access my files from anywhere?</h3>
               <p className="text-muted-foreground">
                 Yes, Carbide Network provides web, desktop, and mobile applications that allow you to access your files
@@ -295,20 +290,31 @@ export default function LandingPage() {
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="w-full py-12 md:py-24 bg-primary/5 text-foreground">
-        <div className="container px-4 md:px-6 mx-auto flex flex-col items-center text-center gap-6">
-          <h2 className="text-3xl font-bold tracking-tighter md:text-4xl">Join the Decentralized Storage Revolution</h2>
-          <p className="max-w-[700px] md:text-xl text-muted-foreground">
-            Take control of your data today and be part of the future of storage.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4">
-            <Button size="lg" className="gap-2">
-              Get Started <ChevronRight className="h-4 w-4" />
-            </Button>
-            <Button size="lg" variant="outline">
-              Learn More
-            </Button>
+      {/* CTA Section with Background Image */}
+      <section className="w-full py-12 md:py-24 relative">
+        <div className="absolute inset-0">
+          <Image
+            src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80"
+            alt="Network Background"
+            fill
+            className="object-cover"
+          />
+          <div className="absolute inset-0 bg-primary/80" />
+        </div>
+        <div className="container px-4 md:px-6 mx-auto relative">
+          <div className="flex flex-col items-center text-center gap-6 text-white">
+            <h2 className="text-3xl font-bold tracking-tighter md:text-4xl">Join the Decentralized Storage Revolution</h2>
+            <p className="max-w-[700px] md:text-xl opacity-90">
+              Take control of your data today and be part of the future of storage.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4">
+              <Button size="lg" variant="outline" className="bg-white hover:bg-white/90 text-primary">
+                Get Started <ChevronRight className="h-4 w-4 ml-2" />
+              </Button>
+              <Button size="lg" variant="outline" className="border-white text-white hover:bg-white/20">
+                Learn More
+              </Button>
+            </div>
           </div>
         </div>
       </section>
@@ -324,7 +330,7 @@ export default function LandingPage() {
               </div>
               <p className="text-muted-foreground">The future of decentralized storage.</p>
               <div className="flex gap-4">
-                <Link href="#" className="text-muted-foreground hover:text-foreground">
+                <Link href="#" className="text-muted-foreground hover:text-foreground transition-colors">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="24"
@@ -340,7 +346,7 @@ export default function LandingPage() {
                     <path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"></path>
                   </svg>
                 </Link>
-                <Link href="#" className="text-muted-foreground hover:text-foreground">
+                <Link href="#" className="text-muted-foreground hover:text-foreground transition-colors">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="24"
@@ -358,7 +364,7 @@ export default function LandingPage() {
                     <circle cx="4" cy="4" r="2"></circle>
                   </svg>
                 </Link>
-                <Link href="#" className="text-muted-foreground hover:text-foreground">
+                <Link href="#" className="text-muted-foreground hover:text-foreground transition-colors">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="24"
@@ -377,78 +383,35 @@ export default function LandingPage() {
               </div>
             </div>
             <div>
-              <h3 className="text-lg font-medium mb-4">Product</h3>
+              <h3 className="font-semibold mb-4">Product</h3>
               <ul className="space-y-2">
-                <li>
-                  <Link href="#" className="text-muted-foreground hover:text-foreground">
-                    Features
-                  </Link>
-                </li>
-                <li>
-                  <Link href="#" className="text-muted-foreground hover:text-foreground">
-                    Pricing
-                  </Link>
-                </li>
-                <li>
-                  <Link href="#" className="text-muted-foreground hover:text-foreground">
-                    Roadmap
-                  </Link>
-                </li>
-                <li>
-                  <Link href="#" className="text-muted-foreground hover:text-foreground">
-                    Documentation
-                  </Link>
-                </li>
+                <li><Link href="#" className="text-muted-foreground hover:text-foreground">Features</Link></li>
+                <li><Link href="#" className="text-muted-foreground hover:text-foreground">Security</Link></li>
+                <li><Link href="#" className="text-muted-foreground hover:text-foreground">Enterprise</Link></li>
+                <li><Link href="#" className="text-muted-foreground hover:text-foreground">Pricing</Link></li>
               </ul>
             </div>
             <div>
-              <h3 className="text-lg font-medium mb-4">Company</h3>
+              <h3 className="font-semibold mb-4">Resources</h3>
               <ul className="space-y-2">
-                <li>
-                  <Link href="#" className="text-muted-foreground hover:text-foreground">
-                    About
-                  </Link>
-                </li>
-                <li>
-                  <Link href="#" className="text-muted-foreground hover:text-foreground">
-                    Blog
-                  </Link>
-                </li>
-                <li>
-                  <Link href="#" className="text-muted-foreground hover:text-foreground">
-                    Careers
-                  </Link>
-                </li>
-                <li>
-                  <Link href="#" className="text-muted-foreground hover:text-foreground">
-                    Contact
-                  </Link>
-                </li>
+                <li><Link href="#" className="text-muted-foreground hover:text-foreground">Documentation</Link></li>
+                <li><Link href="#" className="text-muted-foreground hover:text-foreground">API Reference</Link></li>
+                <li><Link href="#" className="text-muted-foreground hover:text-foreground">Blog</Link></li>
+                <li><Link href="#" className="text-muted-foreground hover:text-foreground">Community</Link></li>
               </ul>
             </div>
             <div>
-              <h3 className="text-lg font-medium mb-4">Legal</h3>
+              <h3 className="font-semibold mb-4">Company</h3>
               <ul className="space-y-2">
-                <li>
-                  <Link href="#" className="text-muted-foreground hover:text-foreground">
-                    Privacy Policy
-                  </Link>
-                </li>
-                <li>
-                  <Link href="#" className="text-muted-foreground hover:text-foreground">
-                    Terms of Service
-                  </Link>
-                </li>
-                <li>
-                  <Link href="#" className="text-muted-foreground hover:text-foreground">
-                    Cookie Policy
-                  </Link>
-                </li>
+                <li><Link href="#" className="text-muted-foreground hover:text-foreground">About</Link></li>
+                <li><Link href="#" className="text-muted-foreground hover:text-foreground">Careers</Link></li>
+                <li><Link href="#" className="text-muted-foreground hover:text-foreground">Contact</Link></li>
+                <li><Link href="#" className="text-muted-foreground hover:text-foreground">Partners</Link></li>
               </ul>
             </div>
           </div>
           <div className="mt-12 pt-8 border-t text-center text-muted-foreground">
-            <p>© {new Date().getFullYear()} Carbide Network. All rights reserved.</p>
+            <p>&copy; 2024 Carbide Network. All rights reserved.</p>
           </div>
         </div>
       </footer>
