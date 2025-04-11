@@ -90,31 +90,30 @@ export default function LandingPage() {
         <div className="absolute inset-0">
           <div className="absolute inset-0">
             <Image
-              src="https://images.unsplash.com/photo-1639322537508-3d530caf2a0d?auto=format&fit=crop&q=80"
+              src="/images/cta-bg.jpg"
               alt="Decentralized Network Visualization"
               fill
               className="object-cover"
               priority
             />
           </div>
-          <div className="absolute inset-0 bg-gradient-to-b from-white/90 via-white/50 to-transparent" />
         </div>
         <div className="container h-full px-4 md:px-6 mx-auto relative flex flex-col items-center justify-center text-center gap-8">
           <div className="space-y-4 max-w-3xl">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/5 border border-primary/10">
-              <Sparkles className="h-4 w-4 text-primary" />
-              <span className="text-sm font-medium text-primary">Decentralized Storage Solution</span>
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/20 backdrop-blur-sm border border-white/20">
+              <Sparkles className="h-4 w-4 text-white" />
+              <span className="text-sm font-medium text-white">Decentralized Storage Solution</span>
             </div>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tighter">
-              <span className="bg-gradient-to-r from-primary to-primary/80 bg-clip-text text-transparent">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tighter text-white">
+              <span className="bg-gradient-to-r from-white to-white/80 bg-clip-text text-transparent">
                 The Future of
               </span>
               <br />
-              <span className="bg-gradient-to-r from-primary/80 to-primary bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-white/80 to-white bg-clip-text text-transparent">
                 Decentralized Storage
               </span>
             </h1>
-            <p className="text-muted-foreground text-lg md:text-xl max-w-[700px] mx-auto">
+            <p className="text-white/90 text-lg md:text-xl max-w-[700px] mx-auto">
               Take control of your data with Carbide Network's next-generation decentralized storage solution.
               Built for security, scalability, and true data ownership.
             </p>
@@ -262,7 +261,7 @@ export default function LandingPage() {
             </div>
             <div className="relative rounded-2xl overflow-hidden shadow-xl group">
               <Image
-                src="https://images.unsplash.com/photo-1633886038251-66951c209216?auto=format&fit=crop&q=80"
+                src="/images/how-it-works.jpg"
                 alt="Network Setup Process"
                 width={800}
                 height={600}
@@ -468,7 +467,7 @@ export default function LandingPage() {
       <section className="w-full py-12 md:py-24 relative">
         <div className="absolute inset-0">
           <Image
-            src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80"
+            src="/images/cta-bg.jpg"
             alt="Network Background"
             fill
             className="object-cover"
