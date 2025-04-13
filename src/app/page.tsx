@@ -390,74 +390,87 @@ export default function LandingPage() {
       </section>
 
       {/* FAQ Section */}
-      <section id="faq" className="w-full py-16 bg-white">
-        <div className="container px-4 md:px-6 mx-auto">
-          <div className="flex flex-col items-center justify-center space-y-4 text-center mb-8">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/5 border border-primary/10">
-              <ShieldCheck className="h-4 w-4 text-primary" />
-              <span className="text-sm font-medium text-primary">FAQ</span>
+      <section id="faq" className="w-full h-screen bg-black relative overflow-hidden">
+        <div className="absolute inset-0 bg-[url('/images/pattern.svg')] opacity-5" />
+        <div className="container h-full px-4 md:px-6 mx-auto relative flex flex-col justify-center">
+          <div className="flex flex-col items-center justify-center space-y-4 text-center mb-12">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 border border-white/20">
+              <ShieldCheck className="h-4 w-4 text-white" />
+              <span className="text-sm font-medium text-white">FAQ</span>
             </div>
-            <h2 className="text-3xl font-bold tracking-tighter md:text-4xl">Frequently Asked Questions</h2>
-            <p className="max-w-[700px] text-muted-foreground md:text-xl">
+            <h2 className="text-3xl font-bold tracking-tighter md:text-4xl text-white">Frequently Asked Questions</h2>
+            <p className="max-w-[700px] text-white/70 md:text-xl">
               Everything you need to know about Carbide Network.
             </p>
           </div>
-          <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-            <div className="group bg-white p-6 rounded-xl border shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1">
-              <div className="h-10 w-10 rounded-full bg-primary/10 flex items-center justify-center mb-3 group-hover:scale-110 transition-transform">
-                <Shield className="h-5 w-5 text-primary" />
+          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3 h-[calc(100vh-300px)]">
+            <div className="group bg-white/5 p-8 rounded-xl border border-white/10 shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1 backdrop-blur-sm flex flex-col justify-between">
+              <div>
+                <div className="h-12 w-12 rounded-full bg-white/10 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                  <Shield className="h-6 w-6 text-white" />
+                </div>
+                <h3 className="text-2xl font-bold mb-4 text-white">How secure is my data?</h3>
+                <p className="text-base text-white/80 leading-relaxed">
+                  Your data is protected with military-grade encryption and distributed across multiple nodes for maximum security and redundancy.
+                </p>
               </div>
-              <h3 className="text-lg font-bold mb-2">How secure is my data?</h3>
-              <p className="text-sm text-muted-foreground">
-                Your data is protected with military-grade encryption and distributed across multiple nodes for maximum security and redundancy.
-              </p>
             </div>
-            <div className="group bg-white p-6 rounded-xl border shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1">
-              <div className="h-10 w-10 rounded-full bg-primary/10 flex items-center justify-center mb-3 group-hover:scale-110 transition-transform">
-                <Coins className="h-5 w-5 text-primary" />
+            <div className="group bg-white/5 p-8 rounded-xl border border-white/10 shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1 backdrop-blur-sm flex flex-col justify-between">
+              <div>
+                <div className="h-12 w-12 rounded-full bg-white/10 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                  <Coins className="h-6 w-6 text-white" />
+                </div>
+                <h3 className="text-2xl font-bold mb-4 text-white">How do I earn rewards?</h3>
+                <p className="text-base text-white/80 leading-relaxed">
+                  By contributing storage space to the network, you earn Carbide tokens based on the amount of space
+                  provided, uptime, and network demand.
+                </p>
               </div>
-              <h3 className="text-lg font-bold mb-2">How do I earn rewards?</h3>
-              <p className="text-sm text-muted-foreground">
-                By contributing storage space to the network, you earn Carbide tokens based on the amount of space
-                provided, uptime, and network demand.
-              </p>
             </div>
-            <div className="group bg-white p-6 rounded-xl border shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1">
-              <div className="h-10 w-10 rounded-full bg-primary/10 flex items-center justify-center mb-3 group-hover:scale-110 transition-transform">
-                <Globe className="h-5 w-5 text-primary" />
+            <div className="group bg-white/5 p-8 rounded-xl border border-white/10 shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1 backdrop-blur-sm flex flex-col justify-between">
+              <div>
+                <div className="h-12 w-12 rounded-full bg-white/10 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                  <Globe className="h-6 w-6 text-white" />
+                </div>
+                <h3 className="text-2xl font-bold mb-4 text-white">Can I access my files from anywhere?</h3>
+                <p className="text-base text-white/80 leading-relaxed">
+                  Yes, Carbide Network provides web, desktop, and mobile applications that allow you to access your files
+                  from any device with an internet connection.
+                </p>
               </div>
-              <h3 className="text-lg font-bold mb-2">Can I access my files from anywhere?</h3>
-              <p className="text-sm text-muted-foreground">
-                Yes, Carbide Network provides web, desktop, and mobile applications that allow you to access your files
-                from any device with an internet connection.
-              </p>
             </div>
-            <div className="group bg-white p-6 rounded-xl border shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1">
-              <div className="h-10 w-10 rounded-full bg-primary/10 flex items-center justify-center mb-3 group-hover:scale-110 transition-transform">
-                <Server className="h-5 w-5 text-primary" />
+            <div className="group bg-white/5 p-8 rounded-xl border border-white/10 shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1 backdrop-blur-sm flex flex-col justify-between">
+              <div>
+                <div className="h-12 w-12 rounded-full bg-white/10 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                  <Server className="h-6 w-6 text-white" />
+                </div>
+                <h3 className="text-2xl font-bold mb-4 text-white">What hardware do I need?</h3>
+                <p className="text-base text-white/80 leading-relaxed">
+                  Any storage device with sufficient capacity can be used. We recommend a minimum of 1TB storage and a stable internet connection.
+                </p>
               </div>
-              <h3 className="text-lg font-bold mb-2">What hardware do I need?</h3>
-              <p className="text-sm text-muted-foreground">
-                Any storage device with sufficient capacity can be used. We recommend a minimum of 1TB storage and a stable internet connection.
-              </p>
             </div>
-            <div className="group bg-white p-6 rounded-xl border shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1">
-              <div className="h-10 w-10 rounded-full bg-primary/10 flex items-center justify-center mb-3 group-hover:scale-110 transition-transform">
-                <Lock className="h-5 w-5 text-primary" />
+            <div className="group bg-white/5 p-8 rounded-xl border border-white/10 shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1 backdrop-blur-sm flex flex-col justify-between">
+              <div>
+                <div className="h-12 w-12 rounded-full bg-white/10 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                  <Lock className="h-6 w-6 text-white" />
+                </div>
+                <h3 className="text-2xl font-bold mb-4 text-white">Is my data private?</h3>
+                <p className="text-base text-white/80 leading-relaxed">
+                  Yes, all data is encrypted before being stored, and only you have access to your encryption keys.
+                </p>
               </div>
-              <h3 className="text-lg font-bold mb-2">Is my data private?</h3>
-              <p className="text-sm text-muted-foreground">
-                Yes, all data is encrypted before being stored, and only you have access to your encryption keys.
-              </p>
             </div>
-            <div className="group bg-white p-6 rounded-xl border shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1">
-              <div className="h-10 w-10 rounded-full bg-primary/10 flex items-center justify-center mb-3 group-hover:scale-110 transition-transform">
-                <UserCircle className="h-5 w-5 text-primary" />
+            <div className="group bg-white/5 p-8 rounded-xl border border-white/10 shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1 backdrop-blur-sm flex flex-col justify-between">
+              <div>
+                <div className="h-12 w-12 rounded-full bg-white/10 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                  <UserCircle className="h-6 w-6 text-white" />
+                </div>
+                <h3 className="text-2xl font-bold mb-4 text-white">How do I get started?</h3>
+                <p className="text-base text-white/80 leading-relaxed">
+                  Simply download our application, connect your storage device, and follow the setup wizard to join the network.
+                </p>
               </div>
-              <h3 className="text-lg font-bold mb-2">How do I get started?</h3>
-              <p className="text-sm text-muted-foreground">
-                Simply download our application, connect your storage device, and follow the setup wizard to join the network.
-              </p>
             </div>
           </div>
         </div>
