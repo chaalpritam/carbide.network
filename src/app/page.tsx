@@ -508,20 +508,20 @@ export default function LandingPage() {
       </section>
 
       {/* Footer */}
-      <footer className="w-full py-12 bg-white border-t">
-        <div className="container px-4 md:px-6 mx-auto">
+      <footer className="w-full h-[50vh] bg-white border-t">
+        <div className="container h-full px-4 md:px-6 mx-auto flex flex-col justify-center">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-            <div className="space-y-4">
+            <div className="space-y-6">
               <div className="flex items-center gap-2">
                 <div className="relative">
-                  <Database className="h-6 w-6 text-primary" />
+                  <Database className="h-8 w-8 text-primary" />
                   <div className="absolute -top-1 -right-1 h-2 w-2 rounded-full bg-primary animate-pulse" />
                 </div>
-                <span className="text-xl font-bold bg-gradient-to-r from-primary to-primary/80 bg-clip-text text-transparent">
+                <span className="text-2xl font-bold bg-gradient-to-r from-primary to-primary/80 bg-clip-text text-transparent">
                   Carbide Network
                 </span>
               </div>
-              <p className="text-muted-foreground">The future of decentralized storage.</p>
+              <p className="text-muted-foreground text-lg">The future of decentralized storage.</p>
               <div className="flex gap-4">
                 <Link href="#" className="text-muted-foreground hover:text-primary transition-colors">
                   <svg
@@ -534,7 +534,7 @@ export default function LandingPage() {
                     strokeWidth="2"
                     strokeLinecap="round"
                     strokeLinejoin="round"
-                    className="h-5 w-5"
+                    className="h-6 w-6"
                   >
                     <path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"></path>
                   </svg>
@@ -550,7 +550,7 @@ export default function LandingPage() {
                     strokeWidth="2"
                     strokeLinecap="round"
                     strokeLinejoin="round"
-                    className="h-5 w-5"
+                    className="h-6 w-6"
                   >
                     <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
                     <rect width="4" height="12" x="2" y="9"></rect>
@@ -568,7 +568,7 @@ export default function LandingPage() {
                     strokeWidth="2"
                     strokeLinecap="round"
                     strokeLinejoin="round"
-                    className="h-5 w-5"
+                    className="h-6 w-6"
                   >
                     <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
                   </svg>
@@ -576,35 +576,35 @@ export default function LandingPage() {
               </div>
             </div>
             <div>
-              <h3 className="font-semibold mb-4">Product</h3>
-              <ul className="space-y-2">
-                <li><Link href="#" className="text-muted-foreground hover:text-primary transition-colors">Features</Link></li>
-                <li><Link href="#" className="text-muted-foreground hover:text-primary transition-colors">Security</Link></li>
-                <li><Link href="#" className="text-muted-foreground hover:text-primary transition-colors">Enterprise</Link></li>
-                <li><Link href="#" className="text-muted-foreground hover:text-primary transition-colors">Pricing</Link></li>
+              <h3 className="font-semibold text-lg mb-6">Product</h3>
+              <ul className="space-y-4">
+                <li><Link href="#" className="text-muted-foreground hover:text-primary transition-colors text-base">Features</Link></li>
+                <li><Link href="#" className="text-muted-foreground hover:text-primary transition-colors text-base">Security</Link></li>
+                <li><Link href="#" className="text-muted-foreground hover:text-primary transition-colors text-base">Enterprise</Link></li>
+                <li><Link href="#" className="text-muted-foreground hover:text-primary transition-colors text-base">Pricing</Link></li>
               </ul>
             </div>
             <div>
-              <h3 className="font-semibold mb-4">Resources</h3>
-              <ul className="space-y-2">
-                <li><Link href="#" className="text-muted-foreground hover:text-primary transition-colors">Documentation</Link></li>
-                <li><Link href="#" className="text-muted-foreground hover:text-primary transition-colors">API Reference</Link></li>
-                <li><Link href="#" className="text-muted-foreground hover:text-primary transition-colors">Blog</Link></li>
-                <li><Link href="#" className="text-muted-foreground hover:text-primary transition-colors">Community</Link></li>
+              <h3 className="font-semibold text-lg mb-6">Resources</h3>
+              <ul className="space-y-4">
+                <li><Link href="#" className="text-muted-foreground hover:text-primary transition-colors text-base">Documentation</Link></li>
+                <li><Link href="#" className="text-muted-foreground hover:text-primary transition-colors text-base">API Reference</Link></li>
+                <li><Link href="#" className="text-muted-foreground hover:text-primary transition-colors text-base">Blog</Link></li>
+                <li><Link href="#" className="text-muted-foreground hover:text-primary transition-colors text-base">Community</Link></li>
               </ul>
             </div>
             <div>
-              <h3 className="font-semibold mb-4">Company</h3>
-              <ul className="space-y-2">
-                <li><Link href="#" className="text-muted-foreground hover:text-primary transition-colors">About</Link></li>
-                <li><Link href="#" className="text-muted-foreground hover:text-primary transition-colors">Careers</Link></li>
-                <li><Link href="#" className="text-muted-foreground hover:text-primary transition-colors">Contact</Link></li>
-                <li><Link href="#" className="text-muted-foreground hover:text-primary transition-colors">Partners</Link></li>
+              <h3 className="font-semibold text-lg mb-6">Company</h3>
+              <ul className="space-y-4">
+                <li><Link href="#" className="text-muted-foreground hover:text-primary transition-colors text-base">About</Link></li>
+                <li><Link href="#" className="text-muted-foreground hover:text-primary transition-colors text-base">Careers</Link></li>
+                <li><Link href="#" className="text-muted-foreground hover:text-primary transition-colors text-base">Contact</Link></li>
+                <li><Link href="#" className="text-muted-foreground hover:text-primary transition-colors text-base">Partners</Link></li>
               </ul>
             </div>
           </div>
           <div className="mt-12 pt-8 border-t text-center text-muted-foreground">
-            <p>&copy; 2024 Carbide Network. All rights reserved.</p>
+            <p className="text-base">&copy; 2024 Carbide Network. All rights reserved.</p>
           </div>
         </div>
       </footer>
