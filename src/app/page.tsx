@@ -477,7 +477,7 @@ export default function LandingPage() {
       </section>
 
       {/* CTA Section with Background Image */}
-      <section className="w-full py-12 md:py-24 relative">
+      <section className="w-full h-[50vh] relative">
         <div className="absolute inset-0">
           <Image
             src="/images/cta-bg.jpg"
@@ -487,8 +487,8 @@ export default function LandingPage() {
           />
           <div className="absolute inset-0 bg-gradient-to-b from-primary/90 to-primary/80" />
         </div>
-        <div className="container px-4 md:px-6 mx-auto relative">
-          <div className="flex flex-col items-center text-center gap-6 text-white">
+        <div className="container h-full px-4 md:px-6 mx-auto relative">
+          <div className="flex flex-col items-center text-center gap-6 text-white h-full justify-center">
             <h2 className="text-3xl font-bold tracking-tighter md:text-4xl">Join the Decentralized Storage Revolution</h2>
             <p className="max-w-[700px] md:text-xl opacity-90">
               Take control of your data today and be part of the future of storage.
