@@ -149,58 +149,58 @@ export default function LandingPage() {
               Disrupting traditional consumer storage services with a decentralized approach.
             </p>
           </div>
-          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3 h-[calc(100vh-300px)]">
-            <div className="group relative flex flex-col items-center text-center p-8 bg-white rounded-xl border shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1">
-              <div className="h-16 w-16 rounded-full bg-primary/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                <Server className="h-8 w-8 text-primary" />
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+            <div className="group relative flex flex-col items-center text-center p-4 bg-white rounded-lg border shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1">
+              <div className="h-10 w-10 rounded-full bg-primary/10 flex items-center justify-center mb-3 group-hover:scale-110 transition-transform">
+                <Server className="h-5 w-5 text-primary" />
               </div>
-              <h3 className="text-2xl font-bold mb-4">Decentralized Storage</h3>
-              <p className="text-base text-muted-foreground leading-relaxed">
+              <h3 className="text-lg font-bold mb-1">Decentralized Storage</h3>
+              <p className="text-sm text-muted-foreground">
                 Host your own hardware storage devices and eliminate reliance on centralized providers.
               </p>
             </div>
-            <div className="group relative flex flex-col items-center text-center p-8 bg-white rounded-xl border shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1">
-              <div className="h-16 w-16 rounded-full bg-primary/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                <ShieldCheck className="h-8 w-8 text-primary" />
+            <div className="group relative flex flex-col items-center text-center p-4 bg-white rounded-lg border shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1">
+              <div className="h-10 w-10 rounded-full bg-primary/10 flex items-center justify-center mb-3 group-hover:scale-110 transition-transform">
+                <ShieldCheck className="h-5 w-5 text-primary" />
               </div>
-              <h3 className="text-2xl font-bold mb-4">Secure and Private</h3>
-              <p className="text-base text-muted-foreground leading-relaxed">
+              <h3 className="text-lg font-bold mb-1">Secure and Private</h3>
+              <p className="text-sm text-muted-foreground">
                 Blockchain technology ensures data integrity and privacy, giving you full ownership of your data.
               </p>
             </div>
-            <div className="group relative flex flex-col items-center text-center p-8 bg-white rounded-xl border shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1">
-              <div className="h-16 w-16 rounded-full bg-primary/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                <Coins className="h-8 w-8 text-primary" />
+            <div className="group relative flex flex-col items-center text-center p-4 bg-white rounded-lg border shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1">
+              <div className="h-10 w-10 rounded-full bg-primary/10 flex items-center justify-center mb-3 group-hover:scale-110 transition-transform">
+                <Coins className="h-5 w-5 text-primary" />
               </div>
-              <h3 className="text-2xl font-bold mb-4">Earn Rewards</h3>
-              <p className="text-base text-muted-foreground leading-relaxed">
+              <h3 className="text-lg font-bold mb-1">Earn Rewards</h3>
+              <p className="text-sm text-muted-foreground">
                 Contribute to the network by hosting storage devices and earn rewards for your participation.
               </p>
             </div>
-            <div className="group relative flex flex-col items-center text-center p-8 bg-white rounded-xl border shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1">
-              <div className="h-16 w-16 rounded-full bg-primary/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                <Globe className="h-8 w-8 text-primary" />
+            <div className="group relative flex flex-col items-center text-center p-4 bg-white rounded-lg border shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1">
+              <div className="h-10 w-10 rounded-full bg-primary/10 flex items-center justify-center mb-3 group-hover:scale-110 transition-transform">
+                <Globe className="h-5 w-5 text-primary" />
               </div>
-              <h3 className="text-2xl font-bold mb-4">Global Network</h3>
-              <p className="text-base text-muted-foreground leading-relaxed">
+              <h3 className="text-lg font-bold mb-1">Global Network</h3>
+              <p className="text-sm text-muted-foreground">
                 Access your data from anywhere in the world with our distributed network infrastructure.
               </p>
             </div>
-            <div className="group relative flex flex-col items-center text-center p-8 bg-white rounded-xl border shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1">
-              <div className="h-16 w-16 rounded-full bg-primary/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                <BarChart3 className="h-8 w-8 text-primary" />
+            <div className="group relative flex flex-col items-center text-center p-4 bg-white rounded-lg border shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1">
+              <div className="h-10 w-10 rounded-full bg-primary/10 flex items-center justify-center mb-3 group-hover:scale-110 transition-transform">
+                <BarChart3 className="h-5 w-5 text-primary" />
               </div>
-              <h3 className="text-2xl font-bold mb-4">High Performance</h3>
-              <p className="text-base text-muted-foreground leading-relaxed">
+              <h3 className="text-lg font-bold mb-1">High Performance</h3>
+              <p className="text-sm text-muted-foreground">
                 Experience faster speeds and better reliability with our optimized network architecture.
               </p>
             </div>
-            <div className="group relative flex flex-col items-center text-center p-8 bg-white rounded-xl border shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1">
-              <div className="h-16 w-16 rounded-full bg-primary/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                <Cpu className="h-8 w-8 text-primary" />
+            <div className="group relative flex flex-col items-center text-center p-4 bg-white rounded-lg border shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1">
+              <div className="h-10 w-10 rounded-full bg-primary/10 flex items-center justify-center mb-3 group-hover:scale-110 transition-transform">
+                <Cpu className="h-5 w-5 text-primary" />
               </div>
-              <h3 className="text-2xl font-bold mb-4">DePIN Protocol</h3>
-              <p className="text-base text-muted-foreground leading-relaxed">
+              <h3 className="text-lg font-bold mb-1">DePIN Protocol</h3>
+              <p className="text-sm text-muted-foreground">
                 Built on a Decentralized Physical Infrastructure Network protocol for maximum security and reliability.
               </p>
             </div>
@@ -390,10 +390,10 @@ export default function LandingPage() {
       </section>
 
       {/* FAQ Section */}
-      <section id="faq" className="w-full h-screen bg-black relative overflow-hidden">
+      <section id="faq" className="w-full h-screen py-16 bg-black relative overflow-hidden">
         <div className="absolute inset-0 bg-[url('/images/pattern.svg')] opacity-5" />
-        <div className="container h-full px-4 md:px-6 mx-auto relative flex flex-col justify-center">
-          <div className="flex flex-col items-center justify-center space-y-4 text-center mb-12">
+        <div className="container px-4 md:px-6 mx-auto relative">
+          <div className="flex flex-col items-center justify-center space-y-4 text-center mb-8">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 border border-white/20">
               <ShieldCheck className="h-4 w-4 text-white" />
               <span className="text-sm font-medium text-white">FAQ</span>
@@ -403,81 +403,69 @@ export default function LandingPage() {
               Everything you need to know about Carbide Network.
             </p>
           </div>
-          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3 h-[calc(100vh-300px)]">
-            <div className="group bg-white/5 p-8 rounded-xl border border-white/10 shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1 backdrop-blur-sm flex flex-col justify-between">
-              <div>
-                <div className="h-12 w-12 rounded-full bg-white/10 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
-                  <Shield className="h-6 w-6 text-white" />
-                </div>
-                <h3 className="text-2xl font-bold mb-4 text-white">How secure is my data?</h3>
-                <p className="text-base text-white/80 leading-relaxed">
-                  Your data is protected with military-grade encryption and distributed across multiple nodes for maximum security and redundancy.
-                </p>
+          <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+            <div className="group bg-white/5 p-6 rounded-xl border border-white/10 shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1 backdrop-blur-sm">
+              <div className="h-10 w-10 rounded-full bg-white/10 flex items-center justify-center mb-3 group-hover:scale-110 transition-transform">
+                <Shield className="h-5 w-5 text-white" />
               </div>
+              <h3 className="text-lg font-bold mb-2 text-white">How secure is my data?</h3>
+              <p className="text-sm text-white/70">
+                Your data is protected with military-grade encryption and distributed across multiple nodes for maximum security and redundancy.
+              </p>
             </div>
-            <div className="group bg-white/5 p-8 rounded-xl border border-white/10 shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1 backdrop-blur-sm flex flex-col justify-between">
-              <div>
-                <div className="h-12 w-12 rounded-full bg-white/10 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
-                  <Coins className="h-6 w-6 text-white" />
-                </div>
-                <h3 className="text-2xl font-bold mb-4 text-white">How do I earn rewards?</h3>
-                <p className="text-base text-white/80 leading-relaxed">
-                  By contributing storage space to the network, you earn Carbide tokens based on the amount of space
-                  provided, uptime, and network demand.
-                </p>
+            <div className="group bg-white/5 p-6 rounded-xl border border-white/10 shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1 backdrop-blur-sm">
+              <div className="h-10 w-10 rounded-full bg-white/10 flex items-center justify-center mb-3 group-hover:scale-110 transition-transform">
+                <Coins className="h-5 w-5 text-white" />
               </div>
+              <h3 className="text-lg font-bold mb-2 text-white">How do I earn rewards?</h3>
+              <p className="text-sm text-white/70">
+                By contributing storage space to the network, you earn Carbide tokens based on the amount of space
+                provided, uptime, and network demand.
+              </p>
             </div>
-            <div className="group bg-white/5 p-8 rounded-xl border border-white/10 shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1 backdrop-blur-sm flex flex-col justify-between">
-              <div>
-                <div className="h-12 w-12 rounded-full bg-white/10 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
-                  <Globe className="h-6 w-6 text-white" />
-                </div>
-                <h3 className="text-2xl font-bold mb-4 text-white">Can I access my files from anywhere?</h3>
-                <p className="text-base text-white/80 leading-relaxed">
-                  Yes, Carbide Network provides web, desktop, and mobile applications that allow you to access your files
-                  from any device with an internet connection.
-                </p>
+            <div className="group bg-white/5 p-6 rounded-xl border border-white/10 shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1 backdrop-blur-sm">
+              <div className="h-10 w-10 rounded-full bg-white/10 flex items-center justify-center mb-3 group-hover:scale-110 transition-transform">
+                <Globe className="h-5 w-5 text-white" />
               </div>
+              <h3 className="text-lg font-bold mb-2 text-white">Can I access my files from anywhere?</h3>
+              <p className="text-sm text-white/70">
+                Yes, Carbide Network provides web, desktop, and mobile applications that allow you to access your files
+                from any device with an internet connection.
+              </p>
             </div>
-            <div className="group bg-white/5 p-8 rounded-xl border border-white/10 shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1 backdrop-blur-sm flex flex-col justify-between">
-              <div>
-                <div className="h-12 w-12 rounded-full bg-white/10 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
-                  <Server className="h-6 w-6 text-white" />
-                </div>
-                <h3 className="text-2xl font-bold mb-4 text-white">What hardware do I need?</h3>
-                <p className="text-base text-white/80 leading-relaxed">
-                  Any storage device with sufficient capacity can be used. We recommend a minimum of 1TB storage and a stable internet connection.
-                </p>
+            <div className="group bg-white/5 p-6 rounded-xl border border-white/10 shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1 backdrop-blur-sm">
+              <div className="h-10 w-10 rounded-full bg-white/10 flex items-center justify-center mb-3 group-hover:scale-110 transition-transform">
+                <Server className="h-5 w-5 text-white" />
               </div>
+              <h3 className="text-lg font-bold mb-2 text-white">What hardware do I need?</h3>
+              <p className="text-sm text-white/70">
+                Any storage device with sufficient capacity can be used. We recommend a minimum of 1TB storage and a stable internet connection.
+              </p>
             </div>
-            <div className="group bg-white/5 p-8 rounded-xl border border-white/10 shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1 backdrop-blur-sm flex flex-col justify-between">
-              <div>
-                <div className="h-12 w-12 rounded-full bg-white/10 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
-                  <Lock className="h-6 w-6 text-white" />
-                </div>
-                <h3 className="text-2xl font-bold mb-4 text-white">Is my data private?</h3>
-                <p className="text-base text-white/80 leading-relaxed">
-                  Yes, all data is encrypted before being stored, and only you have access to your encryption keys.
-                </p>
+            <div className="group bg-white/5 p-6 rounded-xl border border-white/10 shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1 backdrop-blur-sm">
+              <div className="h-10 w-10 rounded-full bg-white/10 flex items-center justify-center mb-3 group-hover:scale-110 transition-transform">
+                <Lock className="h-5 w-5 text-white" />
               </div>
+              <h3 className="text-lg font-bold mb-2 text-white">Is my data private?</h3>
+              <p className="text-sm text-white/70">
+                Yes, all data is encrypted before being stored, and only you have access to your encryption keys.
+              </p>
             </div>
-            <div className="group bg-white/5 p-8 rounded-xl border border-white/10 shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1 backdrop-blur-sm flex flex-col justify-between">
-              <div>
-                <div className="h-12 w-12 rounded-full bg-white/10 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
-                  <UserCircle className="h-6 w-6 text-white" />
-                </div>
-                <h3 className="text-2xl font-bold mb-4 text-white">How do I get started?</h3>
-                <p className="text-base text-white/80 leading-relaxed">
-                  Simply download our application, connect your storage device, and follow the setup wizard to join the network.
-                </p>
+            <div className="group bg-white/5 p-6 rounded-xl border border-white/10 shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1 backdrop-blur-sm">
+              <div className="h-10 w-10 rounded-full bg-white/10 flex items-center justify-center mb-3 group-hover:scale-110 transition-transform">
+                <UserCircle className="h-5 w-5 text-white" />
               </div>
+              <h3 className="text-lg font-bold mb-2 text-white">How do I get started?</h3>
+              <p className="text-sm text-white/70">
+                Simply download our application, connect your storage device, and follow the setup wizard to join the network.
+              </p>
             </div>
           </div>
         </div>
       </section>
 
       {/* CTA Section with Background Image */}
-      <section className="w-full h-[50vh] relative">
+      <section className="w-full h-[50vh] py-12 md:py-24 relative">
         <div className="absolute inset-0">
           <Image
             src="/images/cta-bg.jpg"
@@ -487,8 +475,8 @@ export default function LandingPage() {
           />
           <div className="absolute inset-0 bg-gradient-to-b from-primary/90 to-primary/80" />
         </div>
-        <div className="container h-full px-4 md:px-6 mx-auto relative">
-          <div className="flex flex-col items-center text-center gap-6 text-white h-full justify-center">
+        <div className="container px-4 md:px-6 mx-auto relative">
+          <div className="flex flex-col items-center text-center gap-6 text-white">
             <h2 className="text-3xl font-bold tracking-tighter md:text-4xl">Join the Decentralized Storage Revolution</h2>
             <p className="max-w-[700px] md:text-xl opacity-90">
               Take control of your data today and be part of the future of storage.
@@ -508,20 +496,20 @@ export default function LandingPage() {
       </section>
 
       {/* Footer */}
-      <footer className="w-full h-[50vh] bg-white border-t">
-        <div className="container h-full px-4 md:px-6 mx-auto flex flex-col justify-center">
+      <footer className="w-full h-[50vh] py-12 bg-white border-t">
+        <div className="container px-4 md:px-6 mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-            <div className="space-y-6">
+            <div className="space-y-4">
               <div className="flex items-center gap-2">
                 <div className="relative">
-                  <Database className="h-8 w-8 text-primary" />
+                  <Database className="h-6 w-6 text-primary" />
                   <div className="absolute -top-1 -right-1 h-2 w-2 rounded-full bg-primary animate-pulse" />
                 </div>
-                <span className="text-2xl font-bold bg-gradient-to-r from-primary to-primary/80 bg-clip-text text-transparent">
+                <span className="text-xl font-bold bg-gradient-to-r from-primary to-primary/80 bg-clip-text text-transparent">
                   Carbide Network
                 </span>
               </div>
-              <p className="text-muted-foreground text-lg">The future of decentralized storage.</p>
+              <p className="text-muted-foreground">The future of decentralized storage.</p>
               <div className="flex gap-4">
                 <Link href="#" className="text-muted-foreground hover:text-primary transition-colors">
                   <svg
@@ -534,7 +522,7 @@ export default function LandingPage() {
                     strokeWidth="2"
                     strokeLinecap="round"
                     strokeLinejoin="round"
-                    className="h-6 w-6"
+                    className="h-5 w-5"
                   >
                     <path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"></path>
                   </svg>
@@ -550,7 +538,7 @@ export default function LandingPage() {
                     strokeWidth="2"
                     strokeLinecap="round"
                     strokeLinejoin="round"
-                    className="h-6 w-6"
+                    className="h-5 w-5"
                   >
                     <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
                     <rect width="4" height="12" x="2" y="9"></rect>
@@ -568,7 +556,7 @@ export default function LandingPage() {
                     strokeWidth="2"
                     strokeLinecap="round"
                     strokeLinejoin="round"
-                    className="h-6 w-6"
+                    className="h-5 w-5"
                   >
                     <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
                   </svg>
@@ -576,35 +564,35 @@ export default function LandingPage() {
               </div>
             </div>
             <div>
-              <h3 className="font-semibold text-lg mb-6">Product</h3>
-              <ul className="space-y-4">
-                <li><Link href="#" className="text-muted-foreground hover:text-primary transition-colors text-base">Features</Link></li>
-                <li><Link href="#" className="text-muted-foreground hover:text-primary transition-colors text-base">Security</Link></li>
-                <li><Link href="#" className="text-muted-foreground hover:text-primary transition-colors text-base">Enterprise</Link></li>
-                <li><Link href="#" className="text-muted-foreground hover:text-primary transition-colors text-base">Pricing</Link></li>
+              <h3 className="font-semibold mb-4">Product</h3>
+              <ul className="space-y-2">
+                <li><Link href="#" className="text-muted-foreground hover:text-primary transition-colors">Features</Link></li>
+                <li><Link href="#" className="text-muted-foreground hover:text-primary transition-colors">Security</Link></li>
+                <li><Link href="#" className="text-muted-foreground hover:text-primary transition-colors">Enterprise</Link></li>
+                <li><Link href="#" className="text-muted-foreground hover:text-primary transition-colors">Pricing</Link></li>
               </ul>
             </div>
             <div>
-              <h3 className="font-semibold text-lg mb-6">Resources</h3>
-              <ul className="space-y-4">
-                <li><Link href="#" className="text-muted-foreground hover:text-primary transition-colors text-base">Documentation</Link></li>
-                <li><Link href="#" className="text-muted-foreground hover:text-primary transition-colors text-base">API Reference</Link></li>
-                <li><Link href="#" className="text-muted-foreground hover:text-primary transition-colors text-base">Blog</Link></li>
-                <li><Link href="#" className="text-muted-foreground hover:text-primary transition-colors text-base">Community</Link></li>
+              <h3 className="font-semibold mb-4">Resources</h3>
+              <ul className="space-y-2">
+                <li><Link href="#" className="text-muted-foreground hover:text-primary transition-colors">Documentation</Link></li>
+                <li><Link href="#" className="text-muted-foreground hover:text-primary transition-colors">API Reference</Link></li>
+                <li><Link href="#" className="text-muted-foreground hover:text-primary transition-colors">Blog</Link></li>
+                <li><Link href="#" className="text-muted-foreground hover:text-primary transition-colors">Community</Link></li>
               </ul>
             </div>
             <div>
-              <h3 className="font-semibold text-lg mb-6">Company</h3>
-              <ul className="space-y-4">
-                <li><Link href="#" className="text-muted-foreground hover:text-primary transition-colors text-base">About</Link></li>
-                <li><Link href="#" className="text-muted-foreground hover:text-primary transition-colors text-base">Careers</Link></li>
-                <li><Link href="#" className="text-muted-foreground hover:text-primary transition-colors text-base">Contact</Link></li>
-                <li><Link href="#" className="text-muted-foreground hover:text-primary transition-colors text-base">Partners</Link></li>
+              <h3 className="font-semibold mb-4">Company</h3>
+              <ul className="space-y-2">
+                <li><Link href="#" className="text-muted-foreground hover:text-primary transition-colors">About</Link></li>
+                <li><Link href="#" className="text-muted-foreground hover:text-primary transition-colors">Careers</Link></li>
+                <li><Link href="#" className="text-muted-foreground hover:text-primary transition-colors">Contact</Link></li>
+                <li><Link href="#" className="text-muted-foreground hover:text-primary transition-colors">Partners</Link></li>
               </ul>
             </div>
           </div>
           <div className="mt-12 pt-8 border-t text-center text-muted-foreground">
-            <p className="text-base">&copy; 2024 Carbide Network. All rights reserved.</p>
+            <p>&copy; 2024 Carbide Network. All rights reserved.</p>
           </div>
         </div>
       </footer>
