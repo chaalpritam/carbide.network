@@ -137,7 +137,7 @@ export default function LandingPage() {
               </span>
             </h1>
             <p className="text-white/90 text-lg md:text-xl max-w-[700px] mx-auto">
-              Take control of your data with Carbide Network's next-generation decentralized storage solution.
+              Take control of your data with Carbide Networks next-generation decentralized storage solution.
               Built for security, scalability, and true data ownership.
             </p>
           </div>
@@ -808,7 +808,7 @@ export default function LandingPage() {
                   <div className="p-6">
                     <h3 className="text-lg font-bold mb-2">Tech Talk Series</h3>
                     <p className="text-muted-foreground text-sm mb-4 line-clamp-2">
-                      Technical deep-dives into Carbide Network's architecture and protocols.
+                      Technical deep-dives into Carbide Networks architecture and protocols.
                     </p>
                     <div className="flex items-center gap-4 text-xs text-muted-foreground">
                       <div className="flex items-center gap-1">
