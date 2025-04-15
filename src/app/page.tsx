@@ -21,10 +21,19 @@ import {
   BarChart3,
   Cpu,
 } from "lucide-react"
-import { useRef } from "react"
+import { useRef, useState } from "react"
 
 export default function LandingPage() {
   const scrollContainerRef = useRef<HTMLDivElement>(null)
+  const [email, setEmail] = useState("")
+  const [isSubmitted, setIsSubmitted] = useState(false)
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault()
+    // Here you would typically send the email to your backend
+    setIsSubmitted(true)
+    setEmail("")
+  }
 
   const scrollLeft = () => {
     if (scrollContainerRef.current) {
@@ -934,12 +943,35 @@ export default function LandingPage() {
             <p className="max-w-[700px] md:text-xl opacity-90">
               Take control of your data today and be part of the future of storage.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4">
-              <Button size="lg" variant="outline" className="bg-white hover:bg-white/90 text-primary group">
-                <span>Get Started</span>
-                <ChevronRight className="h-4 w-4 ml-2 transition-transform group-hover:translate-x-1" />
-              </Button>
-            </div>
+            {isSubmitted ? (
+              <div className="bg-white/10 backdrop-blur-sm p-6 rounded-lg max-w-md w-full">
+                <div className="flex items-center gap-2">
+                  <CheckCircle2 className="h-4 w-4 text-white" />
+                  <p className="text-white/90">Thank you for joining. We'll keep you updated.</p>
+                </div>
+              </div>
+            ) : (
+              <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-4 max-w-md w-full">
+                <div className="flex-1">
+                  <input
+                    type="email"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    placeholder="Enter your email"
+                    required
+                    className="w-full h-11 px-4 rounded-[8px] bg-white/10 backdrop-blur-sm border border-white/20 text-white placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-white/20"
+                  />
+                </div>
+                <Button
+                  type="submit"
+                  size="lg"
+                  className="bg-white hover:bg-white/90 text-primary group"
+                >
+                  <span>Join the Network</span>
+                  <ChevronRight className="h-4 w-4 ml-2 transition-transform group-hover:translate-x-1" />
+                </Button>
+              </form>
+            )}
           </div>
         </div>
       </section>
