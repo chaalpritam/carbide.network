@@ -105,7 +105,7 @@ export default function LandingPage() {
           <div className="space-y-4 max-w-3xl">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/20 backdrop-blur-sm border border-white/20">
               <Sparkles className="h-4 w-4 text-white" />
-              <span className="text-sm font-medium text-white">Decentralized Storage Solution</span>
+              <span className="text-sm font-light text-white">decentralizing cosumer storage</span>
             </div>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tighter text-white">
               <span className="bg-gradient-to-r from-white to-white/80 bg-clip-text text-transparent">
@@ -116,19 +116,15 @@ export default function LandingPage() {
                 Consumer storage space
               </span>
             </h1>
-            <p className="text-white/90 text-lg md:text-xl max-w-[700px] mx-auto">
+            <p className="text-white/90 text-lg md:text-xl max-w-[700px] mx-auto font-light">
               Take control of your data with Carbide Networks next-generation decentralized storage solution.
               Built for security, scalability, and true data ownership.
             </p>
           </div>
           <div className="flex flex-col sm:flex-row gap-4">
-            <Button size="lg" className="gap-2 group">
+            <Button size="lg" className="gap-2 group bg-white text-primary hover:bg-white/90">
               <span>Join the Network</span>
               <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-            </Button>
-            <Button size="lg" variant="outline" className="relative overflow-hidden group">
-              <span className="relative z-10">Learn More</span>
-              <div className="absolute inset-0 bg-gradient-to-r from-primary/10 to-primary/5 opacity-0 group-hover:opacity-100 transition-opacity" />
             </Button>
           </div>
           <div className="absolute bottom-4 left-0 right-0 flex justify-center gap-2">
