@@ -50,59 +50,39 @@ export default function LandingPage() {
       <div className="fixed w-full px-4 lg:px-6 h-14 flex items-center z-50">
         <div className="relative flex items-center justify-between w-full max-w-7xl mx-auto mt-12">
           <div className="flex items-center gap-2">
-            <div className="relative">
-              <Database className="h-4 w-4 text-white" />
-              <div className="absolute -top-0.5 -right-0.5 h-1 w-1 rounded-full bg-white animate-pulse" />
-            </div>
-            <span className="text-base font-bold bg-gradient-to-r from-white to-white/80 bg-clip-text text-transparent">
-              Carbide Network
-            </span>
+            <Link href="/" className="flex items-center">
+              <Image
+                src="/images/carbidelogo_white_medium.png"
+                alt="Carbide Network"
+                width={225}
+                height={75}
+              />
+            </Link>
           </div>
           <nav className="hidden md:flex items-center gap-1">
             <div className="flex items-center gap-1 px-2 py-1 rounded-full bg-white/30 backdrop-blur-sm border border-primary/5">
-              <Link href="#features" className="px-2 py-0.5 rounded-full text-sm font-medium hover:bg-primary/5 hover:text-primary transition-colors">
+              <Link href="#features" className="px-2 py-0.5 rounded-full text-sm font-light hover:bg-primary/5 hover:text-primary transition-colors">
                 Features
               </Link>
-              <Link href="#how-it-works" className="px-2 py-0.5 rounded-full text-sm font-medium hover:bg-primary/5 hover:text-primary transition-colors">
+              <Link href="#how-it-works" className="px-2 py-0.5 rounded-full text-sm font-light hover:bg-primary/5 hover:text-primary transition-colors">
                 How It Works
               </Link>
-              <Link href="#faq" className="px-2 py-0.5 rounded-full text-sm font-medium hover:bg-primary/5 hover:text-primary transition-colors">
+              <Link href="#comparison" className="px-2 py-0.5 rounded-full text-sm font-light hover:bg-primary/5 hover:text-primary transition-colors">
+                Comparison
+              </Link>
+              <Link href="#faq" className="px-2 py-0.5 rounded-full text-sm font-light hover:bg-primary/5 hover:text-primary transition-colors">
                 FAQ
               </Link>
               <div className="h-2.5 w-px bg-primary/5 mx-0.5" />
-              <Link href="#" className="px-2 py-0.5 rounded-full text-sm font-medium hover:bg-primary/5 hover:text-primary transition-colors">
-                Docs
-              </Link>
-              <Link href="#" className="px-2 py-0.5 rounded-full text-sm font-medium hover:bg-primary/5 hover:text-primary transition-colors">
-                Blog
+              <Link href="#community" className="px-2 py-0.5 rounded-full text-sm font-light hover:bg-primary/5 hover:text-primary transition-colors">
+                Community
               </Link>
             </div>
           </nav>
           <div className="flex items-center gap-1">
-            <Button variant="ghost" size="sm" className="text-sm font-medium hover:text-primary h-8">
-              Login
-            </Button>
             <Button size="sm" className="relative overflow-hidden group rounded-full h-8">
-              <span className="relative z-10">Get Started</span>
+              <span className="relative z-10">Docs</span>
               <div className="absolute inset-0 bg-gradient-to-r from-primary/10 to-primary/5 opacity-0 group-hover:opacity-100 transition-opacity" />
-            </Button>
-            <Button variant="outline" size="icon" className="md:hidden rounded-full h-8 w-8">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                className="h-3.5 w-3.5"
-              >
-                <line x1="4" x2="20" y1="12" y2="12" />
-                <line x1="4" x2="20" y1="6" y2="6" />
-                <line x1="4" x2="20" y1="18" y2="18" />
-              </svg>
             </Button>
           </div>
         </div>
@@ -298,7 +278,7 @@ export default function LandingPage() {
       </section>
 
       {/* Comparison Section */}
-      <section className="w-full h-screen bg-gray-50/50">
+      <section id="comparison" className="w-full h-screen bg-gray-50/50">
         <div className="container h-full px-4 md:px-6 mx-auto flex flex-col justify-center">
           <div className="flex flex-col items-center justify-center space-y-4 text-center mb-12">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/5 border border-primary/10">
@@ -488,7 +468,7 @@ export default function LandingPage() {
       </section>
 
       {/* Community Events Section */}
-      <section className="w-full h-screen py-16 bg-white">
+      <section id="community" className="w-full h-screen py-16 bg-white">
         <div className="container px-4 md:px-6 mx-auto">
           <div className="flex flex-col items-center justify-center space-y-4 text-center mb-12">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/5 border border-primary/10">
@@ -940,7 +920,7 @@ export default function LandingPage() {
       </section>
 
       {/* CTA Section with Background Image */}
-      <section className="w-full h-[50vh] py-12 md:py-24 relative">
+      <section id="cta" className="w-full h-[50vh] py-12 md:py-24 relative">
         <div className="absolute inset-0">
           <Image
             src="/images/cta-bg.jpg"
@@ -971,7 +951,7 @@ export default function LandingPage() {
       </section>
 
       {/* Footer */}
-      <footer className="w-full h-[50vh] py-12 bg-white border-t">
+      <footer id="footer" className="w-full h-[50vh] py-12 bg-white border-t">
         <div className="container px-4 md:px-6 mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
             <div className="space-y-4">
