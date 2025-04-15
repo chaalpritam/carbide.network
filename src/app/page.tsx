@@ -22,6 +22,7 @@ import {
   Cpu,
 } from "lucide-react"
 import { useRef, useState } from "react"
+import { EventCard } from "@/components/EventCard"
 
 export default function LandingPage() {
   const scrollContainerRef = useRef<HTMLDivElement>(null)
@@ -529,378 +530,70 @@ export default function LandingPage() {
                 className="flex overflow-x-auto gap-4 py-4 px-4 scrollbar-hide"
                 style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
               >
-                <div className="group relative overflow-hidden rounded-xl border shadow-sm hover:shadow-md transition-all duration-300 min-w-[300px] h-[400px]">
-                  <div className="h-[250px] relative">
-                    <Image
-                      src="/images/event1.jpg"
-                      alt="Community Meetup"
-                      fill
-                      className="object-cover transition-transform duration-500 group-hover:scale-105"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
-                    <div className="absolute bottom-2 left-2 right-2">
-                      <span className="inline-flex items-center rounded-full bg-white/90 px-2 py-0.5 text-xs font-medium">
-                        Past Event
-                      </span>
-                    </div>
-                  </div>
-                  <div className="p-6">
-                    <h3 className="text-lg font-bold mb-2">Community Meetup 2024</h3>
-                    <p className="text-muted-foreground text-sm mb-4 line-clamp-2">
-                      Our first community meetup discussing decentralized storage and network development.
-                    </p>
-                    <div className="flex items-center gap-4 text-xs text-muted-foreground">
-                      <div className="flex items-center gap-1">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          width="24"
-                          height="24"
-                          viewBox="0 0 24 24"
-                          fill="none"
-                          stroke="currentColor"
-                          strokeWidth="2"
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          className="h-3 w-3"
-                        >
-                          <rect width="18" height="18" x="3" y="4" rx="2" ry="2" />
-                          <line x1="16" x2="16" y1="2" y2="6" />
-                          <line x1="8" x2="8" y1="2" y2="6" />
-                          <line x1="3" x2="21" y1="10" y2="10" />
-                        </svg>
-                        <span>March 15, 2024</span>
-                      </div>
-                      <div className="flex items-center gap-1">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          width="24"
-                          height="24"
-                          viewBox="0 0 24 24"
-                          fill="none"
-                          stroke="currentColor"
-                          strokeWidth="2"
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          className="h-3 w-3"
-                        >
-                          <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
-                          <circle cx="12" cy="10" r="3" />
-                        </svg>
-                        <span>San Francisco</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div className="group relative overflow-hidden rounded-xl border shadow-sm hover:shadow-md transition-all duration-300 min-w-[300px] h-[400px]">
-                  <div className="h-[250px] relative">
-                    <Image
-                      src="/images/event2.jpg"
-                      alt="Developer Workshop"
-                      fill
-                      className="object-cover transition-transform duration-500 group-hover:scale-105"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
-                    <div className="absolute bottom-2 left-2 right-2">
-                      <span className="inline-flex items-center rounded-full bg-white/90 px-2 py-0.5 text-xs font-medium">
-                        Past Event
-                      </span>
-                    </div>
-                  </div>
-                  <div className="p-6">
-                    <h3 className="text-lg font-bold mb-2">Developer Workshop</h3>
-                    <p className="text-muted-foreground text-sm mb-4 line-clamp-2">
-                      Hands-on workshop for developers to build on the Carbide Network platform.
-                    </p>
-                    <div className="flex items-center gap-4 text-xs text-muted-foreground">
-                      <div className="flex items-center gap-1">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          width="24"
-                          height="24"
-                          viewBox="0 0 24 24"
-                          fill="none"
-                          stroke="currentColor"
-                          strokeWidth="2"
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          className="h-3 w-3"
-                        >
-                          <rect width="18" height="18" x="3" y="4" rx="2" ry="2" />
-                          <line x1="16" x2="16" y1="2" y2="6" />
-                          <line x1="8" x2="8" y1="2" y2="6" />
-                          <line x1="3" x2="21" y1="10" y2="10" />
-                        </svg>
-                        <span>February 28, 2024</span>
-                      </div>
-                      <div className="flex items-center gap-1">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          width="24"
-                          height="24"
-                          viewBox="0 0 24 24"
-                          fill="none"
-                          stroke="currentColor"
-                          strokeWidth="2"
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          className="h-3 w-3"
-                        >
-                          <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
-                          <circle cx="12" cy="10" r="3" />
-                        </svg>
-                        <span>Online</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div className="group relative overflow-hidden rounded-xl border shadow-sm hover:shadow-md transition-all duration-300 min-w-[300px] h-[400px]">
-                  <div className="h-[250px] relative">
-                    <Image
-                      src="/images/event3.jpg"
-                      alt="Network Launch"
-                      fill
-                      className="object-cover transition-transform duration-500 group-hover:scale-105"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
-                    <div className="absolute bottom-2 left-2 right-2">
-                      <span className="inline-flex items-center rounded-full bg-white/90 px-2 py-0.5 text-xs font-medium">
-                        Past Event
-                      </span>
-                    </div>
-                  </div>
-                  <div className="p-6">
-                    <h3 className="text-lg font-bold mb-2">Network Launch Party</h3>
-                    <p className="text-muted-foreground text-sm mb-4 line-clamp-2">
-                      Celebration of our official network launch with community and partners.
-                    </p>
-                    <div className="flex items-center gap-4 text-xs text-muted-foreground">
-                      <div className="flex items-center gap-1">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          width="24"
-                          height="24"
-                          viewBox="0 0 24 24"
-                          fill="none"
-                          stroke="currentColor"
-                          strokeWidth="2"
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          className="h-3 w-3"
-                        >
-                          <rect width="18" height="18" x="3" y="4" rx="2" ry="2" />
-                          <line x1="16" x2="16" y1="2" y2="6" />
-                          <line x1="8" x2="8" y1="2" y2="6" />
-                          <line x1="3" x2="21" y1="10" y2="10" />
-                        </svg>
-                        <span>January 10, 2024</span>
-                      </div>
-                      <div className="flex items-center gap-1">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          width="24"
-                          height="24"
-                          viewBox="0 0 24 24"
-                          fill="none"
-                          stroke="currentColor"
-                          strokeWidth="2"
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          className="h-3 w-3"
-                        >
-                          <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
-                          <circle cx="12" cy="10" r="3" />
-                        </svg>
-                        <span>New York</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div className="group relative overflow-hidden rounded-xl border shadow-sm hover:shadow-md transition-all duration-300 min-w-[300px] h-[400px]">
-                  <div className="h-[250px] relative">
-                    <Image
-                      src="/images/event4.jpg"
-                      alt="Hackathon"
-                      fill
-                      className="object-cover transition-transform duration-500 group-hover:scale-105"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
-                    <div className="absolute bottom-2 left-2 right-2">
-                      <span className="inline-flex items-center rounded-full bg-white/90 px-2 py-0.5 text-xs font-medium">
-                        Past Event
-                      </span>
-                    </div>
-                  </div>
-                  <div className="p-6">
-                    <h3 className="text-lg font-bold mb-2">Storage Hackathon</h3>
-                    <p className="text-muted-foreground text-sm mb-4 line-clamp-2">
-                      48-hour hackathon building innovative decentralized storage solutions.
-                    </p>
-                    <div className="flex items-center gap-4 text-xs text-muted-foreground">
-                      <div className="flex items-center gap-1">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          width="24"
-                          height="24"
-                          viewBox="0 0 24 24"
-                          fill="none"
-                          stroke="currentColor"
-                          strokeWidth="2"
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          className="h-3 w-3"
-                        >
-                          <rect width="18" height="18" x="3" y="4" rx="2" ry="2" />
-                          <line x1="16" x2="16" y1="2" y2="6" />
-                          <line x1="8" x2="8" y1="2" y2="6" />
-                          <line x1="3" x2="21" y1="10" y2="10" />
-                        </svg>
-                        <span>December 5, 2023</span>
-                      </div>
-                      <div className="flex items-center gap-1">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          width="24"
-                          height="24"
-                          viewBox="0 0 24 24"
-                          fill="none"
-                          stroke="currentColor"
-                          strokeWidth="2"
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          className="h-3 w-3"
-                        >
-                          <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
-                          <circle cx="12" cy="10" r="3" />
-                        </svg>
-                        <span>Berlin</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div className="group relative overflow-hidden rounded-xl border shadow-sm hover:shadow-md transition-all duration-300 min-w-[300px] h-[400px]">
-                  <div className="h-[250px] relative">
-                    <Image
-                      src="/images/event5.jpg"
-                      alt="Tech Talk"
-                      fill
-                      className="object-cover transition-transform duration-500 group-hover:scale-105"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
-                    <div className="absolute bottom-2 left-2 right-2">
-                      <span className="inline-flex items-center rounded-full bg-white/90 px-2 py-0.5 text-xs font-medium">
-                        Past Event
-                      </span>
-                    </div>
-                  </div>
-                  <div className="p-6">
-                    <h3 className="text-lg font-bold mb-2">Tech Talk Series</h3>
-                    <p className="text-muted-foreground text-sm mb-4 line-clamp-2">
-                      Technical deep-dives into Carbide Networks architecture and protocols.
-                    </p>
-                    <div className="flex items-center gap-4 text-xs text-muted-foreground">
-                      <div className="flex items-center gap-1">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          width="24"
-                          height="24"
-                          viewBox="0 0 24 24"
-                          fill="none"
-                          stroke="currentColor"
-                          strokeWidth="2"
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          className="h-3 w-3"
-                        >
-                          <rect width="18" height="18" x="3" y="4" rx="2" ry="2" />
-                          <line x1="16" x2="16" y1="2" y2="6" />
-                          <line x1="8" x2="8" y1="2" y2="6" />
-                          <line x1="3" x2="21" y1="10" y2="10" />
-                        </svg>
-                        <span>November 20, 2023</span>
-                      </div>
-                      <div className="flex items-center gap-1">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          width="24"
-                          height="24"
-                          viewBox="0 0 24 24"
-                          fill="none"
-                          stroke="currentColor"
-                          strokeWidth="2"
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          className="h-3 w-3"
-                        >
-                          <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
-                          <circle cx="12" cy="10" r="3" />
-                        </svg>
-                        <span>Online</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div className="group relative overflow-hidden rounded-xl border shadow-sm hover:shadow-md transition-all duration-300 min-w-[300px] h-[400px]">
-                  <div className="h-[250px] relative">
-                    <Image
-                      src="/images/event6.jpg"
-                      alt="Community AMA"
-                      fill
-                      className="object-cover transition-transform duration-500 group-hover:scale-105"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
-                    <div className="absolute bottom-2 left-2 right-2">
-                      <span className="inline-flex items-center rounded-full bg-white/90 px-2 py-0.5 text-xs font-medium">
-                        Past Event
-                      </span>
-                    </div>
-                  </div>
-                  <div className="p-6">
-                    <h3 className="text-lg font-bold mb-2">Community AMA</h3>
-                    <p className="text-muted-foreground text-sm mb-4 line-clamp-2">
-                      Ask Me Anything session about our roadmap and development plans.
-                    </p>
-                    <div className="flex items-center gap-4 text-xs text-muted-foreground">
-                      <div className="flex items-center gap-1">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          width="24"
-                          height="24"
-                          viewBox="0 0 24 24"
-                          fill="none"
-                          stroke="currentColor"
-                          strokeWidth="2"
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          className="h-3 w-3"
-                        >
-                          <rect width="18" height="18" x="3" y="4" rx="2" ry="2" />
-                          <line x1="16" x2="16" y1="2" y2="6" />
-                          <line x1="8" x2="8" y1="2" y2="6" />
-                          <line x1="3" x2="21" y1="10" y2="10" />
-                        </svg>
-                        <span>October 15, 2023</span>
-                      </div>
-                      <div className="flex items-center gap-1">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          width="24"
-                          height="24"
-                          viewBox="0 0 24 24"
-                          fill="none"
-                          stroke="currentColor"
-                          strokeWidth="2"
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          className="h-3 w-3"
-                        >
-                          <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
-                          <circle cx="12" cy="10" r="3" />
-                        </svg>
-                        <span>Online</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+                <EventCard
+                  title="Disrupt with DePIN (IBW)"
+                  description="Hosted around India Blockchain Week to explore how DePIN is revolutionizing decentralized infrastructure and storage solutions."
+                  date="December 9, 2023"
+                  location="Bengaluru"
+                  imageUrl="/events/2023.png"
+                  tweetUrl="https://x.com/ChaalPritam/status/1736350189538189456"
+                />
+                <EventCard
+                  title="Disrupt with DePIN (Dubai)"
+                  description="Discover the future of decentralized physical infrastructure networks at our exclusive Dubai event."
+                  date="Friday 19, 2024"
+                  location="Dubai"
+                  imageUrl="/events/2024.png"
+                  tweetUrl="https://x.com/ChaalPritam/status/1786815270679449952"
+                />
+                <EventCard
+                  title="What to Build on DePIN"
+                  description="Learn about innovative DePIN applications and discover how to build the next generation of decentralized infrastructure."
+                  date="July 6, 2024"
+                  location="Chennai"
+                  imageUrl="/events/2024_1.png"
+                  tweetUrl="https://x.com/ChaalPritam/status/1809841085721551154"
+                />
+                <EventCard
+                  title="What to Build on DePIN"
+                  description="Explore practical DePIN use cases and get hands-on experience building decentralized infrastructure solutions."
+                  date="July 20, 2024"
+                  location="Kochi"
+                  imageUrl="/events/2024_2.png"
+                  tweetUrl="https://x.com/ChaalPritam/status/1815346193578532927"
+                />
+                <EventCard
+                  title="What to Build on DePIN"
+                  description="Dive deep into DePIN architecture and learn how to create scalable decentralized infrastructure applications."
+                  date="July 21, 2024"
+                  location="Hyderabad"
+                  imageUrl="/events/2024_3.png"
+                  tweetUrl="https://x.com/ChaalPritam/status/1815395721425944993"
+                />
+                <EventCard
+                  title="What to Build on DePIN"
+                  description="We deep dive to discover how to leverage DePIN for building next-gen decentralized applications."
+                  date="July 26, 2024"
+                  location="Bangalore"
+                  imageUrl="/events/2024_4.png"
+                  tweetUrl="https://x.com/ChaalPritam/status/1818548912044605780"
+                />
+                <EventCard
+                  title="What to Build on DePIN"
+                  description="Learn about DePIN's potential to transform traditional infrastructure into decentralized networks."
+                  date="August 3, 2024"
+                  location="Pune"
+                  imageUrl="/events/2024_5.png"
+                  tweetUrl="https://x.com/ChaalPritam/status/1820003761533673594"
+                />
+                <EventCard
+                  title="What to Build on DePIN"
+                  description="Explore the intersection of DePIN and Web3 infrastructure at our Goa event."
+                  date="August 6, 2024"
+                  location="Goa"
+                  imageUrl="/events/2024_6.png"
+                  tweetUrl="https://x.com/ChaalPritam/status/1821097979010314748"
+                />
               </div>
               <button
                 onClick={scrollRight}
