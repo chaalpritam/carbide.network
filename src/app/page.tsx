@@ -950,13 +950,14 @@ export default function LandingPage() {
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
             <div className="space-y-4">
               <div className="flex items-center gap-2">
-                <div className="relative">
-                  <Database className="h-6 w-6 text-primary" />
-                  <div className="absolute -top-1 -right-1 h-2 w-2 rounded-full bg-primary animate-pulse" />
-                </div>
-                <span className="text-xl font-bold bg-gradient-to-r from-primary to-primary/80 bg-clip-text text-transparent">
-                  Carbide Network
-                </span>
+                <Link href="/" className="flex items-center">
+                  <Image
+                    src="/images/carbidelogo.png"
+                    alt="Carbide Network"
+                    width={115}
+                    height={40}
+                  />
+                </Link>
               </div>
               <p className="text-muted-foreground">Redefining the Consumer <br /> storage space.</p>
               <div className="flex gap-4">
