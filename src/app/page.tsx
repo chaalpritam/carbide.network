@@ -640,7 +640,7 @@ export default function LandingPage() {
               <div className="bg-white/10 backdrop-blur-sm p-6 rounded-lg max-w-md w-full">
                 <div className="flex items-center gap-2">
                   <CheckCircle2 className="h-4 w-4 text-white" />
-                  <p className="text-white/90">Thank you for joining. We'll keep you updated.</p>
+                  <p className="text-white/90">Thank you for joining. We will keep you updated.</p>
                 </div>
               </div>
             ) : (
