@@ -260,7 +260,7 @@ export default function LandingPage() {
             </div>
             <div className="relative rounded-2xl overflow-hidden shadow-xl group">
               <Image
-                src="/images/how-it-works.jpg"
+                src="/images/carbide_works.png"
                 alt="Network Setup Process"
                 width={800}
                 height={600}
