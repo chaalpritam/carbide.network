@@ -59,7 +59,7 @@ export default function LandingPage() {
               />
             </Link>
           </div>
-          <nav className="hidden md:flex items-center gap-1">
+          <nav className="hidden md:flex items-center gap-1 absolute left-1/2 -translate-x-1/2">
             <div className="flex items-center gap-1 px-2 py-1 rounded-full bg-white/30 backdrop-blur-sm border border-primary/5">
               <Link href="#features" className="px-2 py-0.5 rounded-full text-sm font-light hover:bg-primary/5 hover:text-primary transition-colors">
                 Features
