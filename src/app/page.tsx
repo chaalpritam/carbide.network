@@ -320,14 +320,13 @@ export default function LandingPage() {
               </div>
 
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-gray-900 mb-6">
-                Decentralized storage
+                Consumer storage,
                 <br />
-                <span className="text-gradient">marketplace</span>
+                <span className="text-gradient">reimagined</span>
               </h1>
 
               <p className="text-lg sm:text-xl text-gray-600 max-w-lg mx-auto lg:mx-0 mb-8">
-                Store files with 1-10 redundant copies at $0.002-0.012/GB/month.
-                Or earn by sharing spare disk space. AES-256 encrypted, truly private.
+                Rebuilding consumer storage in a decentralized way, without Google or Apple.
               </p>
 
               <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-3 mb-10">
