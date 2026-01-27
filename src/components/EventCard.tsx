@@ -1,5 +1,5 @@
 import Image from "next/image"
-import { Calendar, MapPin, ExternalLink } from "lucide-react"
+import { Calendar, MapPin } from "lucide-react"
 
 interface EventCardProps {
   title: string
@@ -25,57 +25,43 @@ export function EventCard({
       href={tweetUrl}
       target="_blank"
       rel="noopener noreferrer"
-      className="group relative flex-shrink-0 w-[320px] overflow-hidden rounded-2xl bg-white border shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
+      className="group flex-shrink-0 w-72 overflow-hidden rounded-2xl bg-white border border-gray-100 shadow-sm hover:shadow-md hover:border-gray-200 transition-all duration-300"
     >
       {/* Image */}
-      <div className="relative h-48 overflow-hidden">
+      <div className="relative h-40 overflow-hidden bg-gray-100">
         <Image
           src={imageUrl}
           alt={title}
           fill
-          className="object-cover transition-transform duration-500 group-hover:scale-110"
+          className="object-cover group-hover:scale-105 transition-transform duration-300"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
-
-        {/* Badge */}
         {isPastEvent && (
-          <div className="absolute top-4 left-4">
-            <span className="inline-flex items-center px-3 py-1 rounded-full bg-white/90 backdrop-blur-sm text-xs font-semibold text-gray-700">
-              Past Event
+          <div className="absolute top-3 left-3">
+            <span className="px-2 py-1 rounded-full bg-white/90 text-xs font-medium text-gray-600">
+              Past
             </span>
           </div>
         )}
-
-        {/* External link indicator */}
-        <div className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity">
-          <span className="inline-flex items-center justify-center w-8 h-8 rounded-full bg-white/90 backdrop-blur-sm">
-            <ExternalLink className="h-4 w-4 text-gray-700" />
-          </span>
-        </div>
-
-        {/* Location overlay */}
-        <div className="absolute bottom-4 left-4 right-4">
-          <div className="flex items-center gap-1.5 text-white/90 text-sm">
-            <MapPin className="h-4 w-4" />
-            <span className="font-medium">{location}</span>
-          </div>
-        </div>
       </div>
 
       {/* Content */}
-      <div className="p-5">
-        <div className="flex items-center gap-1.5 text-muted-foreground text-xs mb-3">
-          <Calendar className="h-3.5 w-3.5" />
-          <span>{date}</span>
-        </div>
-
-        <h3 className="text-lg font-bold mb-2 group-hover:text-primary transition-colors line-clamp-1">
+      <div className="p-4">
+        <h3 className="font-semibold text-gray-900 mb-1 line-clamp-1 group-hover:text-blue-600 transition-colors">
           {title}
         </h3>
-
-        <p className="text-muted-foreground text-sm line-clamp-2 leading-relaxed">
+        <p className="text-gray-500 text-sm mb-3 line-clamp-2">
           {description}
         </p>
+        <div className="flex items-center gap-4 text-xs text-gray-400">
+          <span className="flex items-center gap-1">
+            <Calendar className="h-3 w-3" />
+            {date}
+          </span>
+          <span className="flex items-center gap-1">
+            <MapPin className="h-3 w-3" />
+            {location}
+          </span>
+        </div>
       </div>
     </a>
   )
