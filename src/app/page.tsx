@@ -22,6 +22,12 @@ import {
   Smartphone,
   Monitor,
   Sparkles,
+  Package,
+  Terminal,
+  Globe,
+  Server,
+  Apple,
+  ExternalLink,
 } from "lucide-react"
 import { useRef, useState } from "react"
 import { EventCard } from "@/components/EventCard"
@@ -154,6 +160,76 @@ const platforms = [
   { name: "Android", icon: Smartphone, available: false, coming: true },
 ]
 
+// Products from carbide ecosystem
+const products = [
+  {
+    name: "Carbide Provider",
+    description: "Desktop app to run a storage provider node. One-click setup, real-time earnings dashboard, auto-start on boot.",
+    icon: Server,
+    platforms: ["macOS", "Windows"],
+    status: "Available",
+    statusColor: "green",
+    features: ["Tauri-based GUI", "Real-time earnings", "Auto LaunchAgent", "Live logs viewer"],
+    cta: "Download",
+    href: "#cta",
+  },
+  {
+    name: "Carbide iOS SDK",
+    description: "Native Swift SDK for integrating decentralized storage into iOS and macOS apps. Zero external dependencies.",
+    icon: Apple,
+    platforms: ["iOS 16+", "macOS 13+"],
+    status: "Available",
+    statusColor: "green",
+    features: ["Swift 5.9+", "AES-256 encryption", "Keychain storage", "Progress tracking"],
+    cta: "View Docs",
+    href: "https://github.com/carbidenetwork",
+  },
+  {
+    name: "Carbide CLI",
+    description: "Command-line tools for power users. Upload, download, manage files, and interact with providers directly.",
+    icon: Terminal,
+    platforms: ["macOS", "Linux", "Windows"],
+    status: "Available",
+    statusColor: "green",
+    features: ["File operations", "Provider management", "Scripting support", "JSON output"],
+    cta: "Install",
+    href: "#cta",
+  },
+  {
+    name: "Discovery Service",
+    description: "Central registry that coordinates the marketplace. Find providers, get quotes, check health status.",
+    icon: Globe,
+    platforms: ["Cloud API"],
+    status: "Live",
+    statusColor: "green",
+    features: ["11 REST endpoints", "Health monitoring", "Geographic search", "Quote aggregation"],
+    cta: "API Docs",
+    href: "https://github.com/carbidenetwork",
+  },
+  {
+    name: "Android SDK",
+    description: "Native Kotlin SDK for Android apps. Same great features as iOS SDK, optimized for Android.",
+    icon: Smartphone,
+    platforms: ["Android 8+"],
+    status: "Coming Soon",
+    statusColor: "yellow",
+    features: ["Kotlin native", "Jetpack Compose", "Background sync", "Material Design"],
+    cta: "Notify Me",
+    href: "#cta",
+  },
+  {
+    name: "Web Dashboard",
+    description: "Browser-based interface to manage your files and monitor provider earnings from anywhere.",
+    icon: Monitor,
+    platforms: ["Web"],
+    status: "In Development",
+    statusColor: "yellow",
+    features: ["File manager", "Analytics", "Multi-device", "No install"],
+    cta: "Notify Me",
+    href: "#cta",
+  },
+]
+
 export default function LandingPage() {
   const scrollContainerRef = useRef<HTMLDivElement>(null)
   const [email, setEmail] = useState("")
@@ -192,7 +268,7 @@ export default function LandingPage() {
 
             <div className="hidden md:flex items-center gap-8">
               <Link href="#features" className="text-sm text-gray-600 hover:text-gray-900 transition-colors">Features</Link>
-              <Link href="#how-it-works" className="text-sm text-gray-600 hover:text-gray-900 transition-colors">How It Works</Link>
+              <Link href="#products" className="text-sm text-gray-600 hover:text-gray-900 transition-colors">Products</Link>
               <Link href="#pricing" className="text-sm text-gray-600 hover:text-gray-900 transition-colors">Pricing</Link>
               <Link href="#faq" className="text-sm text-gray-600 hover:text-gray-900 transition-colors">FAQ</Link>
             </div>
@@ -221,7 +297,7 @@ export default function LandingPage() {
           <div className="md:hidden bg-white border-b">
             <div className="px-4 py-4 space-y-3">
               <Link href="#features" className="block py-2 text-gray-600" onClick={() => setMobileMenuOpen(false)}>Features</Link>
-              <Link href="#how-it-works" className="block py-2 text-gray-600" onClick={() => setMobileMenuOpen(false)}>How It Works</Link>
+              <Link href="#products" className="block py-2 text-gray-600" onClick={() => setMobileMenuOpen(false)}>Products</Link>
               <Link href="#pricing" className="block py-2 text-gray-600" onClick={() => setMobileMenuOpen(false)}>Pricing</Link>
               <Link href="#faq" className="block py-2 text-gray-600" onClick={() => setMobileMenuOpen(false)}>FAQ</Link>
               <hr />
@@ -344,8 +420,83 @@ export default function LandingPage() {
         </div>
       </section>
 
+      {/* Products Section */}
+      <section id="products" className="py-20 md:py-28 bg-gray-50">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6">
+          <div className="text-center mb-16">
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-indigo-50 text-indigo-700 text-sm font-medium mb-4">
+              <Package className="h-4 w-4" />
+              Products
+            </div>
+            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
+              The Carbide ecosystem
+            </h2>
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+              Everything you need to store files or run a provider node. Native apps, SDKs, and APIs.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {products.map((product, i) => (
+              <div
+                key={i}
+                className="group flex flex-col p-6 rounded-2xl border border-gray-200 bg-white hover:border-gray-300 hover:shadow-lg transition-all duration-300"
+              >
+                <div className="flex items-start justify-between mb-4">
+                  <div className="w-12 h-12 rounded-xl bg-gray-100 flex items-center justify-center group-hover:bg-indigo-100 transition-colors">
+                    <product.icon className="w-6 h-6 text-gray-600 group-hover:text-indigo-600 transition-colors" />
+                  </div>
+                  <span className={`px-2 py-1 rounded-full text-xs font-medium ${
+                    product.statusColor === 'green'
+                      ? 'bg-green-100 text-green-700'
+                      : 'bg-yellow-100 text-yellow-700'
+                  }`}>
+                    {product.status}
+                  </span>
+                </div>
+
+                <h3 className="text-lg font-semibold text-gray-900 mb-2">{product.name}</h3>
+                <p className="text-gray-600 text-sm mb-4 leading-relaxed">{product.description}</p>
+
+                <div className="flex flex-wrap gap-1.5 mb-4">
+                  {product.platforms.map((platform, j) => (
+                    <span key={j} className="px-2 py-0.5 rounded bg-gray-100 text-gray-600 text-xs">
+                      {platform}
+                    </span>
+                  ))}
+                </div>
+
+                <div className="flex-1">
+                  <ul className="space-y-1.5 mb-6">
+                    {product.features.map((feature, j) => (
+                      <li key={j} className="flex items-center gap-2 text-sm text-gray-600">
+                        <CheckCircle2 className="h-3.5 w-3.5 text-green-500 flex-shrink-0" />
+                        {feature}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+                <Button
+                  variant={product.statusColor === 'green' ? 'default' : 'outline'}
+                  className={product.statusColor === 'green' ? 'bg-indigo-600 hover:bg-indigo-700' : ''}
+                  size="sm"
+                  asChild
+                >
+                  <Link href={product.href} target={product.href.startsWith('http') ? '_blank' : undefined}>
+                    {product.cta}
+                    {product.href.startsWith('http') && <ExternalLink className="ml-1.5 h-3.5 w-3.5" />}
+                    {!product.href.startsWith('http') && product.statusColor === 'green' && <ArrowRight className="ml-1.5 h-3.5 w-3.5" />}
+                  </Link>
+                </Button>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* How It Works Section */}
-      <section id="how-it-works" className="py-20 md:py-28 bg-gray-50">
+      <section id="how-it-works" className="py-20 md:py-28 bg-white">
         <div className="max-w-6xl mx-auto px-4 sm:px-6">
           <div className="text-center mb-16">
             <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-blue-50 text-blue-700 text-sm font-medium mb-4">
