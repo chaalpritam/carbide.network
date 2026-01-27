@@ -263,7 +263,6 @@ export default function LandingPage() {
                 alt="Carbide"
                 width={100}
                 height={32}
-                className="h-7 w-auto"
               />
             </Link>
 
@@ -851,13 +850,12 @@ export default function LandingPage() {
       <footer className="py-12 bg-gray-50 border-t">
         <div className="max-w-6xl mx-auto px-4 sm:px-6">
           <div className="flex flex-col md:flex-row items-center justify-between gap-6">
-            <div className="flex items-center gap-6">
+            <div className="flex flex-col gap-6">
               <Image
                 src="/images/carbidelogo.png"
                 alt="Carbide"
                 width={80}
                 height={26}
-                className="h-6 w-auto opacity-60"
               />
               <span className="text-sm text-gray-500">
                 &copy; {new Date().getFullYear()} Carbide Network
