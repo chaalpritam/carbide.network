@@ -33,6 +33,7 @@ import { useRef, useState } from "react"
 import { EventCard } from "@/components/EventCard"
 import { HeroIllustration } from "@/components/illustrations/HeroIllustration"
 import { NetworkIllustration } from "@/components/illustrations/NetworkIllustration"
+import { AnimatedBackground, FloatingOrbs, GridBackground } from "@/components/AnimatedBackground"
 import {
   StorageIcon,
   ReplicationIcon,

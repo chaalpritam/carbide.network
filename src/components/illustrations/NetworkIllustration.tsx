@@ -1,110 +1,172 @@
 "use client"
 
+import { useEffect, useState } from "react"
+
 export function NetworkIllustration() {
+  const [mounted, setMounted] = useState(false)
+
+  useEffect(() => {
+    setMounted(true)
+  }, [])
+
   return (
-    <div className="relative w-full aspect-[16/9] rounded-3xl overflow-hidden bg-gradient-to-br from-slate-900 via-blue-900 to-violet-900 p-8 md:p-12">
-      {/* Animated background dots */}
-      <div className="absolute inset-0 opacity-20">
+    <div
+      className={`relative w-full aspect-[16/9] rounded-3xl overflow-hidden transition-all duration-1000 ${
+        mounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+      }`}
+    >
+      {/* Animated gradient background */}
+      <div className="absolute inset-0 animated-mesh" />
+
+      {/* Noise overlay */}
+      <div className="absolute inset-0 noise-overlay" />
+
+      {/* Grid overlay */}
+      <div className="absolute inset-0 opacity-10">
         <svg width="100%" height="100%">
           <defs>
-            <pattern id="dots" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse">
-              <circle cx="2" cy="2" r="1.5" fill="white" />
+            <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+              <path d="M 40 0 L 0 0 0 40" fill="none" stroke="white" strokeWidth="0.5" />
             </pattern>
           </defs>
-          <rect width="100%" height="100%" fill="url(#dots)" />
+          <rect width="100%" height="100%" fill="url(#grid)" />
         </svg>
       </div>
 
-      <div className="relative h-full flex flex-col">
+      <div className="relative h-full flex flex-col p-6 md:p-10">
         {/* Header */}
-        <div className="text-center mb-8">
+        <div className="text-center mb-6">
           <h3 className="text-white text-xl md:text-2xl font-bold mb-2">The Carbide Network</h3>
-          <p className="text-blue-200 text-sm md:text-base">Your files, distributed across the globe</p>
+          <p className="text-blue-200/70 text-sm md:text-base">Decentralized storage marketplace in action</p>
         </div>
 
         {/* Network visualization */}
-        <div className="flex-1 relative">
-          <svg viewBox="0 0 600 250" className="w-full h-full" preserveAspectRatio="xMidYMid meet">
+        <div className="flex-1 relative min-h-[200px]">
+          <svg viewBox="0 0 700 280" className="w-full h-full" preserveAspectRatio="xMidYMid meet">
             <defs>
-              <linearGradient id="netGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+              <linearGradient id="lineGrad" x1="0%" y1="0%" x2="100%" y2="0%">
                 <stop offset="0%" stopColor="#60a5fa" />
-                <stop offset="100%" stopColor="#a78bfa" />
+                <stop offset="50%" stopColor="#a78bfa" />
+                <stop offset="100%" stopColor="#60a5fa" />
               </linearGradient>
+              <linearGradient id="nodeGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stopColor="#3b82f6" />
+                <stop offset="100%" stopColor="#8b5cf6" />
+              </linearGradient>
+              <filter id="nodeShadow" x="-50%" y="-50%" width="200%" height="200%">
+                <feDropShadow dx="0" dy="0" stdDeviation="6" floodColor="#3b82f6" floodOpacity="0.5" />
+              </filter>
+              <filter id="glowLine" x="-20%" y="-20%" width="140%" height="140%">
+                <feGaussianBlur stdDeviation="2" result="blur" />
+                <feMerge>
+                  <feMergeNode in="blur" />
+                  <feMergeNode in="SourceGraphic" />
+                </feMerge>
+              </filter>
             </defs>
 
-            {/* Connection lines */}
-            <g stroke="url(#netGrad)" strokeWidth="2" opacity="0.4">
-              <line x1="100" y1="80" x2="300" y2="125" />
-              <line x1="100" y1="170" x2="300" y2="125" />
-              <line x1="300" y1="125" x2="500" y2="80" />
-              <line x1="300" y1="125" x2="500" y2="170" />
-              <line x1="100" y1="80" x2="100" y2="170" />
-              <line x1="500" y1="80" x2="500" y2="170" />
+            {/* Animated connection lines */}
+            <g stroke="url(#lineGrad)" strokeWidth="2" opacity="0.4" filter="url(#glowLine)">
+              <line x1="120" y1="90" x2="350" y2="140">
+                <animate attributeName="opacity" values="0.2;0.6;0.2" dur="3s" repeatCount="indefinite" />
+              </line>
+              <line x1="120" y1="190" x2="350" y2="140">
+                <animate attributeName="opacity" values="0.2;0.6;0.2" dur="3s" repeatCount="indefinite" begin="0.5s" />
+              </line>
+              <line x1="350" y1="140" x2="580" y2="90">
+                <animate attributeName="opacity" values="0.2;0.6;0.2" dur="3s" repeatCount="indefinite" begin="1s" />
+              </line>
+              <line x1="350" y1="140" x2="580" y2="190">
+                <animate attributeName="opacity" values="0.2;0.6;0.2" dur="3s" repeatCount="indefinite" begin="1.5s" />
+              </line>
+              <line x1="120" y1="90" x2="120" y2="190">
+                <animate attributeName="opacity" values="0.2;0.5;0.2" dur="4s" repeatCount="indefinite" />
+              </line>
+              <line x1="580" y1="90" x2="580" y2="190">
+                <animate attributeName="opacity" values="0.2;0.5;0.2" dur="4s" repeatCount="indefinite" begin="2s" />
+              </line>
             </g>
+
+            {/* Data packets moving along lines */}
+            {[
+              { path: "M120,90 L350,140", dur: "2s", delay: "0s" },
+              { path: "M120,190 L350,140", dur: "2.5s", delay: "0.5s" },
+              { path: "M350,140 L580,90", dur: "2s", delay: "1s" },
+              { path: "M350,140 L580,190", dur: "2.5s", delay: "1.5s" },
+              { path: "M580,90 L350,140 L120,190", dur: "4s", delay: "2s" },
+            ].map((item, i) => (
+              <circle key={i} r="4" fill="#22c55e" filter="url(#nodeShadow)">
+                <animateMotion dur={item.dur} repeatCount="indefinite" path={item.path} begin={item.delay} />
+              </circle>
+            ))}
 
             {/* Provider nodes - left */}
             <g>
-              <circle cx="100" cy="80" r="28" fill="#1e3a5f" stroke="#60a5fa" strokeWidth="2" />
-              <rect x="86" y="72" width="28" height="6" rx="2" fill="#60a5fa" />
-              <rect x="86" y="82" width="20" height="6" rx="2" fill="#60a5fa" opacity="0.6" />
-              <text x="100" y="120" textAnchor="middle" fill="#94a3b8" fontSize="10">Provider 1</text>
-            </g>
-            <g>
-              <circle cx="100" cy="170" r="28" fill="#1e3a5f" stroke="#60a5fa" strokeWidth="2" />
-              <rect x="86" y="162" width="28" height="6" rx="2" fill="#60a5fa" />
-              <rect x="86" y="172" width="20" height="6" rx="2" fill="#60a5fa" opacity="0.6" />
-              <text x="100" y="210" textAnchor="middle" fill="#94a3b8" fontSize="10">Provider 2</text>
+              <circle cx="120" cy="90" r="32" fill="#1e293b" stroke="#3b82f6" strokeWidth="2" filter="url(#nodeShadow)">
+                <animate attributeName="r" values="30;34;30" dur="3s" repeatCount="indefinite" />
+              </circle>
+              <rect x="104" y="80" width="32" height="6" rx="3" fill="#60a5fa" />
+              <rect x="104" y="90" width="24" height="6" rx="3" fill="#60a5fa" opacity="0.6" />
+              <text x="120" y="135" textAnchor="middle" fill="#94a3b8" fontSize="11">Provider 1</text>
             </g>
 
-            {/* Central hub */}
             <g>
-              <circle cx="300" cy="125" r="40" fill="#3b82f6" />
-              <circle cx="300" cy="125" r="32" fill="#1e40af" />
-              <text x="300" y="120" textAnchor="middle" fill="white" fontSize="11" fontWeight="600">Carbide</text>
-              <text x="300" y="134" textAnchor="middle" fill="#93c5fd" fontSize="9">Network</text>
+              <circle cx="120" cy="190" r="32" fill="#1e293b" stroke="#3b82f6" strokeWidth="2" filter="url(#nodeShadow)">
+                <animate attributeName="r" values="30;34;30" dur="3s" repeatCount="indefinite" begin="1s" />
+              </circle>
+              <rect x="104" y="180" width="32" height="6" rx="3" fill="#60a5fa" />
+              <rect x="104" y="190" width="24" height="6" rx="3" fill="#60a5fa" opacity="0.6" />
+              <text x="120" y="235" textAnchor="middle" fill="#94a3b8" fontSize="11">Provider 2</text>
+            </g>
+
+            {/* Central hub with pulse */}
+            <g>
+              <circle cx="350" cy="140" r="50" fill="#3b82f6" opacity="0.2">
+                <animate attributeName="r" values="45;55;45" dur="2s" repeatCount="indefinite" />
+                <animate attributeName="opacity" values="0.1;0.3;0.1" dur="2s" repeatCount="indefinite" />
+              </circle>
+              <circle cx="350" cy="140" r="40" fill="url(#nodeGrad)" filter="url(#nodeShadow)" />
+              <circle cx="350" cy="140" r="32" fill="#1e40af" />
+              <text x="350" y="135" textAnchor="middle" fill="white" fontSize="12" fontWeight="600">Carbide</text>
+              <text x="350" y="150" textAnchor="middle" fill="#93c5fd" fontSize="10">Network</text>
             </g>
 
             {/* Provider nodes - right */}
             <g>
-              <circle cx="500" cy="80" r="28" fill="#1e3a5f" stroke="#a78bfa" strokeWidth="2" />
-              <rect x="486" y="72" width="28" height="6" rx="2" fill="#a78bfa" />
-              <rect x="486" y="82" width="20" height="6" rx="2" fill="#a78bfa" opacity="0.6" />
-              <text x="500" y="120" textAnchor="middle" fill="#94a3b8" fontSize="10">Provider 3</text>
-            </g>
-            <g>
-              <circle cx="500" cy="170" r="28" fill="#1e3a5f" stroke="#a78bfa" strokeWidth="2" />
-              <rect x="486" y="162" width="28" height="6" rx="2" fill="#a78bfa" />
-              <rect x="486" y="172" width="20" height="6" rx="2" fill="#a78bfa" opacity="0.6" />
-              <text x="500" y="210" textAnchor="middle" fill="#94a3b8" fontSize="10">Provider 4</text>
+              <circle cx="580" cy="90" r="32" fill="#1e293b" stroke="#a78bfa" strokeWidth="2" filter="url(#nodeShadow)">
+                <animate attributeName="r" values="30;34;30" dur="3s" repeatCount="indefinite" begin="0.5s" />
+              </circle>
+              <rect x="564" y="80" width="32" height="6" rx="3" fill="#a78bfa" />
+              <rect x="564" y="90" width="24" height="6" rx="3" fill="#a78bfa" opacity="0.6" />
+              <text x="580" y="135" textAnchor="middle" fill="#94a3b8" fontSize="11">Provider 3</text>
             </g>
 
-            {/* Data packets animation simulation */}
-            <circle r="4" fill="#22c55e">
-              <animateMotion dur="3s" repeatCount="indefinite" path="M100,80 L300,125" />
-            </circle>
-            <circle r="4" fill="#22c55e">
-              <animateMotion dur="2.5s" repeatCount="indefinite" path="M300,125 L500,170" />
-            </circle>
-            <circle r="4" fill="#60a5fa">
-              <animateMotion dur="4s" repeatCount="indefinite" path="M500,80 L300,125 L100,170" />
-            </circle>
+            <g>
+              <circle cx="580" cy="190" r="32" fill="#1e293b" stroke="#a78bfa" strokeWidth="2" filter="url(#nodeShadow)">
+                <animate attributeName="r" values="30;34;30" dur="3s" repeatCount="indefinite" begin="1.5s" />
+              </circle>
+              <rect x="564" y="180" width="32" height="6" rx="3" fill="#a78bfa" />
+              <rect x="564" y="190" width="24" height="6" rx="3" fill="#a78bfa" opacity="0.6" />
+              <text x="580" y="235" textAnchor="middle" fill="#94a3b8" fontSize="11">Provider 4</text>
+            </g>
           </svg>
         </div>
 
         {/* Stats bar */}
-        <div className="grid grid-cols-3 gap-4 mt-6">
-          <div className="bg-white/10 backdrop-blur rounded-xl p-4 text-center">
-            <div className="text-2xl md:text-3xl font-bold text-white">1,247</div>
-            <div className="text-xs md:text-sm text-blue-200">Active Providers</div>
-          </div>
-          <div className="bg-white/10 backdrop-blur rounded-xl p-4 text-center">
-            <div className="text-2xl md:text-3xl font-bold text-white">2.4 PB</div>
-            <div className="text-xs md:text-sm text-blue-200">Data Stored</div>
-          </div>
-          <div className="bg-white/10 backdrop-blur rounded-xl p-4 text-center">
-            <div className="text-2xl md:text-3xl font-bold text-green-400">73%</div>
-            <div className="text-xs md:text-sm text-blue-200">Avg. Savings</div>
-          </div>
+        <div className="grid grid-cols-3 gap-3 mt-4">
+          {[
+            { value: "1,247+", label: "Providers", color: "text-white" },
+            { value: "2.4 PB", label: "Stored", color: "text-white" },
+            { value: "73%", label: "Savings", color: "text-green-400" },
+          ].map((stat, i) => (
+            <div
+              key={i}
+              className="bg-white/5 backdrop-blur-sm rounded-xl p-3 md:p-4 text-center border border-white/10"
+            >
+              <div className={`text-xl md:text-2xl font-bold ${stat.color}`}>{stat.value}</div>
+              <div className="text-xs md:text-sm text-blue-200/60">{stat.label}</div>
+            </div>
+          ))}
         </div>
       </div>
     </div>
