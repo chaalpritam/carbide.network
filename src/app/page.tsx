@@ -7,9 +7,7 @@ import {
   ArrowRight,
   CheckCircle2,
   ChevronRight,
-  Shield,
   Coins,
-  Globe,
   Server,
   Lock,
   Zap,
@@ -21,9 +19,23 @@ import {
   ExternalLink,
   Menu,
   X,
+  Play,
+  Download,
+  Smartphone,
+  Monitor,
 } from "lucide-react"
 import { useRef, useState } from "react"
 import { EventCard } from "@/components/EventCard"
+import { HeroIllustration } from "@/components/illustrations/HeroIllustration"
+import { NetworkIllustration } from "@/components/illustrations/NetworkIllustration"
+import {
+  StorageIcon,
+  ReplicationIcon,
+  SavingsIcon,
+  SecurityIcon,
+  EarningsIcon,
+  GlobalIcon,
+} from "@/components/illustrations/FeatureIcons"
 
 const stats = [
   { value: "60-80%", label: "Cost Savings", description: "vs traditional cloud" },
@@ -34,40 +46,46 @@ const stats = [
 
 const features = [
   {
-    icon: HardDrive,
+    Icon: StorageIcon,
     title: "Decentralized Storage",
     description: "Your data distributed across a global network of providers. No single point of failure, no central authority controlling your files.",
     highlight: true,
+    color: "blue",
   },
   {
-    icon: Layers,
+    Icon: ReplicationIcon,
     title: "Custom Replication",
     description: "Choose 1-10 copies of your data based on importance. Critical files get more redundancy, backups stay affordable.",
     highlight: true,
+    color: "purple",
   },
   {
-    icon: TrendingDown,
+    Icon: SavingsIcon,
     title: "60-80% Cost Savings",
     description: "Pay only for what you use. Our marketplace-driven pricing beats traditional cloud storage providers significantly.",
     highlight: false,
+    color: "green",
   },
   {
-    icon: Shield,
+    Icon: SecurityIcon,
     title: "Zero-Knowledge Security",
     description: "AES-256-GCM encryption before upload. Only you hold the keys. Providers store encrypted chunks they cannot read.",
     highlight: false,
+    color: "blue",
   },
   {
-    icon: Coins,
+    Icon: EarningsIcon,
     title: "Earn as Provider",
     description: "Monetize your spare storage capacity. Set your own prices, track earnings in real-time, withdraw anytime.",
     highlight: false,
+    color: "amber",
   },
   {
-    icon: Globe,
+    Icon: GlobalIcon,
     title: "Global Network",
     description: "Access your data from anywhere. Intelligent routing finds the fastest providers based on your location.",
     highlight: false,
+    color: "indigo",
   },
 ]
 
@@ -105,6 +123,13 @@ const faqs = [
     question: "Can I access my files from mobile devices?",
     answer: "Yes, our iOS SDK is production-ready with native Swift integration. Android support is coming soon. You can also access files via desktop apps and web interface.",
   },
+]
+
+const platforms = [
+  { name: "macOS", icon: Monitor, available: true },
+  { name: "Windows", icon: Monitor, available: true },
+  { name: "iOS", icon: Smartphone, available: true },
+  { name: "Android", icon: Smartphone, available: false, coming: true },
 ]
 
 export default function LandingPage() {
@@ -212,7 +237,7 @@ export default function LandingPage() {
       </header>
 
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-b from-blue-50 via-white to-white">
+      <section className="relative min-h-screen flex items-center overflow-hidden bg-gradient-to-b from-blue-50 via-white to-white">
         {/* Background elements */}
         <div className="absolute inset-0 grid-pattern" />
         <div className="absolute top-20 left-10 w-72 h-72 bg-blue-400/20 rounded-full blur-3xl animate-pulse-glow" />
@@ -220,62 +245,82 @@ export default function LandingPage() {
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-gradient-to-r from-blue-400/10 to-purple-400/10 rounded-full blur-3xl" />
 
         <div className="container-custom relative z-10 pt-32 pb-20">
-          <div className="max-w-4xl mx-auto text-center">
-            {/* Badge */}
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-50 border border-blue-100 mb-8">
-              <span className="relative flex h-2 w-2">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
-                <span className="relative inline-flex rounded-full h-2 w-2 bg-blue-500"></span>
-              </span>
-              <span className="text-sm font-medium text-blue-700">Decentralized Storage Marketplace</span>
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            {/* Left content */}
+            <div className="text-center lg:text-left">
+              {/* Badge */}
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-50 border border-blue-100 mb-8">
+                <span className="relative flex h-2 w-2">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
+                  <span className="relative inline-flex rounded-full h-2 w-2 bg-blue-500"></span>
+                </span>
+                <span className="text-sm font-medium text-blue-700">DePIN Storage Marketplace</span>
+              </div>
+
+              {/* Headline */}
+              <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold tracking-tight mb-6">
+                <span className="text-foreground">Storage that</span>
+                <br />
+                <span className="text-gradient">you control</span>
+              </h1>
+
+              {/* Subheadline */}
+              <p className="text-xl text-muted-foreground max-w-xl mx-auto lg:mx-0 mb-10 leading-relaxed">
+                The decentralized storage network where you choose your replication,
+                control your costs, and own your data. Save 60-80% compared to traditional cloud.
+              </p>
+
+              {/* CTA Buttons */}
+              <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 mb-12">
+                <Button size="lg" className="h-14 px-8 text-base font-semibold bg-primary hover:bg-primary/90 shadow-lg shadow-primary/25" asChild>
+                  <Link href="#cta">
+                    Start Storing
+                    <ArrowRight className="ml-2 h-5 w-5" />
+                  </Link>
+                </Button>
+                <Button size="lg" variant="outline" className="h-14 px-8 text-base font-semibold" asChild>
+                  <Link href="#how-it-works">
+                    <Play className="mr-2 h-4 w-4" />
+                    See How It Works
+                  </Link>
+                </Button>
+              </div>
+
+              {/* Platform badges */}
+              <div className="flex flex-wrap items-center justify-center lg:justify-start gap-3">
+                <span className="text-sm text-muted-foreground mr-2">Available on:</span>
+                {platforms.map((platform, index) => (
+                  <div
+                    key={index}
+                    className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-sm ${
+                      platform.available
+                        ? 'bg-gray-100 text-gray-700'
+                        : 'bg-gray-50 text-gray-400'
+                    }`}
+                  >
+                    <platform.icon className="h-4 w-4" />
+                    {platform.name}
+                    {platform.coming && <span className="text-xs">(Soon)</span>}
+                  </div>
+                ))}
+              </div>
             </div>
 
-            {/* Headline */}
-            <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold tracking-tight mb-6">
-              <span className="text-foreground">Storage that</span>
-              <br />
-              <span className="text-gradient">you control</span>
-            </h1>
-
-            {/* Subheadline */}
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto mb-10 leading-relaxed">
-              The decentralized storage network where you choose your replication,
-              control your costs, and own your data. Save 60-80% compared to traditional cloud.
-            </p>
-
-            {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16">
-              <Button size="lg" className="h-14 px-8 text-base font-semibold bg-primary hover:bg-primary/90 shadow-lg shadow-primary/25" asChild>
-                <Link href="#cta">
-                  Start Storing
-                  <ArrowRight className="ml-2 h-5 w-5" />
-                </Link>
-              </Button>
-              <Button size="lg" variant="outline" className="h-14 px-8 text-base font-semibold" asChild>
-                <Link href="#how-it-works">
-                  Become a Provider
-                </Link>
-              </Button>
-            </div>
-
-            {/* Stats */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
-              {stats.map((stat, index) => (
-                <div key={index} className="text-center">
-                  <div className="text-3xl md:text-4xl font-bold text-foreground mb-1">{stat.value}</div>
-                  <div className="text-sm font-semibold text-foreground/80">{stat.label}</div>
-                  <div className="text-xs text-muted-foreground">{stat.description}</div>
-                </div>
-              ))}
+            {/* Right illustration */}
+            <div className="hidden lg:block">
+              <HeroIllustration />
             </div>
           </div>
-        </div>
 
-        {/* Scroll indicator */}
-        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-muted-foreground">
-          <span className="text-xs font-medium">Scroll to explore</span>
-          <div className="w-6 h-10 rounded-full border-2 border-current flex items-start justify-center p-2">
-            <div className="w-1 h-2 bg-current rounded-full animate-bounce" />
+          {/* Stats */}
+          <div className="mt-20 grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
+            {stats.map((stat, index) => (
+              <div key={index} className="text-center p-6 rounded-2xl bg-white/60 backdrop-blur-sm border border-gray-100 shadow-sm">
+                <div className="text-3xl md:text-4xl font-bold text-foreground mb-1">{stat.value}</div>
+                <div className="text-sm font-semibold text-foreground/80">{stat.label}</div>
+                <div className="text-xs text-muted-foreground">{stat.description}</div>
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -299,7 +344,7 @@ export default function LandingPage() {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {features.map((feature, index) => (
               <div
                 key={index}
@@ -309,10 +354,8 @@ export default function LandingPage() {
                     : 'bg-white hover:border-gray-300 hover:shadow-lg'
                 }`}
               >
-                <div className={`inline-flex items-center justify-center w-14 h-14 rounded-xl mb-6 transition-transform group-hover:scale-110 ${
-                  feature.highlight ? 'bg-primary/10' : 'bg-gray-100'
-                }`}>
-                  <feature.icon className={`h-7 w-7 ${feature.highlight ? 'text-primary' : 'text-gray-600'}`} />
+                <div className="mb-6 transition-transform group-hover:scale-110">
+                  <feature.Icon className="w-20 h-20" />
                 </div>
                 <h3 className="text-xl font-bold mb-3">{feature.title}</h3>
                 <p className="text-muted-foreground leading-relaxed">{feature.description}</p>
@@ -340,71 +383,88 @@ export default function LandingPage() {
             </p>
           </div>
 
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
+          <div className="grid lg:grid-cols-2 gap-16 items-start mb-20">
             {/* For Users */}
-            <div className="space-y-8">
-              <h3 className="text-2xl font-bold flex items-center gap-3">
-                <span className="flex items-center justify-center w-10 h-10 rounded-full bg-blue-100 text-blue-600 text-sm font-bold">U</span>
-                For Storage Users
-              </h3>
+            <div className="bg-white rounded-3xl p-8 md:p-10 shadow-sm border">
+              <div className="flex items-center gap-4 mb-8">
+                <div className="w-14 h-14 rounded-2xl bg-blue-100 flex items-center justify-center">
+                  <HardDrive className="w-7 h-7 text-blue-600" />
+                </div>
+                <div>
+                  <h3 className="text-2xl font-bold">For Storage Users</h3>
+                  <p className="text-muted-foreground">Store your files securely</p>
+                </div>
+              </div>
               <div className="space-y-6">
                 {[
-                  { step: "1", title: "Upload & Encrypt", desc: "Files encrypted locally with your keys before leaving your device." },
-                  { step: "2", title: "Choose Replication", desc: "Select 1-10 copies based on how critical your data is." },
-                  { step: "3", title: "Select Providers", desc: "Pick from home, professional, or enterprise providers based on price and reputation." },
-                  { step: "4", title: "Access Anywhere", desc: "Retrieve your files from any device via our apps or SDKs." },
+                  { step: "1", title: "Upload & Encrypt", desc: "Files encrypted locally with your keys before leaving your device.", color: "blue" },
+                  { step: "2", title: "Choose Replication", desc: "Select 1-10 copies based on how critical your data is.", color: "blue" },
+                  { step: "3", title: "Select Providers", desc: "Pick from home, professional, or enterprise providers.", color: "blue" },
+                  { step: "4", title: "Access Anywhere", desc: "Retrieve your files from any device via our apps.", color: "blue" },
                 ].map((item, index) => (
                   <div key={index} className="flex gap-4 group">
-                    <div className="flex-shrink-0 w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary font-bold text-sm group-hover:bg-primary group-hover:text-white transition-colors">
+                    <div className="flex-shrink-0 w-10 h-10 rounded-xl bg-blue-100 flex items-center justify-center text-blue-600 font-bold text-sm group-hover:bg-blue-600 group-hover:text-white transition-colors">
                       {item.step}
                     </div>
-                    <div>
+                    <div className="pt-1">
                       <h4 className="font-semibold mb-1">{item.title}</h4>
                       <p className="text-muted-foreground text-sm">{item.desc}</p>
                     </div>
                   </div>
                 ))}
+              </div>
+              <div className="mt-8">
+                <Button className="w-full h-12" asChild>
+                  <Link href="#cta">
+                    Start Storing Files
+                    <ArrowRight className="ml-2 h-4 w-4" />
+                  </Link>
+                </Button>
               </div>
             </div>
 
             {/* For Providers */}
-            <div className="space-y-8">
-              <h3 className="text-2xl font-bold flex items-center gap-3">
-                <span className="flex items-center justify-center w-10 h-10 rounded-full bg-green-100 text-green-600 text-sm font-bold">P</span>
-                For Storage Providers
-              </h3>
+            <div className="bg-white rounded-3xl p-8 md:p-10 shadow-sm border">
+              <div className="flex items-center gap-4 mb-8">
+                <div className="w-14 h-14 rounded-2xl bg-green-100 flex items-center justify-center">
+                  <Coins className="w-7 h-7 text-green-600" />
+                </div>
+                <div>
+                  <h3 className="text-2xl font-bold">For Storage Providers</h3>
+                  <p className="text-muted-foreground">Earn from your spare space</p>
+                </div>
+              </div>
               <div className="space-y-6">
                 {[
-                  { step: "1", title: "Install the App", desc: "One-click installation with our desktop GUI. No technical expertise needed." },
-                  { step: "2", title: "Allocate Storage", desc: "Choose how much disk space to contribute. Start with as little as 100GB." },
-                  { step: "3", title: "Set Your Price", desc: "Control your rates. Home providers typically earn $0.002-0.005/GB/month." },
-                  { step: "4", title: "Earn Passively", desc: "Track real-time earnings on your dashboard. Network handles everything." },
+                  { step: "1", title: "Install the App", desc: "One-click installation with our desktop GUI. No expertise needed.", color: "green" },
+                  { step: "2", title: "Allocate Storage", desc: "Choose how much disk space to contribute. Start with 100GB.", color: "green" },
+                  { step: "3", title: "Set Your Price", desc: "Control your rates. Typically $0.002-0.005/GB/month.", color: "green" },
+                  { step: "4", title: "Earn Passively", desc: "Track real-time earnings. Network handles everything.", color: "green" },
                 ].map((item, index) => (
                   <div key={index} className="flex gap-4 group">
-                    <div className="flex-shrink-0 w-10 h-10 rounded-full bg-green-100 flex items-center justify-center text-green-600 font-bold text-sm group-hover:bg-green-500 group-hover:text-white transition-colors">
+                    <div className="flex-shrink-0 w-10 h-10 rounded-xl bg-green-100 flex items-center justify-center text-green-600 font-bold text-sm group-hover:bg-green-600 group-hover:text-white transition-colors">
                       {item.step}
                     </div>
-                    <div>
+                    <div className="pt-1">
                       <h4 className="font-semibold mb-1">{item.title}</h4>
                       <p className="text-muted-foreground text-sm">{item.desc}</p>
                     </div>
                   </div>
                 ))}
               </div>
+              <div className="mt-8">
+                <Button variant="outline" className="w-full h-12 border-green-200 text-green-700 hover:bg-green-50" asChild>
+                  <Link href="#cta">
+                    <Download className="mr-2 h-4 w-4" />
+                    Download Provider App
+                  </Link>
+                </Button>
+              </div>
             </div>
           </div>
 
-          {/* Illustration */}
-          <div className="mt-20 relative rounded-2xl overflow-hidden shadow-2xl">
-            <Image
-              src="/images/carbide_works.png"
-              alt="Carbide Network Architecture"
-              width={1200}
-              height={600}
-              className="w-full object-cover"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
-          </div>
+          {/* Network Illustration */}
+          <NetworkIllustration />
         </div>
       </section>
 
@@ -466,13 +526,18 @@ export default function LandingPage() {
             {/* Cost comparison highlight */}
             <div className="mt-8 p-8 rounded-2xl bg-gradient-to-r from-green-50 to-emerald-50 border border-green-100">
               <div className="flex flex-col md:flex-row items-center justify-between gap-6">
-                <div>
-                  <h3 className="text-2xl font-bold text-green-800 mb-2">Save up to 80% on storage costs</h3>
-                  <p className="text-green-700">
-                    Average user saves $50-100/month compared to AWS S3, Google Cloud, or Dropbox.
-                  </p>
+                <div className="flex items-center gap-6">
+                  <div className="hidden sm:block">
+                    <SavingsIcon className="w-24 h-24" />
+                  </div>
+                  <div>
+                    <h3 className="text-2xl font-bold text-green-800 mb-2">Save up to 80% on storage costs</h3>
+                    <p className="text-green-700">
+                      Average user saves $50-100/month compared to AWS S3, Google Cloud, or Dropbox.
+                    </p>
+                  </div>
                 </div>
-                <Button size="lg" className="bg-green-600 hover:bg-green-700 text-white shadow-lg shadow-green-600/25" asChild>
+                <Button size="lg" className="bg-green-600 hover:bg-green-700 text-white shadow-lg shadow-green-600/25 flex-shrink-0" asChild>
                   <Link href="#cta">
                     Calculate Savings
                     <ArrowRight className="ml-2 h-5 w-5" />
@@ -487,6 +552,11 @@ export default function LandingPage() {
       {/* FAQ Section */}
       <section id="faq" className="section-padding bg-gray-900 text-white relative overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-gray-800 via-gray-900 to-gray-900" />
+
+        {/* Decorative elements */}
+        <div className="absolute top-20 left-20 w-64 h-64 bg-blue-500/10 rounded-full blur-3xl" />
+        <div className="absolute bottom-20 right-20 w-80 h-80 bg-purple-500/10 rounded-full blur-3xl" />
+
         <div className="container-custom relative">
           <div className="text-center mb-16">
             <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/10 border border-white/10 mb-6">
@@ -506,7 +576,7 @@ export default function LandingPage() {
             {faqs.map((faq, index) => (
               <div
                 key={index}
-                className="p-6 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 hover:border-white/20 transition-all duration-300"
+                className="p-6 rounded-2xl bg-white/5 border border-white/10 hover:bg-white/10 hover:border-white/20 transition-all duration-300 backdrop-blur-sm"
               >
                 <h3 className="text-lg font-semibold mb-3 text-white">{faq.question}</h3>
                 <p className="text-gray-400 leading-relaxed text-sm">{faq.answer}</p>
