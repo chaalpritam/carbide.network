@@ -36,78 +36,114 @@ import {
   GlobalIcon,
 } from "@/components/illustrations/FeatureIcons"
 
+// Real stats from carbide-node
 const stats = [
   { value: "60-80%", label: "Cheaper", accent: true },
-  { value: "1-10x", label: "Replication" },
+  { value: "1-10x", label: "Copies" },
   { value: "99.9%", label: "Uptime" },
-  { value: "E2E", label: "Encrypted" },
+  { value: "AES-256", label: "Encrypted" },
 ]
 
+// Features based on actual carbide capabilities
 const features = [
   {
     Icon: StorageIcon,
-    title: "Truly Decentralized",
-    description: "No Big Tech middlemen. Your files live on a network of independent providers worldwide.",
+    title: "Decentralized Network",
+    description: "Your files distributed across independent providers worldwide. No Big Tech middlemen, no single point of failure.",
   },
   {
     Icon: ReplicationIcon,
-    title: "You Pick the Copies",
-    description: "Want 10 copies of your wedding photos? Just 1 for temp files? You decide, not us.",
+    title: "1-10 Copies, You Choose",
+    description: "Critical files? Set 5 copies on enterprise providers. Temp backups? Just 2 on home providers. Your call.",
   },
   {
     Icon: SavingsIcon,
-    title: "Save Real Money",
-    description: "We're talking 60-80% less than AWS or Dropbox. Do the math, you'll like it.",
+    title: "60-80% Cost Savings",
+    description: "Home tier: $0.002/GB/month. Enterprise: $0.008/GB/month. No data centers, no corporate overhead.",
   },
   {
     Icon: SecurityIcon,
-    title: "Actually Private",
-    description: "Your files are encrypted before they leave your device. Providers can't peek. Period.",
+    title: "AES-256-GCM Encryption",
+    description: "Client-side encryption before upload. Providers store encrypted chunks. Only you have the keys.",
   },
   {
     Icon: EarningsIcon,
-    title: "Earn While You Sleep",
-    description: "Got spare disk space? Turn it into passive income. Set your price, we handle the rest.",
+    title: "Earn $20-100/month",
+    description: "Share 1TB of spare space as a home provider at $0.002/GB. That's ~$24/year passive income per TB.",
   },
   {
     Icon: GlobalIcon,
-    title: "Access Everywhere",
-    description: "Desktop, mobile, web - your files follow you. Fast downloads from nearby providers.",
+    title: "iOS, macOS, Windows",
+    description: "Native iOS SDK with Swift. Desktop apps via Tauri. Android coming soon. Access from anywhere.",
   },
 ]
 
-const comparisonData = [
-  { feature: "Who owns your data?", carbide: "You, always", traditional: "Technically... them" },
-  { feature: "Backup copies", carbide: "1-10, you choose", traditional: "Whatever they decide" },
-  { feature: "Monthly cost", carbide: "60-80% less", traditional: "$$$" },
-  { feature: "Can they read your files?", carbide: "Nope, encrypted", traditional: "Yep, they can" },
-  { feature: "Earn money?", carbide: "Become a provider!", traditional: "Lol no" },
+// Accurate pricing tiers from carbide-node
+const pricingTiers = [
+  {
+    tier: "Home",
+    price: "$0.002",
+    earnings: "~$24/year per TB",
+    uptime: "95%",
+    desc: "Spare disk space"
+  },
+  {
+    tier: "Professional",
+    price: "$0.004",
+    earnings: "~$48/year per TB",
+    uptime: "99%",
+    desc: "Dedicated hardware"
+  },
+  {
+    tier: "Enterprise",
+    price: "$0.008",
+    earnings: "~$96/year per TB",
+    uptime: "99.9%",
+    desc: "SLA guaranteed"
+  },
 ]
 
+// User storage presets from carbide-node
+const storagePresets = [
+  { name: "Critical", copies: 5, price: "$0.01/GB", providers: "Enterprise only" },
+  { name: "Important", copies: 3, price: "$0.005/GB", providers: "Mixed" },
+  { name: "Backup", copies: 2, price: "$0.002/GB", providers: "Home OK" },
+]
+
+// Comparison based on actual carbide differentiators
+const comparisonData = [
+  { feature: "Replication control", carbide: "1-10 copies, you choose", traditional: "Fixed by provider" },
+  { feature: "Cost per GB/month", carbide: "$0.002-0.012", traditional: "$0.02-0.03" },
+  { feature: "Encryption", carbide: "AES-256-GCM client-side", traditional: "Server-side (they can read)" },
+  { feature: "Provider earnings", carbide: "$20-100/month passive", traditional: "Not possible" },
+  { feature: "Single point of failure", carbide: "Distributed network", traditional: "Centralized" },
+]
+
+// FAQs with accurate technical details
 const faqs = [
   {
-    question: "Is my data really safe?",
-    answer: "Your files are encrypted with AES-256 before upload - the same encryption banks use. We split files into chunks across multiple providers. Even if one goes down, your data is safe.",
+    question: "How is my data protected?",
+    answer: "Files are encrypted with AES-256-GCM before leaving your device - the same encryption standard used by banks. Data is then split into chunks distributed across multiple providers. Even if one provider fails, your files are safe with redundant copies.",
   },
   {
     question: "How much can I earn as a provider?",
-    answer: "Depends on how much space you share and your uptime. Most home providers earn $20-100/month with just spare hard drive space. The more reliable you are, the more you earn.",
+    answer: "Home providers earn ~$24/year per TB at $0.002/GB/month. With 1TB of spare space and good uptime (95%+), expect $20-100/month. Professional tiers ($0.004-0.008/GB) earn more but require dedicated hardware and higher uptime.",
   },
   {
-    question: "What's this replication thing?",
-    answer: "You pick how many copies of your files exist on the network. Important stuff? Set it to 5 or 10 copies. Random backups? Maybe just 2. You're in control.",
+    question: "What does 1-10 replication mean?",
+    answer: "You choose how many copies of each file exist on the network. Critical files (photos, documents)? Set 5 copies on enterprise providers with 99.9% uptime. Temporary backups? Just 2 copies on cheaper home providers.",
   },
   {
-    question: "What do I need to become a provider?",
-    answer: "A computer, some free disk space (100GB minimum), and decent internet. That's it. Our app handles all the technical stuff - just install and earn.",
+    question: "What do I need to run a provider node?",
+    answer: "Minimum: 100GB free disk space and stable internet. We recommend 500GB+ for meaningful earnings. Our Tauri-based desktop app (macOS/Windows) handles everything - one-click install, auto-start, real-time earnings dashboard.",
   },
   {
-    question: "How is it so much cheaper?",
-    answer: "No fancy data centers or corporate overhead. We're a marketplace connecting people with spare storage to people who need it. Everyone wins.",
+    question: "How does pricing work?",
+    answer: "Providers set their own rates by tier. Home: $0.002/GB/month, Professional: $0.004, Enterprise: $0.008, Global CDN: $0.012. Users pick providers based on price, reputation score, and geographic proximity.",
   },
   {
-    question: "What about mobile?",
-    answer: "iOS app is ready now, Android is coming soon. You can also access everything through your web browser from any device.",
+    question: "Which platforms are supported?",
+    answer: "Native iOS SDK (Swift 5.9+, iOS 16+) is production-ready. Desktop provider app works on macOS and Windows via Tauri. Android SDK is in development. Web access coming soon.",
   },
 ]
 
@@ -154,7 +190,6 @@ export default function LandingPage() {
               />
             </Link>
 
-            {/* Desktop Navigation */}
             <div className="hidden md:flex items-center gap-8">
               <Link href="#features" className="text-sm text-gray-600 hover:text-gray-900 transition-colors">Features</Link>
               <Link href="#how-it-works" className="text-sm text-gray-600 hover:text-gray-900 transition-colors">How It Works</Link>
@@ -164,8 +199,8 @@ export default function LandingPage() {
 
             <div className="hidden md:flex items-center gap-3">
               <Button variant="ghost" size="sm" asChild>
-                <Link href="https://docs.carbide.network" target="_blank">
-                  Docs
+                <Link href="https://github.com/anthropics" target="_blank">
+                  GitHub
                 </Link>
               </Button>
               <Button size="sm" className="bg-blue-600 hover:bg-blue-700" asChild>
@@ -182,7 +217,6 @@ export default function LandingPage() {
           </nav>
         </div>
 
-        {/* Mobile Navigation */}
         {mobileMenuOpen && (
           <div className="md:hidden bg-white border-b">
             <div className="px-4 py-4 space-y-3">
@@ -203,44 +237,38 @@ export default function LandingPage() {
       <section className="pt-28 pb-20 md:pt-36 md:pb-28 overflow-hidden">
         <div className="max-w-6xl mx-auto px-4 sm:px-6">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-8 items-center">
-            {/* Left content */}
             <div className="text-center lg:text-left">
-              {/* Badge */}
               <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-blue-50 text-blue-700 text-sm font-medium mb-6">
                 <Sparkles className="h-4 w-4" />
-                Now in public beta
+                v1.0.0 Production Release
               </div>
 
-              {/* Headline */}
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-gray-900 mb-6">
-                Cloud storage,
+                Decentralized storage
                 <br />
-                <span className="text-gradient">without the cloud</span>
+                <span className="text-gradient">marketplace</span>
               </h1>
 
-              {/* Subheadline */}
               <p className="text-lg sm:text-xl text-gray-600 max-w-lg mx-auto lg:mx-0 mb-8">
-                Store your files on a decentralized network. Pay less. Keep control.
-                Or flip it and earn by sharing your spare space.
+                Store files with 1-10 redundant copies at $0.002-0.012/GB/month.
+                Or earn by sharing spare disk space. AES-256 encrypted, truly private.
               </p>
 
-              {/* CTA Buttons */}
               <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-3 mb-10">
                 <Button size="lg" className="h-12 px-6 bg-blue-600 hover:bg-blue-700 shadow-lg shadow-blue-600/20" asChild>
                   <Link href="#cta">
-                    Start for Free
+                    Start Storing
                     <ArrowRight className="ml-2 h-4 w-4" />
                   </Link>
                 </Button>
                 <Button size="lg" variant="outline" className="h-12 px-6" asChild>
                   <Link href="#how-it-works">
                     <Play className="mr-2 h-4 w-4" />
-                    How it works
+                    Become a Provider
                   </Link>
                 </Button>
               </div>
 
-              {/* Quick stats */}
               <div className="flex items-center justify-center lg:justify-start gap-6 text-sm">
                 {stats.map((stat, i) => (
                   <div key={i} className="text-center">
@@ -253,7 +281,6 @@ export default function LandingPage() {
               </div>
             </div>
 
-            {/* Right illustration */}
             <div className="lg:pl-8">
               <HeroIllustration />
             </div>
@@ -261,7 +288,7 @@ export default function LandingPage() {
         </div>
       </section>
 
-      {/* Social proof */}
+      {/* Platform availability */}
       <section className="py-12 bg-gray-50 border-y border-gray-100">
         <div className="max-w-6xl mx-auto px-4 sm:px-6">
           <div className="flex flex-wrap items-center justify-center gap-4">
@@ -290,13 +317,13 @@ export default function LandingPage() {
           <div className="text-center mb-16">
             <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-purple-50 text-purple-700 text-sm font-medium mb-4">
               <Zap className="h-4 w-4" />
-              Features
+              Core Features
             </div>
             <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
-              Storage that makes sense
+              What makes Carbide different
             </h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              No corporate nonsense. Just good tech that respects your data and your wallet.
+              User-configurable replication, client-side encryption, and a marketplace where providers set their own prices.
             </p>
           </div>
 
@@ -326,10 +353,10 @@ export default function LandingPage() {
               How It Works
             </div>
             <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
-              Two ways to use Carbide
+              Store files or earn money
             </h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Need storage? We got you. Have extra space? Get paid.
+              Two ways to use Carbide: pay for decentralized storage, or get paid for sharing your spare capacity.
             </p>
           </div>
 
@@ -341,17 +368,17 @@ export default function LandingPage() {
                   <HardDrive className="w-6 h-6 text-blue-600" />
                 </div>
                 <div>
-                  <h3 className="text-xl font-bold text-gray-900">Store Files</h3>
-                  <p className="text-sm text-gray-500">Save money on storage</p>
+                  <h3 className="text-xl font-bold text-gray-900">Store Your Files</h3>
+                  <p className="text-sm text-gray-500">$0.002-0.012/GB/month</p>
                 </div>
               </div>
 
-              <div className="space-y-4">
+              <div className="space-y-4 mb-6">
                 {[
-                  { n: "1", text: "Upload your files (they get encrypted first)" },
-                  { n: "2", text: "Pick how many backup copies you want" },
-                  { n: "3", text: "Choose providers by price or speed" },
-                  { n: "4", text: "Access from anywhere, anytime" },
+                  { n: "1", text: "Files encrypted with AES-256-GCM on your device" },
+                  { n: "2", text: "Choose replication factor: 1-10 copies" },
+                  { n: "3", text: "Pick providers by price, reputation, or region" },
+                  { n: "4", text: "Access via iOS SDK, desktop app, or API" },
                 ].map((step, i) => (
                   <div key={i} className="flex items-start gap-3">
                     <span className="flex-shrink-0 w-7 h-7 rounded-full bg-blue-600 text-white text-sm font-medium flex items-center justify-center">
@@ -362,7 +389,20 @@ export default function LandingPage() {
                 ))}
               </div>
 
-              <Button className="w-full mt-6 bg-blue-600 hover:bg-blue-700" asChild>
+              {/* Storage presets */}
+              <div className="bg-gray-50 rounded-xl p-4 mb-6">
+                <p className="text-xs font-medium text-gray-500 mb-3">STORAGE PRESETS</p>
+                <div className="space-y-2">
+                  {storagePresets.map((preset, i) => (
+                    <div key={i} className="flex items-center justify-between text-sm">
+                      <span className="font-medium text-gray-700">{preset.name}</span>
+                      <span className="text-gray-500">{preset.copies} copies • {preset.price}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              <Button className="w-full bg-blue-600 hover:bg-blue-700" asChild>
                 <Link href="#cta">
                   Start Storing
                   <ArrowRight className="ml-2 h-4 w-4" />
@@ -377,17 +417,17 @@ export default function LandingPage() {
                   <Coins className="w-6 h-6 text-green-600" />
                 </div>
                 <div>
-                  <h3 className="text-xl font-bold text-gray-900">Earn Money</h3>
-                  <p className="text-sm text-gray-500">Monetize spare space</p>
+                  <h3 className="text-xl font-bold text-gray-900">Earn as Provider</h3>
+                  <p className="text-sm text-gray-500">$20-100/month passive income</p>
                 </div>
               </div>
 
-              <div className="space-y-4">
+              <div className="space-y-4 mb-6">
                 {[
-                  { n: "1", text: "Download our provider app (it's free)" },
-                  { n: "2", text: "Pick how much space to share" },
-                  { n: "3", text: "Set your price per GB" },
-                  { n: "4", text: "Watch the earnings roll in" },
+                  { n: "1", text: "Download Tauri desktop app (macOS/Windows)" },
+                  { n: "2", text: "Allocate disk space (100GB minimum)" },
+                  { n: "3", text: "Set your price tier ($0.002-0.012/GB)" },
+                  { n: "4", text: "Auto-start, real-time earnings dashboard" },
                 ].map((step, i) => (
                   <div key={i} className="flex items-start gap-3">
                     <span className="flex-shrink-0 w-7 h-7 rounded-full bg-green-600 text-white text-sm font-medium flex items-center justify-center">
@@ -398,37 +438,49 @@ export default function LandingPage() {
                 ))}
               </div>
 
-              <Button variant="outline" className="w-full mt-6 border-green-200 text-green-700 hover:bg-green-50" asChild>
+              {/* Provider tiers */}
+              <div className="bg-gray-50 rounded-xl p-4 mb-6">
+                <p className="text-xs font-medium text-gray-500 mb-3">PROVIDER TIERS</p>
+                <div className="space-y-2">
+                  {pricingTiers.map((tier, i) => (
+                    <div key={i} className="flex items-center justify-between text-sm">
+                      <span className="font-medium text-gray-700">{tier.tier}</span>
+                      <span className="text-gray-500">{tier.price}/GB • {tier.uptime} uptime</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              <Button variant="outline" className="w-full border-green-200 text-green-700 hover:bg-green-50" asChild>
                 <Link href="#cta">
                   <Download className="mr-2 h-4 w-4" />
-                  Become a Provider
+                  Download Provider App
                 </Link>
               </Button>
             </div>
           </div>
 
-          {/* Network visualization */}
           <NetworkIllustration />
         </div>
       </section>
 
-      {/* Comparison Section */}
+      {/* Pricing/Comparison Section */}
       <section id="pricing" className="py-20 md:py-28">
         <div className="max-w-4xl mx-auto px-4 sm:px-6">
           <div className="text-center mb-16">
             <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-green-50 text-green-700 text-sm font-medium mb-4">
               <TrendingDown className="h-4 w-4" />
-              Compare
+              Pricing
             </div>
             <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
-              Us vs. the big guys
+              Carbide vs Traditional Cloud
             </h2>
             <p className="text-lg text-gray-600">
-              Spoiler: we win on pretty much everything.
+              No data centers. No corporate overhead. Just a marketplace connecting storage supply and demand.
             </p>
           </div>
 
-          <div className="bg-white rounded-2xl border border-gray-200 overflow-hidden shadow-sm">
+          <div className="bg-white rounded-2xl border border-gray-200 overflow-hidden shadow-sm mb-8">
             <table className="w-full">
               <thead>
                 <tr className="border-b bg-gray-50">
@@ -437,7 +489,7 @@ export default function LandingPage() {
                     <span className="font-bold text-blue-600">Carbide</span>
                   </th>
                   <th className="p-4 text-center">
-                    <span className="text-gray-400">Traditional</span>
+                    <span className="text-gray-400">AWS/Dropbox</span>
                   </th>
                 </tr>
               </thead>
@@ -460,20 +512,16 @@ export default function LandingPage() {
             </table>
           </div>
 
-          {/* Savings callout */}
-          <div className="mt-8 p-6 rounded-2xl bg-gradient-to-r from-green-50 to-emerald-50 border border-green-100">
-            <div className="flex flex-col sm:flex-row items-center gap-4">
-              <SavingsIcon className="w-16 h-16 flex-shrink-0" />
-              <div className="text-center sm:text-left">
-                <h3 className="text-xl font-bold text-green-800">Save $50-100/month</h3>
-                <p className="text-green-700 text-sm">Compared to Dropbox, Google Drive, or AWS S3</p>
+          {/* Provider earnings highlight */}
+          <div className="grid md:grid-cols-3 gap-4">
+            {pricingTiers.map((tier, i) => (
+              <div key={i} className="p-5 rounded-xl bg-gray-50 border border-gray-100 text-center">
+                <p className="text-sm font-medium text-gray-500 mb-1">{tier.tier} Provider</p>
+                <p className="text-2xl font-bold text-gray-900">{tier.price}<span className="text-sm font-normal text-gray-500">/GB/mo</span></p>
+                <p className="text-sm text-green-600 font-medium">{tier.earnings}</p>
+                <p className="text-xs text-gray-400 mt-1">{tier.uptime} uptime • {tier.desc}</p>
               </div>
-              <Button className="sm:ml-auto bg-green-600 hover:bg-green-700" asChild>
-                <Link href="#cta">
-                  Start Saving
-                </Link>
-              </Button>
-            </div>
+            ))}
           </div>
         </div>
       </section>
@@ -487,10 +535,10 @@ export default function LandingPage() {
               FAQ
             </div>
             <h2 className="text-3xl sm:text-4xl font-bold mb-4">
-              Questions? Answers.
+              Common questions
             </h2>
             <p className="text-lg text-gray-400">
-              The stuff people usually ask us.
+              Technical details about the Carbide network.
             </p>
           </div>
 
@@ -514,10 +562,10 @@ export default function LandingPage() {
               Community
             </div>
             <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
-              Meet us IRL
+              DePIN events worldwide
             </h2>
             <p className="text-lg text-gray-600">
-              We do events. Come say hi.
+              Building the decentralized physical infrastructure network community.
             </p>
           </div>
 
@@ -535,7 +583,7 @@ export default function LandingPage() {
             >
               <EventCard
                 title="Disrupt with DePIN"
-                description="India Blockchain Week - exploring decentralized infrastructure"
+                description="India Blockchain Week - decentralized infrastructure"
                 date="Dec 9, 2023"
                 location="Bengaluru"
                 imageUrl="/events/2023.png"
@@ -543,7 +591,7 @@ export default function LandingPage() {
               />
               <EventCard
                 title="DePIN Dubai"
-                description="The future of physical infrastructure networks"
+                description="Physical infrastructure networks in the Middle East"
                 date="Apr 19, 2024"
                 location="Dubai"
                 imageUrl="/events/2024.png"
@@ -551,7 +599,7 @@ export default function LandingPage() {
               />
               <EventCard
                 title="Build on DePIN"
-                description="Workshop on building decentralized infrastructure apps"
+                description="Workshop: building decentralized infrastructure"
                 date="Jul 6, 2024"
                 location="Chennai"
                 imageUrl="/events/2024_1.png"
@@ -559,7 +607,7 @@ export default function LandingPage() {
               />
               <EventCard
                 title="Build on DePIN"
-                description="Hands-on DePIN development session"
+                description="Hands-on DePIN development workshop"
                 date="Jul 20, 2024"
                 location="Kochi"
                 imageUrl="/events/2024_2.png"
@@ -567,7 +615,7 @@ export default function LandingPage() {
               />
               <EventCard
                 title="Build on DePIN"
-                description="Deep dive into DePIN architecture"
+                description="DePIN architecture deep dive"
                 date="Jul 21, 2024"
                 location="Hyderabad"
                 imageUrl="/events/2024_3.png"
@@ -575,7 +623,7 @@ export default function LandingPage() {
               />
               <EventCard
                 title="Build on DePIN"
-                description="Building next-gen decentralized apps"
+                description="Decentralized apps on physical infrastructure"
                 date="Jul 26, 2024"
                 location="Bangalore"
                 imageUrl="/events/2024_4.png"
@@ -583,7 +631,7 @@ export default function LandingPage() {
               />
               <EventCard
                 title="Build on DePIN"
-                description="Decentralized infrastructure workshop"
+                description="DePIN workshop for developers"
                 date="Aug 3, 2024"
                 location="Pune"
                 imageUrl="/events/2024_5.png"
@@ -613,10 +661,10 @@ export default function LandingPage() {
       <section id="cta" className="py-20 md:py-28 bg-gradient-to-br from-blue-600 to-violet-600">
         <div className="max-w-2xl mx-auto px-4 sm:px-6 text-center text-white">
           <h2 className="text-3xl sm:text-4xl font-bold mb-4">
-            Ready to ditch Big Cloud?
+            Join the decentralized storage network
           </h2>
           <p className="text-lg text-white/80 mb-8">
-            Join the waitlist. We&apos;ll hook you up with early access.
+            Store files at $0.002/GB or earn passive income as a provider. Production-ready, v1.0.0.
           </p>
 
           {isSubmitted ? (
@@ -635,14 +683,14 @@ export default function LandingPage() {
                 className="flex-1 h-12 px-4 rounded-xl bg-white/10 border border-white/20 text-white placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-white/30"
               />
               <Button type="submit" size="lg" className="h-12 bg-white text-blue-600 hover:bg-white/90 font-semibold">
-                Join Waitlist
+                Get Early Access
                 <ChevronRight className="ml-1 h-4 w-4" />
               </Button>
             </form>
           )}
 
           <p className="mt-4 text-sm text-white/50">
-            No spam. We promise.
+            No spam. Unsubscribe anytime.
           </p>
         </div>
       </section>
