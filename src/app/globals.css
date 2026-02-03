@@ -455,3 +455,162 @@
 .animated-underline:hover::after {
   width: 100%;
 }
+
+/* ============================================
+   STARLINK STYLE ANIMATIONS
+   ============================================ */
+
+/* Fade in animation */
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fade-in 1s ease-out forwards;
+}
+
+.animate-fade-in-delay {
+  opacity: 0;
+  animation: fade-in 1s ease-out 0.3s forwards;
+}
+
+.animate-fade-in-delay-2 {
+  opacity: 0;
+  animation: fade-in 1s ease-out 0.6s forwards;
+}
+
+/* Subtle pulse for elements */
+@keyframes subtle-pulse {
+  0%, 100% {
+    opacity: 0.3;
+  }
+  50% {
+    opacity: 0.6;
+  }
+}
+
+.animate-subtle-pulse {
+  animation: subtle-pulse 3s ease-in-out infinite;
+}
+
+/* Data flow animation */
+@keyframes data-flow {
+  0% {
+    stroke-dashoffset: 100;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+.animate-data-flow {
+  stroke-dasharray: 10, 5;
+  animation: data-flow 2s linear infinite;
+}
+
+/* Glow effect */
+@keyframes glow {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(59, 130, 246, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 40px rgba(59, 130, 246, 0.6);
+  }
+}
+
+.animate-glow {
+  animation: glow 2s ease-in-out infinite;
+}
+
+/* Orbit animation */
+@keyframes orbit {
+  0% {
+    transform: rotate(0deg) translateX(100px) rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg) translateX(100px) rotate(-360deg);
+  }
+}
+
+.animate-orbit {
+  animation: orbit 20s linear infinite;
+}
+
+/* Scale pulse */
+@keyframes scale-pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+.animate-scale-pulse {
+  animation: scale-pulse 2s ease-in-out infinite;
+}
+
+/* Ping animation (slower) */
+@keyframes slow-ping {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  75%, 100% {
+    transform: scale(2);
+    opacity: 0;
+  }
+}
+
+.animate-slow-ping {
+  animation: slow-ping 2s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
+
+/* Gradient text animation */
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.animate-gradient {
+  animation: gradient 3s ease infinite;
+}
+
+/* Orbit animation for elements */
+@keyframes orbit {
+  0% {
+    transform: rotate(0deg) translateX(80px) rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg) translateX(80px) rotate(-360deg);
+  }
+}
+
+.animate-orbit {
+  animation: orbit 8s linear infinite;
+}
+
+/* Smooth parallax helper */
+.parallax-container {
+  perspective: 1px;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.parallax-layer {
+  transform-style: preserve-3d;
+}
