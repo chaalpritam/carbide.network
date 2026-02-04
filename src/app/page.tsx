@@ -14,6 +14,8 @@ import {
   DollarSign,
   Check,
 } from "lucide-react"
+import { AnimatedBackground, FloatingOrbs } from "@/components/AnimatedBackground"
+import { Globe as GlobeVisualizationSection } from "@/components/sections"
 import { useEffect, useRef, useState } from "react"
 
 export default function LandingPage() {
@@ -35,14 +37,17 @@ export default function LandingPage() {
   }
 
   return (
-    <div className="bg-black text-white min-h-screen overflow-x-hidden">
+    <div className="bg-black text-white min-h-screen overflow-x-hidden relative">
+      {/* Universal Background particles */}
+      <AnimatedBackground />
+      <FloatingOrbs />
+
       {/* Navigation */}
       <header
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-700 ${
-          scrolled
-            ? "bg-black/80 backdrop-blur-2xl border-b border-white/5"
-            : "bg-transparent"
-        }`}
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-700 ${scrolled
+          ? "bg-black/80 backdrop-blur-2xl border-b border-white/5"
+          : "bg-transparent"
+          }`}
       >
         <nav className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
           <Link href="/" className="flex items-center group">
@@ -89,28 +94,24 @@ export default function LandingPage() {
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           >
             <span
-              className={`absolute left-2 w-6 h-[2px] bg-white transition-all duration-300 ${
-                mobileMenuOpen ? "top-[19px] rotate-45" : "top-3"
-              }`}
+              className={`absolute left-2 w-6 h-[2px] bg-white transition-all duration-300 ${mobileMenuOpen ? "top-[19px] rotate-45" : "top-3"
+                }`}
             />
             <span
-              className={`absolute left-2 top-[19px] w-6 h-[2px] bg-white transition-all duration-300 ${
-                mobileMenuOpen ? "opacity-0" : "opacity-100"
-              }`}
+              className={`absolute left-2 top-[19px] w-6 h-[2px] bg-white transition-all duration-300 ${mobileMenuOpen ? "opacity-0" : "opacity-100"
+                }`}
             />
             <span
-              className={`absolute left-2 w-6 h-[2px] bg-white transition-all duration-300 ${
-                mobileMenuOpen ? "top-[19px] -rotate-45" : "top-7"
-              }`}
+              className={`absolute left-2 w-6 h-[2px] bg-white transition-all duration-300 ${mobileMenuOpen ? "top-[19px] -rotate-45" : "top-7"
+                }`}
             />
           </button>
         </nav>
 
         {/* Mobile Menu */}
         <div
-          className={`md:hidden absolute top-full left-0 right-0 bg-black/95 backdrop-blur-2xl border-b border-white/5 transition-all duration-500 ${
-            mobileMenuOpen ? "opacity-100 visible" : "opacity-0 invisible"
-          }`}
+          className={`md:hidden absolute top-full left-0 right-0 bg-black/95 backdrop-blur-2xl border-b border-white/5 transition-all duration-500 ${mobileMenuOpen ? "opacity-100 visible" : "opacity-0 invisible"
+            }`}
         >
           <div className="px-6 py-10 space-y-6">
             {["Technology", "Providers", "Pricing"].map((item, i) => (
@@ -142,7 +143,7 @@ export default function LandingPage() {
       <section className="relative h-screen flex items-center justify-center overflow-hidden">
         {/* Animated Background */}
         <div className="absolute inset-0">
-          <GlobeVisualization scrollY={scrollY} />
+          <GlobeVisualizationSection />
         </div>
 
         {/* Gradient Overlays */}
@@ -511,7 +512,7 @@ export default function LandingPage() {
         {/* Background */}
         <div className="absolute inset-0">
           <div className="absolute inset-0 bg-gradient-to-t from-blue-950/50 via-blue-950/20 to-transparent" />
-          <StarField density={0.3} />
+          <StarField density={1.5} />
         </div>
 
         <div className="relative z-10 max-w-4xl mx-auto px-6 text-center">

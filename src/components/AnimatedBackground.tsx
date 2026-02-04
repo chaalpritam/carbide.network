@@ -9,6 +9,7 @@ interface Particle {
   vy: number
   size: number
   opacity: number
+  color: string
 }
 
 export function AnimatedBackground() {
@@ -34,16 +35,26 @@ export function AnimatedBackground() {
 
     const initParticles = () => {
       particles = []
-      const particleCount = Math.floor((canvas.width * canvas.height) / 15000)
+      // Significantly increased particle count for a very rich background
+      const particleCount = Math.floor((canvas.width * canvas.height) / 4500)
 
       for (let i = 0; i < particleCount; i++) {
+        // Randomly assign colors to particles
+        const colors = [
+          'rgba(59, 130, 246, ', // Blue
+          'rgba(139, 92, 246, ', // Purple
+          'rgba(236, 72, 153, ', // Pink
+        ]
+        const baseColor = colors[Math.floor(Math.random() * colors.length)]
+
         particles.push({
           x: Math.random() * canvas.width,
           y: Math.random() * canvas.height,
-          vx: (Math.random() - 0.5) * 0.5,
-          vy: (Math.random() - 0.5) * 0.5,
-          size: Math.random() * 2 + 1,
-          opacity: Math.random() * 0.5 + 0.2,
+          vx: (Math.random() - 0.5) * 0.6,
+          vy: (Math.random() - 0.5) * 0.6,
+          size: Math.random() * 2.5 + 0.5,
+          opacity: Math.random() * 0.6 + 0.1,
+          color: baseColor,
         })
       }
     }
@@ -51,23 +62,30 @@ export function AnimatedBackground() {
     const drawParticle = (p: Particle) => {
       ctx.beginPath()
       ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2)
-      ctx.fillStyle = `rgba(59, 130, 246, ${p.opacity})`
+      ctx.fillStyle = `${p.color}${p.opacity})`
       ctx.fill()
     }
 
     const drawConnections = () => {
+      // Limit connections for performance
+      const maxDist = 120
       for (let i = 0; i < particles.length; i++) {
+        // Only check every 2nd particle for connections to save CPU if count is high
+        if (particles.length > 200 && i % 2 !== 0) continue
+
         for (let j = i + 1; j < particles.length; j++) {
           const dx = particles[i].x - particles[j].x
           const dy = particles[i].y - particles[j].y
           const dist = Math.sqrt(dx * dx + dy * dy)
 
-          if (dist < 120) {
+          if (dist < maxDist) {
             ctx.beginPath()
             ctx.moveTo(particles[i].x, particles[i].y)
             ctx.lineTo(particles[j].x, particles[j].y)
-            ctx.strokeStyle = `rgba(59, 130, 246, ${0.15 * (1 - dist / 120)})`
-            ctx.lineWidth = 1
+
+            const connectionColor = particles[i].color
+            ctx.strokeStyle = `${connectionColor}${0.18 * (1 - dist / maxDist)})`
+            ctx.lineWidth = 0.6
             ctx.stroke()
           }
         }
@@ -135,15 +153,15 @@ export function AnimatedBackground() {
   return (
     <canvas
       ref={canvasRef}
-      className="absolute inset-0 pointer-events-none"
-      style={{ opacity: 0.6 }}
+      className="fixed inset-0 pointer-events-none z-0"
+      style={{ opacity: 0.4 }}
     />
   )
 }
 
 export function FloatingOrbs() {
   return (
-    <div className="absolute inset-0 overflow-hidden pointer-events-none">
+    <div className="fixed inset-0 overflow-hidden pointer-events-none z-0">
       {/* Large blue orb */}
       <div
         className="orb-1 absolute w-[500px] h-[500px] rounded-full"
@@ -185,6 +203,27 @@ export function FloatingOrbs() {
           top: "60%",
           left: "30%",
           filter: "blur(20px)",
+        }}
+      />
+
+      {/* Additional dynamic orbs */}
+      <div
+        className="orb-1 absolute w-[250px] h-[250px] rounded-full"
+        style={{
+          background: "radial-gradient(circle, rgba(139, 92, 246, 0.15) 0%, transparent 70%)",
+          bottom: "40%",
+          right: "10%",
+          filter: "blur(30px)",
+        }}
+      />
+
+      <div
+        className="orb-3 absolute w-[200px] h-[200px] rounded-full"
+        style={{
+          background: "radial-gradient(circle, rgba(59, 130, 246, 0.1) 0%, transparent 70%)",
+          top: "20%",
+          left: "15%",
+          filter: "blur(25px)",
         }}
       />
     </div>
