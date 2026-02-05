@@ -1,12 +1,13 @@
 import type React from "react"
 import type { Metadata } from "next"
 import "@/app/globals.css"
-import { Inter } from "next/font/google"
-import { ThemeProvider } from "@/components/theme-provider"
+import { Instrument_Sans } from "next/font/google"
 
-const inter = Inter({
+const instrumentSans = Instrument_Sans({
   subsets: ["latin"],
-  variable: "--font-inter",
+  weight: ["400", "500", "600", "700"],
+  style: ["normal", "italic"],
+  variable: "--font-instrument",
 })
 
 export const metadata: Metadata = {
@@ -39,16 +40,9 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" suppressHydrationWarning className={inter.variable}>
-      <body className={`${inter.className} antialiased`}>
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="light"
-          enableSystem={false}
-          disableTransitionOnChange
-        >
-          {children}
-        </ThemeProvider>
+    <html lang="en" className={instrumentSans.variable}>
+      <body className="font-sans antialiased text-black bg-white">
+        {children}
       </body>
     </html>
   )
