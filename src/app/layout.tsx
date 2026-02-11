@@ -11,14 +11,10 @@ const instrumentSans = Instrument_Sans({
 })
 
 export const metadata: Metadata = {
-  title: "Carbide Network | Decentralized Storage Marketplace",
-  description: "The decentralized storage network where you choose your replication, control your costs, and own your data. Save 60-80% compared to traditional cloud storage.",
-  keywords: ["decentralized storage", "DePIN", "blockchain", "cloud storage", "Web3", "data privacy", "storage marketplace"],
-  authors: [{ name: "Carbide Network" }],
+  title: "Carbide Network | Decentralized Consumer Storage",
+  description: "Redefine how you store your data. Encrypted, distributed, and priced by the market — not a corporation. Save up to 80% on storage costs with Carbide.",
+  keywords: ["decentralized storage", "web3", "encryption", "privacy", "cloud storage", "carbide network"],
   openGraph: {
-    title: "Carbide Network | Decentralized Storage Marketplace",
-    description: "Storage that you control. Save 60-80% compared to traditional cloud. Choose your replication (1-10 copies), earn by providing storage.",
-    type: "website",
     locale: "en_US",
     siteName: "Carbide Network",
   },

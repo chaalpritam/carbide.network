@@ -3,6 +3,8 @@ import { Shield, Globe, DollarSign, Lock, ArrowRight, Check, Calendar, MapPin, S
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { HowItWorks } from "@/components/how-it-works"
+import { InteractiveTerminal } from "@/components/terminal"
+import { NewsletterForm } from "@/components/newsletter-form"
 
 export default function LandingPage() {
   return (
@@ -31,35 +33,31 @@ export default function LandingPage() {
           </p>
 
           {/* Email capture */}
-          <div className="animate-fade-in-delay-2 flex flex-col sm:flex-row items-center justify-center gap-3 max-w-md mx-auto mb-12">
-            <div className="relative flex items-center w-full bg-[#F5F5F5] rounded-full overflow-hidden">
-              <input
-                type="email"
-                placeholder="Enter your email"
-                className="w-full bg-transparent px-6 py-4 text-sm outline-none placeholder:text-black/30"
-              />
-              <Link
-                href="#cta"
-                className="btn-primary shrink-0 mr-1.5 text-sm px-6 py-2.5"
-              >
-                Get Started
-              </Link>
-            </div>
+          <div className="animate-fade-in-delay-2 mb-12">
+            <NewsletterForm />
           </div>
 
           {/* Social proof */}
-          <div className="animate-fade-in-delay-2 flex items-center justify-center gap-3">
-            <div className="flex -space-x-2">
-              {[1, 2, 3, 4].map((i) => (
+          <div className="animate-fade-in-delay-2 flex items-center justify-center gap-4">
+            <div className="flex -space-x-3">
+              {[
+                "bg-blue-100 text-blue-600",
+                "bg-purple-100 text-purple-600",
+                "bg-amber-100 text-amber-600",
+                "bg-emerald-100 text-emerald-600"
+              ].map((style, i) => (
                 <div
                   key={i}
-                  className="w-8 h-8 rounded-full bg-black/5 border-2 border-white flex items-center justify-center"
+                  className={`w-10 h-10 rounded-full border-2 border-white flex items-center justify-center text-[10px] font-bold shadow-sm ${style}`}
                 >
-                  <span className="text-xs text-black/30">{i}</span>
+                  {["JD", "AS", "MK", "TL"][i]}
                 </div>
               ))}
+              <div className="w-10 h-10 rounded-full bg-black border-2 border-white flex items-center justify-center text-[10px] font-bold text-white shadow-sm">
+                +150
+              </div>
             </div>
-            <span className="text-sm text-black/40">150+ providers already online</span>
+            <span className="text-sm font-medium text-black/40">Trusted by providers worldwide</span>
           </div>
         </div>
       </section>
@@ -328,42 +326,8 @@ export default function LandingPage() {
             </div>
 
             {/* Right: Terminal mockup */}
-            <div className="bg-white/5 rounded-[2rem] p-8 border border-white/10">
-              <div className="flex items-center gap-2 mb-6">
-                <div className="w-3 h-3 rounded-full bg-white/20" />
-                <div className="w-3 h-3 rounded-full bg-white/20" />
-                <div className="w-3 h-3 rounded-full bg-white/20" />
-                <span className="text-xs text-white/30 ml-2">Terminal</span>
-              </div>
-              <div className="font-mono text-sm space-y-4">
-                <div>
-                  <span className="text-white/40">$</span>{" "}
-                  <span className="text-green-400">brew install</span>{" "}
-                  <span className="text-white/80">carbide-node</span>
-                </div>
-                <div className="text-white/30">Installing Carbide Node v1.2.0...</div>
-                <div className="text-white/30">Verifying checksums... OK</div>
-                <div className="text-white/30">Setting up storage directory...</div>
-                <div>
-                  <span className="text-green-400">✓</span>{" "}
-                  <span className="text-white/60">Carbide Node installed successfully</span>
-                </div>
-                <div className="pt-2 border-t border-white/5">
-                  <span className="text-white/40">$</span>{" "}
-                  <span className="text-green-400">carbide-node start</span>{" "}
-                  <span className="text-white/40">--storage 500GB</span>
-                </div>
-                <div className="text-white/30">Registering on Carbide Network...</div>
-                <div className="text-white/30">Connecting to discovery service...</div>
-                <div>
-                  <span className="text-green-400">✓</span>{" "}
-                  <span className="text-white/60">Node online — providing 500 GB</span>
-                </div>
-                <div className="flex items-center gap-2 pt-2">
-                  <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse-dot" />
-                  <span className="text-white/40 text-xs">Listening for storage requests...</span>
-                </div>
-              </div>
+            <div className="lg:pl-8">
+              <InteractiveTerminal />
             </div>
           </div>
         </div>
@@ -449,18 +413,18 @@ export default function LandingPage() {
             ].map((row, i) => (
               <div
                 key={i}
-                className={`grid grid-cols-3 gap-4 ${i % 2 === 0 ? "" : ""}`}
+                className="grid grid-cols-3 gap-4 group/row"
               >
-                <div className="px-4 py-4 flex items-center">
-                  <span className="text-sm font-medium text-black/60">{row.label}</span>
+                <div className="px-4 py-4 flex items-center transition-transform duration-300 group-hover/row:translate-x-1">
+                  <span className="text-sm font-medium text-black/60 group-hover/row:text-black">{row.label}</span>
                 </div>
-                <div className={`px-6 py-4 flex items-center justify-center border-x border-black/5 ${row.highlight ? "bg-green-50" : "bg-black/[0.02]"}`}>
-                  <span className={`text-sm font-medium ${row.highlight ? "text-green-700" : "text-black"}`}>
+                <div className={`px-6 py-4 flex items-center justify-center border-x border-black/5 transition-all duration-300 ${row.highlight ? "bg-green-50/50 group-hover/row:bg-green-50" : "bg-black/[0.01] group-hover/row:bg-black/[0.03]"}`}>
+                  <span className={`text-sm font-bold ${row.highlight ? "text-green-700" : "text-black"}`}>
                     {row.carbide}
                   </span>
                 </div>
-                <div className="px-6 py-4 flex items-center justify-center bg-black/[0.02]">
-                  <span className="text-sm text-black/40">{row.traditional}</span>
+                <div className="px-6 py-4 flex items-center justify-center bg-black/[0.01] transition-all duration-300 group-hover/row:bg-black/[0.03]">
+                  <span className="text-sm text-black/40 font-medium">{row.traditional}</span>
                 </div>
               </div>
             ))}
@@ -684,54 +648,58 @@ export default function LandingPage() {
             {[
               {
                 name: "Alex Morgan",
-                role: "Contributor",
+                role: "Core Contributor",
                 initials: "AM",
+                color: "bg-blue-100 text-blue-700",
                 github: "#",
                 twitter: "#",
               },
               {
                 name: "Jordan Lee",
-                role: "Contributor",
+                role: "Infrastructure Lead",
                 initials: "JL",
+                color: "bg-purple-100 text-purple-700",
                 github: "#",
                 twitter: "#",
               },
               {
                 name: "Sam Chen",
-                role: "Contributor",
+                role: "Protocol Engineer",
                 initials: "SC",
+                color: "bg-emerald-100 text-emerald-700",
                 github: "#",
                 twitter: "#",
               },
               {
                 name: "Riley Patel",
-                role: "Contributor",
+                role: "Product Designer",
                 initials: "RP",
+                color: "bg-rose-100 text-rose-700",
                 github: "#",
                 twitter: "#",
               },
             ].map((member, i) => (
               <div
                 key={i}
-                className="bg-white rounded-[2rem] p-8 text-center group hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
+                className="bg-white rounded-[2rem] p-10 text-center group hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 border border-black/[0.02]"
               >
-                <div className="w-20 h-20 rounded-full bg-black/5 flex items-center justify-center mx-auto mb-6 group-hover:bg-black group-hover:text-white transition-all duration-300">
-                  <span className="text-xl font-medium">{member.initials}</span>
+                <div className={`w-24 h-24 rounded-full flex items-center justify-center mx-auto mb-8 transition-transform duration-500 group-hover:scale-110 shadow-inner ${member.color}`}>
+                  <span className="text-2xl font-bold tracking-tighter">{member.initials}</span>
                 </div>
-                <h3 className="text-lg font-medium tracking-tight mb-1">{member.name}</h3>
-                <p className="text-sm text-black/40 mb-6">{member.role}</p>
-                <div className="flex items-center justify-center gap-3">
+                <h3 className="text-xl font-medium tracking-tight mb-2">{member.name}</h3>
+                <p className="text-sm font-medium text-black/30 mb-8 uppercase tracking-widest">{member.role}</p>
+                <div className="flex items-center justify-center gap-4">
                   <Link
                     href={member.github}
-                    className="w-9 h-9 rounded-full bg-black/5 flex items-center justify-center hover:bg-black hover:text-white transition-all duration-300"
+                    className="w-11 h-11 rounded-full bg-[#F5F5F5] flex items-center justify-center hover:bg-black hover:text-white transition-all duration-500 shadow-sm"
                   >
-                    <Github className="h-4 w-4" />
+                    <Github className="h-5 w-5" />
                   </Link>
                   <Link
                     href={member.twitter}
-                    className="w-9 h-9 rounded-full bg-black/5 flex items-center justify-center hover:bg-black hover:text-white transition-all duration-300"
+                    className="w-11 h-11 rounded-full bg-[#F5F5F5] flex items-center justify-center hover:bg-black hover:text-white transition-all duration-500 shadow-sm"
                   >
-                    <Twitter className="h-4 w-4" />
+                    <Twitter className="h-5 w-5" />
                   </Link>
                 </div>
               </div>
@@ -751,21 +719,8 @@ export default function LandingPage() {
           </p>
 
           {/* Email capture */}
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-3 max-w-md mx-auto mb-8">
-            <div className="relative flex items-center w-full bg-[#F5F5F5] rounded-full overflow-hidden">
-              <input
-                type="email"
-                placeholder="Enter your email"
-                className="w-full bg-transparent px-6 py-4 text-sm outline-none placeholder:text-black/30"
-              />
-              <Link
-                href="https://github.com/carbidenetwork"
-                target="_blank"
-                className="btn-primary shrink-0 mr-1.5 text-sm px-6 py-2.5"
-              >
-                Get Started
-              </Link>
-            </div>
+          <div className="mb-8">
+            <NewsletterForm />
           </div>
 
           <p className="text-sm text-black/30">

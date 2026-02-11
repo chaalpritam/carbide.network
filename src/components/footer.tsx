@@ -85,13 +85,13 @@ export function Footer() {
         <div className="flex flex-col md:flex-row items-center justify-between gap-4 pt-8 border-t border-black/5">
           <div className="flex items-center gap-6">
             <Link
-              href="#"
+              href="/privacy"
               className="text-xs text-black/30 hover:text-black transition-colors"
             >
               Privacy Policy
             </Link>
             <Link
-              href="#"
+              href="/terms"
               className="text-xs text-black/30 hover:text-black transition-colors"
             >
               Terms of Service
