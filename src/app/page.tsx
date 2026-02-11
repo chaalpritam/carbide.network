@@ -1,5 +1,5 @@
 import Link from "next/link"
-import { Shield, Globe, DollarSign, Lock, ArrowRight, Check, Users, Calendar, MapPin } from "lucide-react"
+import { Shield, Globe, DollarSign, Lock, ArrowRight, Check, Calendar, MapPin, Server, Smartphone, HardDrive, Code, Compass } from "lucide-react"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 
@@ -374,90 +374,76 @@ export default function LandingPage() {
         </div>
       </section>
 
-      {/* Community Section */}
-      <section className="section-padding bg-[#F5F5F5]">
+      {/* Products Section */}
+      <section id="products" className="section-padding bg-[#F5F5F5]">
         <div className="max-w-[1440px] mx-auto">
-          <div className="grid lg:grid-cols-2 gap-16 items-start">
-            {/* Left: Community intro */}
-            <div>
-              <h2 className="text-4xl md:text-5xl lg:text-6xl font-medium tracking-tighter mb-6">
-                Join the <span className="italic-serif">community</span>.
-              </h2>
-              <p className="text-lg text-black/40 leading-relaxed mb-10 max-w-lg">
-                Carbide is built by its community. Developers, providers, and users shaping the future of decentralized storage together.
-              </p>
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-medium tracking-tighter mb-4">
+              The Carbide <span className="italic-serif">ecosystem</span>.
+            </h2>
+            <p className="text-lg text-black/40 max-w-lg mx-auto">
+              A complete suite of products for decentralized storage — from infrastructure to consumer apps.
+            </p>
+          </div>
 
-              <div className="grid grid-cols-2 gap-6 mb-10">
-                {[
-                  { value: "2,500+", label: "Community Members" },
-                  { value: "150+", label: "Storage Providers" },
-                  { value: "40+", label: "Contributors" },
-                  { value: "12", label: "Countries" },
-                ].map((stat, i) => (
-                  <div key={i}>
-                    <div className="text-3xl font-medium tracking-tight">{stat.value}</div>
-                    <div className="text-sm text-black/40 mt-1">{stat.label}</div>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {[
+              {
+                icon: Server,
+                title: "Carbide Node",
+                tag: "Infrastructure",
+                description: "The backbone of the network. Run a storage node to contribute disk space, serve files, and earn rewards as a provider.",
+              },
+              {
+                icon: Smartphone,
+                title: "Carbide iOS App",
+                tag: "Consumer",
+                description: "Access your decentralized storage on the go. Upload, browse, and share files — all encrypted end-to-end on your iPhone.",
+              },
+              {
+                icon: HardDrive,
+                title: "Carbide Drive",
+                tag: "Desktop",
+                description: "A native desktop client that mounts your Carbide storage as a local drive. Drag, drop, and sync — just like a hard drive.",
+              },
+              {
+                icon: Code,
+                title: "Carbide iOS SDK",
+                tag: "Developer",
+                description: "Integrate decentralized storage into any iOS app. Simple Swift APIs for upload, download, encryption, and key management.",
+              },
+              {
+                icon: Smartphone,
+                title: "Carbide Android App",
+                tag: "Consumer",
+                description: "Decentralized storage in your pocket. Manage, upload, and share files securely from any Android device.",
+              },
+              {
+                icon: Compass,
+                title: "Carbide Discovery Service",
+                tag: "Protocol",
+                description: "The coordination layer that connects clients to optimal providers. Handles peer discovery, health checks, and routing.",
+              },
+            ].map((product, i) => (
+              <div
+                key={i}
+                className="bg-white rounded-[2rem] p-8 group hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
+              >
+                <div className="flex items-center justify-between mb-6">
+                  <div className="w-12 h-12 rounded-2xl bg-black/5 flex items-center justify-center group-hover:bg-black group-hover:text-white transition-all duration-300">
+                    <product.icon className="h-5 w-5" />
                   </div>
-                ))}
-              </div>
-
-              <div className="flex flex-wrap gap-3">
-                <Link
-                  href="https://t.me/carbidenetwork"
-                  target="_blank"
-                  className="btn-primary text-sm"
-                >
-                  <Users className="h-4 w-4 mr-2" />
-                  Join Telegram
-                </Link>
-                <Link
-                  href="https://github.com/carbidenetwork"
-                  target="_blank"
-                  className="btn-secondary text-sm"
-                >
-                  Contribute on GitHub
-                </Link>
-              </div>
-            </div>
-
-            {/* Right: Community highlights */}
-            <div className="space-y-4">
-              {[
-                {
-                  title: "Open Source First",
-                  description: "All core protocols and clients are open source. Audit the code, submit PRs, or fork and build your own.",
-                  icon: "code",
-                },
-                {
-                  title: "Provider Network",
-                  description: "Run a storage node and join a global network of independent operators earning passive income.",
-                  icon: "globe",
-                },
-                {
-                  title: "Governance",
-                  description: "Community members shape protocol upgrades, fee structures, and the roadmap through open proposals.",
-                  icon: "users",
-                },
-                {
-                  title: "Builder Grants",
-                  description: "Building on Carbide? Apply for grants to fund development of tools, integrations, and applications.",
-                  icon: "spark",
-                },
-              ].map((item, i) => (
-                <div key={i} className="bg-white rounded-2xl p-6 flex gap-5 items-start group hover:shadow-lg transition-all duration-300">
-                  <div className="w-10 h-10 rounded-xl bg-black/5 flex items-center justify-center shrink-0 group-hover:bg-black group-hover:text-white transition-all duration-300">
-                    {item.icon === "code" && <span className="text-sm font-mono">{"/>"}</span>}
-                    {item.icon === "globe" && <Globe className="h-4 w-4" />}
-                    {item.icon === "users" && <Users className="h-4 w-4" />}
-                    {item.icon === "spark" && <DollarSign className="h-4 w-4" />}
-                  </div>
-                  <div>
-                    <h3 className="font-medium tracking-tight mb-1">{item.title}</h3>
-                    <p className="text-sm text-black/40 leading-relaxed">{item.description}</p>
-                  </div>
+                  <span className="text-xs font-medium text-black/40 bg-black/5 rounded-full px-3 py-1">{product.tag}</span>
                 </div>
-              ))}
-            </div>
+                <h3 className="text-xl font-medium tracking-tight mb-3">{product.title}</h3>
+                <p className="text-sm text-black/40 leading-relaxed mb-6">{product.description}</p>
+                <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <span className="inline-flex items-center gap-2 text-sm font-medium">
+                    Learn more <ArrowRight className="h-4 w-4" />
+                  </span>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </section>
