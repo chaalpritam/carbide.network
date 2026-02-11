@@ -521,7 +521,7 @@ export default function LandingPage() {
       </section>
 
       {/* Provider Section */}
-      <section id="providers" className="section-padding">
+      <section id="providers" className="section-padding bg-[#F5F5F5]">
         <div className="max-w-[1440px] mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-medium tracking-tighter mb-4">
@@ -558,19 +558,19 @@ export default function LandingPage() {
             ].map((tier, i) => (
               <div
                 key={i}
-                className="rounded-[2rem] border border-black/10 p-8 group hover:bg-black hover:text-white hover:border-black transition-all duration-500 hover:-translate-y-1 hover:shadow-xl"
+                className="bg-white/40 backdrop-blur-sm rounded-[2rem] border border-black/[0.03] p-10 group hover:bg-white transition-all duration-700 hover:-translate-y-2 hover:shadow-[0_32px_64px_-16px_rgba(0,0,0,0.08)] hover:border-black/5"
               >
-                <div className="text-sm text-black/40 group-hover:text-white/60 mb-2 transition-colors">{tier.uptime} uptime</div>
+                <div className="text-sm font-medium text-black/30 mb-2">{tier.uptime} uptime</div>
                 <h3 className="text-2xl font-medium tracking-tight mb-2">{tier.tier}</h3>
-                <div className="text-3xl font-medium tracking-tight mb-4">
+                <div className="text-4xl font-bold tracking-tighter mb-6">
                   {tier.price}
                 </div>
-                <p className="text-sm text-black/40 group-hover:text-white/60 leading-relaxed mb-8 transition-colors">
+                <p className="text-sm text-black/40 leading-relaxed mb-10">
                   {tier.description}
                 </p>
-                <div className="flex items-center justify-between pt-6 border-t border-black/5 group-hover:border-white/10 transition-colors">
-                  <span className="text-sm text-black/40 group-hover:text-white/60 transition-colors">Estimated earnings</span>
-                  <span className="text-lg font-medium text-green-600 group-hover:text-green-400 transition-colors">{tier.earnings}</span>
+                <div className="flex items-center justify-between pt-8 border-t border-black/[0.03]">
+                  <span className="text-sm font-medium text-black/30">Estimated earnings</span>
+                  <span className="text-xl font-bold">{tier.earnings}</span>
                 </div>
               </div>
             ))}
