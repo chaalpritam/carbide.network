@@ -1,6 +1,9 @@
+"use client"
+
 import Link from "next/link"
 import Image from "next/image"
-import { Shield, Globe, DollarSign, Lock, ArrowRight, Check, Calendar, MapPin, Server, Smartphone, HardDrive, Code, Compass, Github, Twitter } from "lucide-react"
+import { useState, useRef } from "react"
+import { Shield, Globe, DollarSign, Lock, ArrowRight, Check, Calendar, MapPin, Server, Smartphone, HardDrive, Code, Compass, Github, Twitter, ChevronLeft, ChevronRight, ExternalLink } from "lucide-react"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { HowItWorks } from "@/components/how-it-works"
@@ -8,6 +11,20 @@ import { InteractiveTerminal } from "@/components/terminal"
 import { NewsletterForm } from "@/components/newsletter-form"
 
 export default function LandingPage() {
+  const scrollContainerRef = useRef<HTMLDivElement>(null)
+
+  const scrollLeft = () => {
+    if (scrollContainerRef.current) {
+      scrollContainerRef.current.scrollBy({ left: -400, behavior: "smooth" })
+    }
+  }
+
+  const scrollRight = () => {
+    if (scrollContainerRef.current) {
+      scrollContainerRef.current.scrollBy({ left: 400, behavior: "smooth" })
+    }
+  }
+
   return (
     <div className="bg-white text-black min-h-screen overflow-x-hidden">
       <Header />
@@ -440,93 +457,170 @@ export default function LandingPage() {
       <HowItWorks />
 
       {/* Events Section */}
-      <section id="events" className="section-padding">
+      <section id="events" className="section-padding overflow-hidden">
         <div className="max-w-[1440px] mx-auto">
           <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-12">
             <div>
-              <h2 className="text-4xl md:text-5xl lg:text-6xl font-medium tracking-tighter mb-4">
-                Upcoming <span className="italic-serif">events</span>.
+              <div className="inline-flex items-center gap-2 bg-black/5 rounded-full px-4 py-1.5 mb-4">
+                <Calendar className="h-4 w-4 text-black/40" />
+                <span className="text-xs font-medium uppercase tracking-widest text-black/40">Community Timeline</span>
+              </div>
+              <h2 className="text-4xl md:text-5xl lg:text-6xl font-medium tracking-tighter">
+                Our Community <span className="italic-serif">events</span>.
               </h2>
-              <p className="text-lg text-black/40 max-w-lg">
-                Meet the team, learn about decentralized storage, and connect with the community.
-              </p>
             </div>
-            <Link
-              href="#"
-              className="btn-secondary text-sm shrink-0"
-            >
-              View all events
-              <ArrowRight className="h-4 w-4 ml-2" />
-            </Link>
+            <div className="flex gap-2">
+              <button
+                onClick={scrollLeft}
+                className="w-12 h-12 rounded-full border border-black/10 flex items-center justify-center hover:bg-black hover:text-white transition-all duration-300"
+                aria-label="Scroll left"
+              >
+                <ChevronLeft className="h-5 w-5" />
+              </button>
+              <button
+                onClick={scrollRight}
+                className="w-12 h-12 rounded-full border border-black/10 flex items-center justify-center hover:bg-black hover:text-white transition-all duration-300"
+                aria-label="Scroll right"
+              >
+                <ChevronRight className="h-5 w-5" />
+              </button>
+            </div>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div
+            ref={scrollContainerRef}
+            className="flex gap-6 overflow-x-auto no-scrollbar snap-x snap-mandatory pb-8 px-4 -mx-4"
+          >
             {[
               {
-                date: "Mar 15, 2026",
-                title: "Carbide Developer Day",
-                description: "Hands-on workshop: build your first dApp on Carbide. Storage APIs, encryption, and provider integration.",
-                location: "San Francisco, CA",
-                type: "Workshop",
+                title: "Disrupt with DePIN (IBW)",
+                description: "Hosted around India Blockchain Week to explore how DePIN is revolutionizing decentralized infrastructure and storage solutions.",
+                date: "Dec 9, 2023",
+                location: "Bengaluru",
+                image: "/events/2023.png",
+                tweet: "https://x.com/ChaalPritam/status/1736350189538189456",
                 bg: "bg-blue-50",
               },
               {
-                date: "Mar 28, 2026",
-                title: "DePIN Summit 2026",
-                description: "Carbide at DePIN Summit - our team presents the provider economics model and marketplace roadmap.",
-                location: "Austin, TX",
-                type: "Conference",
+                title: "Disrupt with DePIN (Dubai)",
+                description: "Discover the future of decentralized physical infrastructure networks at our exclusive Dubai event.",
+                date: "May 19, 2024",
+                location: "Dubai",
+                image: "/events/2024.png",
+                tweet: "https://x.com/ChaalPritam/status/1786815270679449952",
                 bg: "bg-purple-50",
               },
               {
-                date: "Apr 10, 2026",
-                title: "Community AMA",
-                description: "Monthly AMA with the core team. Ask about protocol upgrades, provider onboarding, and what's next.",
-                location: "Online - Telegram",
-                type: "Online",
-                bg: "bg-green-50",
+                title: "What to Build on DePIN",
+                description: "Learn about innovative DePIN applications and discover how to build the next generation of decentralized infrastructure.",
+                date: "July 6, 2024",
+                location: "Chennai",
+                image: "/events/2024_1.png",
+                tweet: "https://x.com/ChaalPritam/status/1809841085721551154",
+                bg: "bg-emerald-50",
               },
               {
-                date: "Apr 22, 2026",
-                title: "ETH Taipei Hackathon",
-                description: "Join our bounty track: build storage-powered dApps and compete for prizes.",
-                location: "Taipei, Taiwan",
-                type: "Hackathon",
+                title: "What to Build on DePIN",
+                description: "Explore practical DePIN use cases and get hands-on experience building decentralized infrastructure solutions.",
+                date: "July 20, 2024",
+                location: "Kochi",
+                image: "/events/2024_2.png",
+                tweet: "https://x.com/ChaalPritam/status/1815346193578532927",
                 bg: "bg-amber-50",
               },
               {
-                date: "May 5, 2026",
-                title: "Provider Onboarding Call",
-                description: "New to hosting? Join our monthly call to set up your first storage node with live support.",
-                location: "Online - Discord",
-                type: "Online",
+                title: "What to Build on DePIN",
+                description: "Dive deep into DePIN architecture and learn how to create scalable decentralized infrastructure applications.",
+                date: "July 21, 2024",
+                location: "Hyderabad",
+                image: "/events/2024_3.png",
+                tweet: "https://x.com/ChaalPritam/status/1815395721425944993",
                 bg: "bg-rose-50",
               },
               {
-                date: "May 18, 2026",
-                title: "Decentralized Storage Day",
-                description: "A global community event celebrating open data infrastructure. Panels, demos, and lightning talks.",
-                location: "Berlin, Germany",
-                type: "Conference",
+                title: "What to Build on DePIN",
+                description: "We deep dive to discover how to leverage DePIN for building next-gen decentralized applications.",
+                date: "July 26, 2024",
+                location: "Bangalore",
+                image: "/events/2024_4.png",
+                tweet: "https://x.com/ChaalPritam/status/1818548912044605780",
                 bg: "bg-teal-50",
+              },
+              {
+                title: "What to Build on DePIN",
+                description: "Learn about DePIN's potential to transform traditional infrastructure into decentralized networks.",
+                date: "August 3, 2024",
+                location: "Pune",
+                image: "/events/2024_5.png",
+                tweet: "https://x.com/ChaalPritam/status/1820003761533673594",
+                bg: "bg-indigo-50",
+              },
+              {
+                title: "What to Build on DePIN",
+                description: "Explore the intersection of DePIN and Web3 infrastructure at our Goa event.",
+                date: "August 6, 2024",
+                location: "Goa",
+                image: "/events/2024_6.png",
+                tweet: "https://x.com/ChaalPritam/status/1821097979010314748",
+                bg: "bg-sky-50",
+              },
+              {
+                title: "let's talk decentralization (Chennai)",
+                description: "A deep-dive masterclass into the world of DePIN, DeSci, and DeAI. Exploring why decentralization matters and how to build for the future.",
+                date: "May 24, 2025",
+                location: "Chennai",
+                image: "/events/2024_1.png",
+                tweet: "https://x.com/Web3Chennai/status/1926615633157845280",
+                bg: "bg-violet-50",
               },
             ].map((event, i) => (
               <div
                 key={i}
-                className={`${event.bg} rounded-[2rem] p-8 group hover:shadow-xl transition-all duration-300 hover:-translate-y-1`}
+                className={`min-w-[320px] md:min-w-[400px] ${event.bg} rounded-[2rem] overflow-hidden group hover:shadow-2xl transition-all duration-500 snap-start flex flex-col`}
               >
-                <div className="flex items-center justify-between mb-6">
-                  <span className="text-xs font-medium bg-white/80 rounded-full px-3 py-1">{event.type}</span>
-                  <div className="flex items-center gap-1.5 text-xs text-black/40">
-                    <Calendar className="h-3.5 w-3.5" />
-                    {event.date}
+                {/* Event Image */}
+                <div className="relative aspect-[16/10] overflow-hidden">
+                  <div className="absolute inset-0 bg-black/5 z-10" />
+                  <Image
+                    src={event.image}
+                    alt={event.title}
+                    fill
+                    className="object-cover group-hover:scale-105 transition-transform duration-700"
+                  />
+                  <div className="absolute top-6 left-6 z-20">
+                    <span className="text-xs font-bold uppercase tracking-widest bg-white/90 backdrop-blur-md px-3 py-1.5 rounded-full shadow-sm">
+                      {event.location}
+                    </span>
                   </div>
                 </div>
-                <h3 className="text-xl font-medium tracking-tight mb-3">{event.title}</h3>
-                <p className="text-sm text-black/40 leading-relaxed mb-6">{event.description}</p>
-                <div className="flex items-center gap-1.5 text-sm text-black/40">
-                  <MapPin className="h-4 w-4" />
-                  {event.location}
+
+                {/* Event Content */}
+                <div className="p-8 flex flex-col flex-grow">
+                  <div className="flex items-center gap-2 mb-4 text-black/40">
+                    <Calendar className="h-4 w-4" />
+                    <span className="text-sm font-medium">{event.date}</span>
+                  </div>
+
+                  <h3 className="text-2xl font-medium tracking-tight mb-3 group-hover:text-black transition-colors">
+                    {event.title}
+                  </h3>
+
+                  <p className="text-sm text-black/50 leading-relaxed mb-8 flex-grow">
+                    {event.description}
+                  </p>
+
+                  <div className="flex items-center justify-between pt-6 border-t border-black/[0.05]">
+                    <Link
+                      href={event.tweet}
+                      target="_blank"
+                      className="inline-flex items-center gap-2 text-sm font-semibold hover:gap-3 transition-all duration-300"
+                    >
+                      View Highlights <ArrowRight className="h-4 w-4" />
+                    </Link>
+                    <Link href={event.tweet} target="_blank">
+                      <Twitter className="h-5 w-5 text-black/20 hover:text-blue-400 transition-colors" />
+                    </Link>
+                  </div>
                 </div>
               </div>
             ))}
@@ -591,131 +685,6 @@ export default function LandingPage() {
           </div>
         </div>
       </section>
-
-      {/* Pricing Comparison */}
-      {/* <section id="pricing" className="section-padding">
-        <div className="max-w-[1440px] mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-medium tracking-tighter mb-4">
-              Transparent <span className="italic-serif">pricing</span>.
-            </h2>
-            <p className="text-lg text-black/40 max-w-lg mx-auto">
-              No hidden fees. No corporate markup. See exactly how Carbide compares.
-            </p>
-          </div>
-
-          <div className="max-w-5xl mx-auto">
-            <div className="grid grid-cols-3 gap-4 mb-2">
-              <div />
-              <div className="bg-black text-white rounded-t-2xl px-6 py-5 text-center">
-                <div className="text-lg font-medium">Carbide</div>
-                <div className="text-xs text-white/50 mt-1">Decentralized</div>
-              </div>
-              <div className="bg-[#F5F5F5] rounded-t-2xl px-6 py-5 text-center">
-                <div className="text-lg font-medium text-black/40">Traditional Cloud</div>
-                <div className="text-xs text-black/30 mt-1">Centralized</div>
-              </div>
-            </div>
-
-            {[
-              {
-                label: "Storage cost",
-                carbide: "$0.002/GB/mo",
-                traditional: "$0.023/GB/mo",
-                highlight: true,
-              },
-              {
-                label: "Egress fees",
-                carbide: "Free",
-                traditional: "$0.09/GB",
-                highlight: false,
-              },
-              {
-                label: "Encryption",
-                carbide: "Client-side AES-256",
-                traditional: "Server-side",
-                highlight: false,
-              },
-              {
-                label: "Key ownership",
-                carbide: "You own your keys",
-                traditional: "Provider controlled",
-                highlight: false,
-              },
-              {
-                label: "Redundancy",
-                carbide: "1–10x, your choice",
-                traditional: "Fixed (3x)",
-                highlight: false,
-              },
-              {
-                label: "Vendor lock-in",
-                carbide: "None",
-                traditional: "High",
-                highlight: false,
-              },
-              {
-                label: "Single point of failure",
-                carbide: "No",
-                traditional: "Yes",
-                highlight: false,
-              },
-              {
-                label: "Minimum commitment",
-                carbide: "None - pay as you go",
-                traditional: "Often required",
-                highlight: false,
-              },
-            ].map((row, i) => (
-              <div
-                key={i}
-                className="grid grid-cols-3 gap-4 group/row"
-              >
-                <div className="px-4 py-4 flex items-center transition-transform duration-300 group-hover/row:translate-x-1">
-                  <span className="text-sm font-medium text-black/60 group-hover/row:text-black">{row.label}</span>
-                </div>
-                <div className={`px-6 py-4 flex items-center justify-center border-x border-black/5 transition-all duration-300 ${row.highlight ? "bg-green-50/50 group-hover/row:bg-green-50" : "bg-black/[0.01] group-hover/row:bg-black/[0.03]"}`}>
-                  <span className={`text-sm font-bold ${row.highlight ? "text-green-700" : "text-black"}`}>
-                    {row.carbide}
-                  </span>
-                </div>
-                <div className="px-6 py-4 flex items-center justify-center bg-black/[0.01] transition-all duration-300 group-hover/row:bg-black/[0.03]">
-                  <span className="text-sm text-black/40 font-medium">{row.traditional}</span>
-                </div>
-              </div>
-            ))}
-
-            <div className="grid grid-cols-3 gap-4 mt-2">
-              <div />
-              <div className="bg-black text-white rounded-b-2xl px-6 py-5 text-center">
-                <Link
-                  href="#cta"
-                  className="inline-flex items-center gap-2 bg-white text-black rounded-full px-6 py-2.5 text-sm font-medium hover:bg-white/90 transition-colors"
-                >
-                  Get started
-                  <ArrowRight className="h-4 w-4" />
-                </Link>
-              </div>
-              <div className="bg-[#F5F5F5] rounded-b-2xl px-6 py-5" />
-            </div>
-          </div>
-
-          <div className="max-w-3xl mx-auto mt-12 bg-green-50 rounded-[2rem] p-8 md:p-10 flex flex-col md:flex-row items-center gap-6 md:gap-10">
-            <div className="shrink-0 text-center">
-              <div className="text-5xl md:text-6xl font-medium tracking-tighter text-green-700">91%</div>
-              <div className="text-sm text-green-700/60 mt-1">avg. savings</div>
-            </div>
-            <div>
-              <h3 className="text-lg font-medium tracking-tight mb-2">
-                Store 1 TB for ~$2/month instead of $23.
-              </h3>
-              <p className="text-sm text-black/40 leading-relaxed">
-                Carbide&apos;s marketplace lets providers compete on price, eliminating corporate margins. With zero egress fees and flexible redundancy, you only pay for exactly what you use.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section> */}
 
       {/* CTA Section */}
       <section id="cta" className="section-padding">
