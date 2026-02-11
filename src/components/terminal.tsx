@@ -12,7 +12,7 @@ const lines = [
     { text: "carbide-node start --storage 500GB", color: "text-green-400", prefix: "$" },
     { text: "Registering on Carbide Network...", color: "text-white/30" },
     { text: "Connecting to discovery service...", color: "text-white/30" },
-    { text: "✓ Node online — providing 500 GB", color: "text-white/60", prefix: "" },
+    { text: "✓ Node online - providing 500 GB", color: "text-white/60", prefix: "" },
 ]
 
 export function InteractiveTerminal() {

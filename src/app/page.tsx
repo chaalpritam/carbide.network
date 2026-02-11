@@ -17,7 +17,7 @@ export default function LandingPage() {
           {/* Badge */}
           <div className="animate-fade-in inline-flex items-center gap-2 bg-[#F5F5F5] rounded-full px-5 py-2 mb-8">
             <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse-dot" />
-            <span className="text-sm text-black/60">Decentralized consumer storage</span>
+            <span className="text-sm text-black/60">decentralized consumer storage</span>
           </div>
 
           {/* Heading */}
@@ -108,13 +108,13 @@ export default function LandingPage() {
               </h2>
 
               <p className="text-lg text-white/40 max-w-lg mb-10 leading-relaxed">
-                Turn your idle Mac Mini into a Carbide provider. Install the node, share your unused disk space, and start earning — all while contributing to a decentralized storage network.
+                Turn your idle Mac Mini into a Carbide provider. Install the node, share your unused disk space, and start earning - all while contributing to a decentralized storage network.
               </p>
 
               <div className="space-y-5 mb-10">
                 {[
                   { title: "One-command install", description: "Download Carbide Node and get running in under 5 minutes. No DevOps required." },
-                  { title: "Always-on, low power", description: "Mac Mini draws just 6W idle — perfect for 24/7 storage hosting at near-zero energy cost." },
+                  { title: "Always-on, low power", description: "Mac Mini draws just 6W idle - perfect for 24/7 storage hosting at near-zero energy cost." },
                   { title: "Set and forget", description: "Auto-updates, health monitoring, and smart allocation. Your node manages itself." },
                   { title: "Earn passively", description: "Get paid per GB stored and per GB served. Earnings deposit directly to your wallet." },
                 ].map((item, i) => (
@@ -163,7 +163,7 @@ export default function LandingPage() {
               Built for <span className="italic-serif">security</span>.
             </h2>
             <p className="text-lg text-black/40 max-w-lg mx-auto">
-              Your data is encrypted, distributed, and priced by the market — not a corporation.
+              Your data is encrypted, distributed, and priced by the market - not a corporation.
             </p>
           </div>
 
@@ -182,7 +182,7 @@ export default function LandingPage() {
               {
                 icon: DollarSign,
                 title: "Marketplace Pricing",
-                description: "Providers compete on price and quality. No corporate markup. Pure supply and demand — save 60-80%.",
+                description: "Providers compete on price and quality. No corporate markup. Pure supply and demand - save 60-80%.",
               },
             ].map((feature, i) => (
               <div key={i} className="hover-card group">
@@ -205,7 +205,7 @@ export default function LandingPage() {
               The Carbide <span className="italic-serif">ecosystem</span>.
             </h2>
             <p className="text-lg text-black/40 max-w-lg mx-auto">
-              A complete suite of products for decentralized storage — from infrastructure to consumer apps.
+              A complete suite of products for decentralized storage - from infrastructure to consumer apps.
             </p>
           </div>
 
@@ -221,13 +221,13 @@ export default function LandingPage() {
                 icon: Smartphone,
                 title: "Carbide iOS App",
                 tag: "Consumer",
-                description: "Access your decentralized storage on the go. Upload, browse, and share files — all encrypted end-to-end on your iPhone.",
+                description: "Access your decentralized storage on the go. Upload, browse, and share files - all encrypted end-to-end on your iPhone.",
               },
               {
                 icon: HardDrive,
                 title: "Carbide Drive",
                 tag: "Desktop",
-                description: "A native desktop client that mounts your Carbide storage as a local drive. Drag, drop, and sync — just like a hard drive.",
+                description: "A native desktop client that mounts your Carbide storage as a local drive. Drag, drop, and sync - just like a hard drive.",
               },
               {
                 icon: Code,
@@ -271,7 +271,7 @@ export default function LandingPage() {
         </div>
       </section>
 
-      {/* Category Slider — "For everyone who stores." */}
+      {/* Category Slider - "For everyone who stores." */}
       <section className="section-padding">
         <div className="max-w-[1440px] mx-auto">
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-medium tracking-tighter mb-12">
@@ -289,7 +289,7 @@ export default function LandingPage() {
                   "End-to-end encrypted personal vault",
                   "Share files with expiring links",
                   "Up to 10x redundancy for critical files",
-                  "Starting at $0.002/GB — 80% cheaper than iCloud",
+                  "Starting at $0.002/GB - 80% cheaper than iCloud",
                 ],
               },
               {
@@ -300,7 +300,7 @@ export default function LandingPage() {
                   "Team workspaces with role-based access",
                   "Compliance-ready audit logs & retention policies",
                   "Seamless integration with existing workflows",
-                  "No per-seat pricing — pay only for storage used",
+                  "No per-seat pricing - pay only for storage used",
                   "Geographic redundancy across 30+ regions",
                 ],
               },
@@ -361,33 +361,33 @@ export default function LandingPage() {
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
               {
-                name: "Alex Morgan",
+                name: "Chaal Pritam",
                 role: "Core Contributor",
-                initials: "AM",
+                initials: "CP",
                 color: "bg-blue-100 text-blue-700",
                 github: "#",
                 twitter: "#",
               },
               {
-                name: "Jordan Lee",
+                name: "Kaushik K",
                 role: "Infrastructure Lead",
-                initials: "JL",
+                initials: "KK",
                 color: "bg-purple-100 text-purple-700",
                 github: "#",
                 twitter: "#",
               },
               {
-                name: "Sam Chen",
+                name: "Sathish Kumar",
                 role: "Protocol Engineer",
-                initials: "SC",
+                initials: "SK",
                 color: "bg-emerald-100 text-emerald-700",
                 github: "#",
                 twitter: "#",
               },
               {
-                name: "Riley Patel",
+                name: "Sudharshan",
                 role: "Product Designer",
-                initials: "RP",
+                initials: "S",
                 color: "bg-rose-100 text-rose-700",
                 github: "#",
                 twitter: "#",
@@ -459,7 +459,7 @@ export default function LandingPage() {
               {
                 date: "Mar 28, 2026",
                 title: "DePIN Summit 2026",
-                description: "Carbide at DePIN Summit — our team presents the provider economics model and marketplace roadmap.",
+                description: "Carbide at DePIN Summit - our team presents the provider economics model and marketplace roadmap.",
                 location: "Austin, TX",
                 type: "Conference",
                 bg: "bg-purple-50",
@@ -468,7 +468,7 @@ export default function LandingPage() {
                 date: "Apr 10, 2026",
                 title: "Community AMA",
                 description: "Monthly AMA with the core team. Ask about protocol upgrades, provider onboarding, and what's next.",
-                location: "Online — Telegram",
+                location: "Online - Telegram",
                 type: "Online",
                 bg: "bg-green-50",
               },
@@ -484,7 +484,7 @@ export default function LandingPage() {
                 date: "May 5, 2026",
                 title: "Provider Onboarding Call",
                 description: "New to hosting? Join our monthly call to set up your first storage node with live support.",
-                location: "Online — Discord",
+                location: "Online - Discord",
                 type: "Online",
                 bg: "bg-rose-50",
               },
@@ -648,7 +648,7 @@ export default function LandingPage() {
               },
               {
                 label: "Minimum commitment",
-                carbide: "None — pay as you go",
+                carbide: "None - pay as you go",
                 traditional: "Often required",
                 highlight: false,
               },
