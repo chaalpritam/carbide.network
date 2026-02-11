@@ -434,65 +434,123 @@ export default function LandingPage() {
               Transparent <span className="italic-serif">pricing</span>.
             </h2>
             <p className="text-lg text-black/40 max-w-lg mx-auto">
-              No hidden fees. No corporate markup. Just a marketplace connecting you to storage providers.
+              No hidden fees. No corporate markup. See exactly how Carbide compares.
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
-            {/* Carbide */}
-            <div className="hover-card border-2 border-black">
-              <div className="flex items-center gap-3 mb-6">
-                <div className="w-10 h-10 rounded-xl bg-black flex items-center justify-center">
-                  <span className="text-white text-sm font-bold">C</span>
-                </div>
-                <div>
-                  <div className="font-medium">Carbide Network</div>
-                  <div className="text-xs text-black/40">Decentralized</div>
-                </div>
+          {/* Comparison Table */}
+          <div className="max-w-5xl mx-auto">
+            {/* Table Header */}
+            <div className="grid grid-cols-3 gap-4 mb-2">
+              <div />
+              <div className="bg-black text-white rounded-t-2xl px-6 py-5 text-center">
+                <div className="text-lg font-medium">Carbide</div>
+                <div className="text-xs text-white/50 mt-1">Decentralized</div>
               </div>
-              <ul className="space-y-4">
-                {[
-                  "$0.002 - $0.012/GB/month",
-                  "Client-side AES-256 encryption",
-                  "You own your keys",
-                  "1-10 copies, your choice",
-                  "No single point of failure",
-                ].map((item, i) => (
-                  <li key={i} className="flex items-start gap-3">
-                    <Check className="h-5 w-5 text-green-600 shrink-0 mt-0.5" />
-                    <span className="text-sm">{item}</span>
-                  </li>
-                ))}
-              </ul>
+              <div className="bg-[#F5F5F5] rounded-t-2xl px-6 py-5 text-center">
+                <div className="text-lg font-medium text-black/40">Traditional Cloud</div>
+                <div className="text-xs text-black/30 mt-1">Centralized</div>
+              </div>
             </div>
 
-            {/* Traditional */}
-            <div className="hover-card">
-              <div className="flex items-center gap-3 mb-6">
-                <div className="w-10 h-10 rounded-xl bg-black/5 flex items-center justify-center">
-                  <span className="text-black/30 text-sm font-bold">T</span>
+            {/* Rows */}
+            {[
+              {
+                label: "Storage cost",
+                carbide: "$0.002/GB/mo",
+                traditional: "$0.023/GB/mo",
+                highlight: true,
+              },
+              {
+                label: "Egress fees",
+                carbide: "Free",
+                traditional: "$0.09/GB",
+                highlight: false,
+              },
+              {
+                label: "Encryption",
+                carbide: "Client-side AES-256",
+                traditional: "Server-side",
+                highlight: false,
+              },
+              {
+                label: "Key ownership",
+                carbide: "You own your keys",
+                traditional: "Provider controlled",
+                highlight: false,
+              },
+              {
+                label: "Redundancy",
+                carbide: "1–10x, your choice",
+                traditional: "Fixed (3x)",
+                highlight: false,
+              },
+              {
+                label: "Vendor lock-in",
+                carbide: "None",
+                traditional: "High",
+                highlight: false,
+              },
+              {
+                label: "Single point of failure",
+                carbide: "No",
+                traditional: "Yes",
+                highlight: false,
+              },
+              {
+                label: "Minimum commitment",
+                carbide: "None — pay as you go",
+                traditional: "Often required",
+                highlight: false,
+              },
+            ].map((row, i) => (
+              <div
+                key={i}
+                className={`grid grid-cols-3 gap-4 ${i % 2 === 0 ? "" : ""}`}
+              >
+                <div className="px-4 py-4 flex items-center">
+                  <span className="text-sm font-medium text-black/60">{row.label}</span>
                 </div>
-                <div>
-                  <div className="font-medium text-black/40">Traditional Cloud</div>
-                  <div className="text-xs text-black/30">Centralized</div>
+                <div className={`px-6 py-4 flex items-center justify-center border-x border-black/5 ${row.highlight ? "bg-green-50" : "bg-black/[0.02]"}`}>
+                  <span className={`text-sm font-medium ${row.highlight ? "text-green-700" : "text-black"}`}>
+                    {row.carbide}
+                  </span>
+                </div>
+                <div className="px-6 py-4 flex items-center justify-center bg-black/[0.02]">
+                  <span className="text-sm text-black/40">{row.traditional}</span>
                 </div>
               </div>
-              <ul className="space-y-4">
-                {[
-                  "$0.02 - $0.03/GB/month",
-                  "Server-side encryption",
-                  "Provider controlled keys",
-                  "Fixed redundancy",
-                  "Single point of failure",
-                ].map((item, i) => (
-                  <li key={i} className="flex items-start gap-3">
-                    <span className="w-5 h-5 rounded-full bg-black/5 shrink-0 mt-0.5 flex items-center justify-center">
-                      <span className="w-1.5 h-1.5 rounded-full bg-black/20" />
-                    </span>
-                    <span className="text-sm text-black/40">{item}</span>
-                  </li>
-                ))}
-              </ul>
+            ))}
+
+            {/* Table Footer */}
+            <div className="grid grid-cols-3 gap-4 mt-2">
+              <div />
+              <div className="bg-black text-white rounded-b-2xl px-6 py-5 text-center">
+                <Link
+                  href="#cta"
+                  className="inline-flex items-center gap-2 bg-white text-black rounded-full px-6 py-2.5 text-sm font-medium hover:bg-white/90 transition-colors"
+                >
+                  Get started
+                  <ArrowRight className="h-4 w-4" />
+                </Link>
+              </div>
+              <div className="bg-[#F5F5F5] rounded-b-2xl px-6 py-5" />
+            </div>
+          </div>
+
+          {/* Savings Callout */}
+          <div className="max-w-3xl mx-auto mt-12 bg-green-50 rounded-[2rem] p-8 md:p-10 flex flex-col md:flex-row items-center gap-6 md:gap-10">
+            <div className="shrink-0 text-center">
+              <div className="text-5xl md:text-6xl font-medium tracking-tighter text-green-700">91%</div>
+              <div className="text-sm text-green-700/60 mt-1">avg. savings</div>
+            </div>
+            <div>
+              <h3 className="text-lg font-medium tracking-tight mb-2">
+                Store 1 TB for ~$2/month instead of $23.
+              </h3>
+              <p className="text-sm text-black/40 leading-relaxed">
+                Carbide&apos;s marketplace lets providers compete on price, eliminating corporate margins. With zero egress fees and flexible redundancy, you only pay for exactly what you use.
+              </p>
             </div>
           </div>
         </div>
