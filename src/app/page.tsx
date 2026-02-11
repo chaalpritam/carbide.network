@@ -1,4 +1,5 @@
 import Link from "next/link"
+import Image from "next/image"
 import { Shield, Globe, DollarSign, Lock, ArrowRight, Check, Calendar, MapPin, Server, Smartphone, HardDrive, Code, Compass, Github, Twitter } from "lucide-react"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
@@ -364,53 +365,66 @@ export default function LandingPage() {
                 name: "Chaal Pritam",
                 role: "Core Contributor",
                 initials: "CP",
+                image: "/team/chaalpritam.png",
                 color: "bg-blue-100 text-blue-700",
-                github: "#",
-                twitter: "#",
+                github: "https://github.com/chaalpritam",
+                twitter: "https://x.com/chaalpritam",
               },
               {
                 name: "Kaushik K",
-                role: "Infrastructure Lead",
+                role: "Core Contributor",
                 initials: "KK",
+                image: "/team/kaushik.png",
                 color: "bg-purple-100 text-purple-700",
-                github: "#",
-                twitter: "#",
+                github: "https://github.com/KaushikKC",
+                twitter: "https://x.com/0xkaushik_k",
               },
               {
                 name: "Sathish Kumar",
-                role: "Protocol Engineer",
+                role: "Core Contributor",
                 initials: "SK",
+                image: "/team/sathish.png",
                 color: "bg-emerald-100 text-emerald-700",
-                github: "#",
-                twitter: "#",
+                github: "https://github.com/sathishkumarmsk",
+                twitter: "https://x.com/msk_sathishcode",
               },
               {
-                name: "Sudharshan",
-                role: "Product Designer",
+                name: "Sudharsanan",
+                role: "Core Contributor",
                 initials: "S",
+                image: "/team/sudharsanan.png",
                 color: "bg-rose-100 text-rose-700",
-                github: "#",
-                twitter: "#",
+                github: "https://github.com/sksudharsanan",
+                twitter: "https://x.com/sksudharsanan",
               },
             ].map((member, i) => (
               <div
                 key={i}
                 className="bg-white rounded-[2rem] p-10 text-center group hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 border border-black/[0.02]"
               >
-                <div className={`w-24 h-24 rounded-full flex items-center justify-center mx-auto mb-8 transition-transform duration-500 group-hover:scale-110 shadow-inner ${member.color}`}>
-                  <span className="text-2xl font-bold tracking-tighter">{member.initials}</span>
+                <div className={`relative w-24 h-24 rounded-full flex items-center justify-center mx-auto mb-8 transition-transform duration-500 group-hover:scale-110 shadow-inner overflow-hidden ${member.color}`}>
+                  <span className="text-2xl font-bold tracking-tighter absolute inset-0 flex items-center justify-center z-0">{member.initials}</span>
+                  <Image
+                    src={member.image}
+                    alt={member.name}
+                    fill
+                    className="object-cover relative z-10"
+                    sizes="96px"
+                  />
                 </div>
                 <h3 className="text-xl font-medium tracking-tight mb-2">{member.name}</h3>
                 <p className="text-sm font-medium text-black/30 mb-8 uppercase tracking-widest">{member.role}</p>
                 <div className="flex items-center justify-center gap-4">
                   <Link
                     href={member.github}
+                    target="_blank"
                     className="w-11 h-11 rounded-full bg-[#F5F5F5] flex items-center justify-center hover:bg-black hover:text-white transition-all duration-500 shadow-sm"
                   >
                     <Github className="h-5 w-5" />
                   </Link>
                   <Link
                     href={member.twitter}
+                    target="_blank"
                     className="w-11 h-11 rounded-full bg-[#F5F5F5] flex items-center justify-center hover:bg-black hover:text-white transition-all duration-500 shadow-sm"
                   >
                     <Twitter className="h-5 w-5" />

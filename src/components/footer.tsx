@@ -24,10 +24,6 @@ export function Footer() {
               {[
                 { label: "Install Node", href: "#install-node" },
                 { label: "Ecosystem", href: "#products" },
-                { label: "Team", href: "#team" },
-                { label: "How it Works", href: "#how-it-works" },
-                { label: "Events", href: "#events" },
-                { label: "Providers", href: "#providers" },
               ].map((link) => (
                 <li key={link.label}>
                   <Link
@@ -68,7 +64,7 @@ export function Footer() {
             <ul className="space-y-4">
               {[
                 { label: "Twitter", href: "https://x.com/carbidenetwork", external: true },
-                { label: "Telegram", href: "https://t.me/carbidenetwork", external: true },
+                { label: "Telegram", href: "https://t.me/chaalpritam", external: true },
               ].map((link) => (
                 <li key={link.label}>
                   <Link
@@ -117,7 +113,7 @@ export function Footer() {
               GitHub
             </Link>
             <Link
-              href="https://t.me/carbidenetwork"
+              href="https://t.me/chaalpritam"
               target="_blank"
               className="text-[11px] uppercase tracking-widest font-bold text-white/20 hover:text-white transition-colors"
             >
