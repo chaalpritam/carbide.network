@@ -2,6 +2,7 @@ import Link from "next/link"
 import { Shield, Globe, DollarSign, Lock, ArrowRight, Check, Calendar, MapPin, Server, Smartphone, HardDrive, Code, Compass, Github, Twitter } from "lucide-react"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
+import { HowItWorks } from "@/components/how-it-works"
 
 export default function LandingPage() {
   return (
@@ -210,65 +211,7 @@ export default function LandingPage() {
       </section>
 
       {/* How It Works */}
-      <section className="section-padding bg-[#F5F5F5]">
-        <div className="max-w-[1440px] mx-auto">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
-            {/* Left: steps */}
-            <div>
-              <h2 className="text-4xl md:text-5xl lg:text-6xl font-medium tracking-tighter mb-12">
-                How Carbide <span className="italic-serif">works</span>.
-              </h2>
-
-              <div className="space-y-10">
-                {[
-                  {
-                    num: "01",
-                    title: "Encrypt",
-                    description: "Your files are encrypted with AES-256-GCM on your device before upload. Only you hold the keys.",
-                  },
-                  {
-                    num: "02",
-                    title: "Distribute",
-                    description: "Encrypted chunks are spread across independent providers worldwide. You choose the redundancy level (1-10 copies).",
-                  },
-                  {
-                    num: "03",
-                    title: "Access",
-                    description: "Retrieve from anywhere. Data is fetched from the fastest providers and decrypted locally on your device.",
-                  },
-                ].map((step, i) => (
-                  <div key={i} className="flex gap-6 items-start">
-                    <div className="text-4xl font-medium text-black/10 shrink-0 w-14">{step.num}</div>
-                    <div>
-                      <h3 className="text-xl font-medium tracking-tight mb-2">{step.title}</h3>
-                      <p className="text-sm text-black/40 leading-relaxed">{step.description}</p>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            {/* Right: mockup */}
-            <div className="mockup-container aspect-square flex items-center justify-center">
-              <div className="text-center p-12">
-                <div className="w-20 h-20 rounded-3xl bg-black/5 flex items-center justify-center mx-auto mb-6">
-                  <Lock className="h-8 w-8 text-black/30" />
-                </div>
-                <div className="space-y-3 max-w-xs mx-auto">
-                  <div className="h-2 bg-black/5 rounded-full w-full" />
-                  <div className="h-2 bg-black/5 rounded-full w-3/4 mx-auto" />
-                  <div className="h-2 bg-black/5 rounded-full w-1/2 mx-auto" />
-                </div>
-                <div className="mt-8 flex justify-center gap-2">
-                  {[1, 2, 3].map((i) => (
-                    <div key={i} className="w-3 h-3 rounded-full bg-black/10" />
-                  ))}
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      <HowItWorks />
 
       {/* Provider Section */}
       <section id="providers" className="section-padding">

@@ -85,6 +85,10 @@
   .mockup-container {
     @apply rounded-[2rem] border border-black/10 overflow-hidden bg-[#F5F5F5];
   }
+
+  .shadow-glow {
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1), 0 0 40px rgba(0, 0, 0, 0.05);
+  }
 }
 
 /* ============================================
