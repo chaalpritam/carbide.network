@@ -328,6 +328,104 @@ export default function LandingPage() {
         </div>
       </section>
 
+      {/* Mac Mini Provider CTA */}
+      <section className="section-padding bg-black text-white">
+        <div className="max-w-[1440px] mx-auto">
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
+            {/* Left: Content */}
+            <div>
+              <div className="inline-flex items-center gap-2 bg-white/10 rounded-full px-5 py-2 mb-8">
+                <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse-dot" />
+                <span className="text-sm text-white/60">Become a provider</span>
+              </div>
+
+              <h2 className="text-4xl md:text-5xl lg:text-6xl font-medium tracking-tighter mb-6">
+                Your Mac Mini is a{" "}
+                <span className="italic-serif">storage node</span>.
+              </h2>
+
+              <p className="text-lg text-white/40 max-w-lg mb-10 leading-relaxed">
+                Turn your idle Mac Mini into a Carbide provider. Install the node, share your unused disk space, and start earning — all while contributing to a decentralized storage network.
+              </p>
+
+              <div className="space-y-5 mb-10">
+                {[
+                  { title: "One-command install", description: "Download Carbide Node and get running in under 5 minutes. No DevOps required." },
+                  { title: "Always-on, low power", description: "Mac Mini draws just 6W idle — perfect for 24/7 storage hosting at near-zero energy cost." },
+                  { title: "Set and forget", description: "Auto-updates, health monitoring, and smart allocation. Your node manages itself." },
+                  { title: "Earn passively", description: "Get paid per GB stored and per GB served. Earnings deposit directly to your wallet." },
+                ].map((item, i) => (
+                  <div key={i} className="flex gap-4 items-start">
+                    <div className="w-8 h-8 rounded-lg bg-white/10 flex items-center justify-center shrink-0 mt-0.5">
+                      <Check className="h-4 w-4 text-green-400" />
+                    </div>
+                    <div>
+                      <div className="text-sm font-medium mb-1">{item.title}</div>
+                      <div className="text-sm text-white/40 leading-relaxed">{item.description}</div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+
+              <div className="flex flex-col sm:flex-row gap-3">
+                <Link
+                  href="#cta"
+                  className="inline-flex items-center justify-center gap-2 bg-white text-black rounded-full px-8 py-4 text-sm font-medium hover:bg-white/90 transition-colors"
+                >
+                  Install Carbide Node
+                  <ArrowRight className="h-4 w-4" />
+                </Link>
+                <Link
+                  href="#"
+                  className="inline-flex items-center justify-center gap-2 border border-white/20 rounded-full px-8 py-4 text-sm font-medium text-white/60 hover:border-white/40 hover:text-white transition-colors"
+                >
+                  Read the docs
+                </Link>
+              </div>
+            </div>
+
+            {/* Right: Terminal mockup */}
+            <div className="bg-white/5 rounded-[2rem] p-8 border border-white/10">
+              <div className="flex items-center gap-2 mb-6">
+                <div className="w-3 h-3 rounded-full bg-white/20" />
+                <div className="w-3 h-3 rounded-full bg-white/20" />
+                <div className="w-3 h-3 rounded-full bg-white/20" />
+                <span className="text-xs text-white/30 ml-2">Terminal</span>
+              </div>
+              <div className="font-mono text-sm space-y-4">
+                <div>
+                  <span className="text-white/40">$</span>{" "}
+                  <span className="text-green-400">brew install</span>{" "}
+                  <span className="text-white/80">carbide-node</span>
+                </div>
+                <div className="text-white/30">Installing Carbide Node v1.2.0...</div>
+                <div className="text-white/30">Verifying checksums... OK</div>
+                <div className="text-white/30">Setting up storage directory...</div>
+                <div>
+                  <span className="text-green-400">✓</span>{" "}
+                  <span className="text-white/60">Carbide Node installed successfully</span>
+                </div>
+                <div className="pt-2 border-t border-white/5">
+                  <span className="text-white/40">$</span>{" "}
+                  <span className="text-green-400">carbide-node start</span>{" "}
+                  <span className="text-white/40">--storage 500GB</span>
+                </div>
+                <div className="text-white/30">Registering on Carbide Network...</div>
+                <div className="text-white/30">Connecting to discovery service...</div>
+                <div>
+                  <span className="text-green-400">✓</span>{" "}
+                  <span className="text-white/60">Node online — providing 500 GB</span>
+                </div>
+                <div className="flex items-center gap-2 pt-2">
+                  <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse-dot" />
+                  <span className="text-white/40 text-xs">Listening for storage requests...</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Pricing Comparison */}
       <section id="pricing" className="section-padding">
         <div className="max-w-[1440px] mx-auto">
