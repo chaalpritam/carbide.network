@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react"
 import { motion, AnimatePresence } from "framer-motion"
-import { Lock, Share2, Download, Check, Shield, Zap, Globe } from "lucide-react"
+import { Lock, Share2, Download, Check, Globe } from "lucide-react"
 
 const steps = [
     {

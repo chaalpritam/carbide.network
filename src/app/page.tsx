@@ -2,8 +2,8 @@
 
 import Link from "next/link"
 import Image from "next/image"
-import { useState, useRef } from "react"
-import { Shield, Globe, DollarSign, Lock, ArrowRight, Check, Calendar, MapPin, Server, Smartphone, HardDrive, Code, Compass, Github, Twitter, ChevronLeft, ChevronRight, ExternalLink } from "lucide-react"
+import { useRef } from "react"
+import { Shield, Globe, DollarSign, ArrowRight, Check, Calendar, Server, Smartphone, HardDrive, Code, Compass, Github, Twitter, ChevronLeft, ChevronRight } from "lucide-react"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { HowItWorks } from "@/components/how-it-works"

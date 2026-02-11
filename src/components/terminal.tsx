@@ -1,6 +1,6 @@
 "use client"
 
-import { useState, useEffect, useRef } from "react"
+import { useState, useEffect } from "react"
 import { motion } from "framer-motion"
 
 const lines = [
@@ -17,7 +17,6 @@ const lines = [
 
 export function InteractiveTerminal() {
     const [visibleLines, setVisibleLines] = useState<number>(0)
-    const [isTyping, setIsTyping] = useState(true)
 
     useEffect(() => {
         if (visibleLines >= lines.length) {
