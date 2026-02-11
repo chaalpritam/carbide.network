@@ -569,7 +569,7 @@ export default function LandingPage() {
                 description: "A deep-dive masterclass into the world of DePIN, DeSci, and DeAI. Exploring why decentralization matters and how to build for the future.",
                 date: "May 24, 2025",
                 location: "Chennai",
-                image: "/events/2024_1.png",
+                image: "/events/2025.png",
                 tweet: "https://x.com/Web3Chennai/status/1926615633157845280",
                 bg: "bg-violet-50",
               },
