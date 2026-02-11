@@ -12,7 +12,7 @@ const instrumentSans = Instrument_Sans({
 
 export const metadata: Metadata = {
   title: "Carbide Network | Decentralized Consumer Storage",
-  description: "Redefine how you store your data. Encrypted, distributed, and priced by the market — not a corporation. Save up to 80% on storage costs with Carbide.",
+  description: "Redefine how you store your data. Encrypted, distributed, and priced by the market not a corporation. Save up to 80% on storage costs with Carbide.",
   keywords: ["decentralized storage", "web3", "encryption", "privacy", "cloud storage", "carbide network"],
   openGraph: {
     locale: "en_US",

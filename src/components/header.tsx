@@ -18,11 +18,12 @@ export function Header() {
   }, [])
 
   const navItems = [
-    { label: "Technology", href: "#technology" },
-    { label: "Providers", href: "#providers" },
+    { label: "Install Node", href: "#install-node" },
     { label: "Ecosystem", href: "#products" },
-    { label: "Pricing", href: "#pricing" },
     { label: "Team", href: "#team" },
+    { label: "How it Works", href: "#how-it-works" },
+    { label: "Events", href: "#events" },
+    { label: "Providers", href: "#providers" },
   ]
 
   return (

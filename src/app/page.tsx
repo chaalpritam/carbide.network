@@ -92,7 +92,7 @@ export default function LandingPage() {
       </section>
 
       {/* Mac Mini Provider CTA */}
-      <section className="section-padding bg-black text-white">
+      <section id="install-node" className="section-padding bg-black text-white">
         <div className="max-w-[1440px] mx-auto">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             {/* Left: Content */}
@@ -426,7 +426,7 @@ export default function LandingPage() {
       <HowItWorks />
 
       {/* Events Section */}
-      <section className="section-padding">
+      <section id="events" className="section-padding">
         <div className="max-w-[1440px] mx-auto">
           <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-12">
             <div>

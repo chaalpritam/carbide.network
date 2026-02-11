@@ -22,9 +22,12 @@ export function Footer() {
             <h4 className="text-sm font-medium mb-6 uppercase tracking-widest text-white/20">Product</h4>
             <ul className="space-y-4">
               {[
-                { label: "Technology", href: "#technology" },
+                { label: "Install Node", href: "#install-node" },
+                { label: "Ecosystem", href: "#products" },
+                { label: "Team", href: "#team" },
+                { label: "How it Works", href: "#how-it-works" },
+                { label: "Events", href: "#events" },
                 { label: "Providers", href: "#providers" },
-                { label: "Pricing", href: "#pricing" },
               ].map((link) => (
                 <li key={link.label}>
                   <Link

@@ -43,7 +43,7 @@ export function HowItWorks() {
     }, [isAutoPlaying])
 
     return (
-        <section className="section-padding bg-white relative overflow-hidden">
+        <section id="how-it-works" className="section-padding bg-white relative overflow-hidden">
             {/* Background decoration */}
             <div className="absolute top-0 left-0 w-full h-full pointer-events-none opacity-[0.03]">
                 <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] rounded-full bg-blue-500 blur-[120px]" />
