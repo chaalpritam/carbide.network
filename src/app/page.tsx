@@ -1,5 +1,5 @@
 import Link from "next/link"
-import { Shield, Globe, DollarSign, Lock, ArrowRight, Check, Calendar, MapPin, Server, Smartphone, HardDrive, Code, Compass } from "lucide-react"
+import { Shield, Globe, DollarSign, Lock, ArrowRight, Check, Calendar, MapPin, Server, Smartphone, HardDrive, Code, Compass, Github, Twitter } from "lucide-react"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 
@@ -536,6 +536,78 @@ export default function LandingPage() {
                 <div className="flex items-center gap-1.5 text-sm text-black/40">
                   <MapPin className="h-4 w-4" />
                   {event.location}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Team Section */}
+      <section id="team" className="section-padding bg-[#F5F5F5]">
+        <div className="max-w-[1440px] mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-medium tracking-tighter mb-4">
+              The <span className="italic-serif">team</span>.
+            </h2>
+            <p className="text-lg text-black/40 max-w-lg mx-auto">
+              A small team of contributors building the future of decentralized storage.
+            </p>
+          </div>
+
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {[
+              {
+                name: "Alex Morgan",
+                role: "Contributor",
+                initials: "AM",
+                github: "#",
+                twitter: "#",
+              },
+              {
+                name: "Jordan Lee",
+                role: "Contributor",
+                initials: "JL",
+                github: "#",
+                twitter: "#",
+              },
+              {
+                name: "Sam Chen",
+                role: "Contributor",
+                initials: "SC",
+                github: "#",
+                twitter: "#",
+              },
+              {
+                name: "Riley Patel",
+                role: "Contributor",
+                initials: "RP",
+                github: "#",
+                twitter: "#",
+              },
+            ].map((member, i) => (
+              <div
+                key={i}
+                className="bg-white rounded-[2rem] p-8 text-center group hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
+              >
+                <div className="w-20 h-20 rounded-full bg-black/5 flex items-center justify-center mx-auto mb-6 group-hover:bg-black group-hover:text-white transition-all duration-300">
+                  <span className="text-xl font-medium">{member.initials}</span>
+                </div>
+                <h3 className="text-lg font-medium tracking-tight mb-1">{member.name}</h3>
+                <p className="text-sm text-black/40 mb-6">{member.role}</p>
+                <div className="flex items-center justify-center gap-3">
+                  <Link
+                    href={member.github}
+                    className="w-9 h-9 rounded-full bg-black/5 flex items-center justify-center hover:bg-black hover:text-white transition-all duration-300"
+                  >
+                    <Github className="h-4 w-4" />
+                  </Link>
+                  <Link
+                    href={member.twitter}
+                    className="w-9 h-9 rounded-full bg-black/5 flex items-center justify-center hover:bg-black hover:text-white transition-all duration-300"
+                  >
+                    <Twitter className="h-4 w-4" />
+                  </Link>
                 </div>
               </div>
             ))}
