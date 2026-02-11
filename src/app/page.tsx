@@ -147,21 +147,37 @@ export default function LandingPage() {
                 title: "Personal",
                 description: "Photos, documents, and backups. Secure and affordable storage for your personal files.",
                 bg: "bg-blue-50",
+                features: [
+                  "Auto-sync photos & videos from any device",
+                  "End-to-end encrypted personal vault",
+                  "Share files with expiring links",
+                  "Up to 10x redundancy for critical files",
+                  "Starting at $0.002/GB — 80% cheaper than iCloud",
+                ],
               },
               {
                 title: "Business",
                 description: "Team files, compliance archives, and shared workspaces. Scale without the enterprise price tag.",
                 bg: "bg-purple-50",
+                features: [
+                  "Team workspaces with role-based access",
+                  "Compliance-ready audit logs & retention policies",
+                  "Seamless integration with existing workflows",
+                  "No per-seat pricing — pay only for storage used",
+                  "Geographic redundancy across 30+ regions",
+                ],
               },
               {
                 title: "Enterprise",
                 description: "Petabyte-scale storage with SLA guarantees. Multi-region redundancy and audit trails.",
                 bg: "bg-amber-50",
+                features: [],
               },
               {
                 title: "Developers",
                 description: "API-first storage for apps and services. S3-compatible with decentralized infrastructure.",
                 bg: "bg-green-50",
+                features: [],
               },
             ].map((card, i) => (
               <div
@@ -171,6 +187,16 @@ export default function LandingPage() {
                 <div>
                   <h3 className="text-2xl font-medium tracking-tight mb-4">{card.title}</h3>
                   <p className="text-sm text-black/40 leading-relaxed">{card.description}</p>
+                  {card.features.length > 0 && (
+                    <ul className="mt-6 space-y-3">
+                      {card.features.map((feature, j) => (
+                        <li key={j} className="flex items-start gap-2.5">
+                          <Check className="h-4 w-4 text-black/30 shrink-0 mt-0.5" />
+                          <span className="text-sm text-black/50 leading-relaxed">{feature}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  )}
                 </div>
                 <div className="mt-8 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                   <span className="inline-flex items-center gap-2 text-sm font-medium">
