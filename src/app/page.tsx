@@ -8,7 +8,6 @@ import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { HowItWorks } from "@/components/how-it-works"
 import { InteractiveTerminal } from "@/components/terminal"
-import { NewsletterForm } from "@/components/newsletter-form"
 
 export default function LandingPage() {
   const scrollContainerRef = useRef<HTMLDivElement>(null)
@@ -50,9 +49,22 @@ export default function LandingPage() {
             Your files. A global network of providers. No middlemen. Save 60-80% on storage costs.
           </p>
 
-          {/* Email capture */}
-          <div className="animate-fade-in-delay-2 mb-12">
-            <NewsletterForm />
+          {/* CTA buttons */}
+          <div className="animate-fade-in-delay-2 flex flex-col sm:flex-row items-center justify-center gap-4 mb-12">
+            <Link
+              href="#install-node"
+              className="inline-flex items-center justify-center gap-2 bg-black text-white rounded-full px-8 py-4 text-sm font-medium hover:bg-black/90 transition-colors"
+            >
+              Get Started
+              <ArrowRight className="h-4 w-4" />
+            </Link>
+            <Link
+              href="https://docs.carbide.network"
+              target="_blank"
+              className="inline-flex items-center justify-center gap-2 border border-black/10 rounded-full px-8 py-4 text-sm font-medium text-black/60 hover:border-black/30 hover:text-black transition-colors"
+            >
+              Read Docs
+            </Link>
           </div>
 
           {/* Social proof */}
@@ -696,9 +708,28 @@ export default function LandingPage() {
             Join the network. Store files at $0.002/GB or earn passive income as a provider.
           </p>
 
-          {/* Email capture */}
-          <div className="mb-8">
-            <NewsletterForm />
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8">
+            <Link
+              href="#install-node"
+              className="inline-flex items-center justify-center gap-2 bg-black text-white rounded-full px-8 py-4 text-sm font-medium hover:bg-black/90 transition-colors"
+            >
+              Install Node
+              <ArrowRight className="h-4 w-4" />
+            </Link>
+            <Link
+              href="https://docs.carbide.network"
+              target="_blank"
+              className="inline-flex items-center justify-center gap-2 border border-black/10 rounded-full px-8 py-4 text-sm font-medium text-black/60 hover:border-black/30 hover:text-black transition-colors"
+            >
+              Browse Docs
+            </Link>
+            <Link
+              href="https://t.me/carbidenetwork"
+              target="_blank"
+              className="inline-flex items-center justify-center gap-2 border border-black/10 rounded-full px-8 py-4 text-sm font-medium text-black/60 hover:border-black/30 hover:text-black transition-colors"
+            >
+              Join Telegram
+            </Link>
           </div>
 
           <p className="text-sm text-black/30">
