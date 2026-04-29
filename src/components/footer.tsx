@@ -22,8 +22,8 @@ export function Footer() {
             <h4 className="text-sm font-medium mb-6 uppercase tracking-widest text-white/20">Product</h4>
             <ul className="space-y-4">
               {[
-                { label: "Install Node", href: "#install-node" },
-                { label: "Ecosystem", href: "#products" },
+                { label: "Install Node", href: "/#install-node" },
+                { label: "Ecosystem", href: "/#products" },
               ].map((link) => (
                 <li key={link.label}>
                   <Link
@@ -43,7 +43,7 @@ export function Footer() {
             <ul className="space-y-4">
               {[
                 { label: "GitHub", href: "https://github.com/carbidenetwork", external: true },
-                { label: "Documentation", href: "#", external: false },
+                { label: "Documentation", href: "/docs", external: false },
               ].map((link) => (
                 <li key={link.label}>
                   <Link
